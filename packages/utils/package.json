@@ -1,0 +1,64 @@
+{
+  "name": "@c3/utils",
+  "version": "1.0.130",
+  "description": "",
+  "keywords": [],
+  "author": "che3vinci <che3vinci@gmail.com>",
+  "license": "ISC",
+  "main": "dist/utils.umd.js",
+  "module": "dist/utils.es.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest --config ../../jest.config.ts --rootDir .",
+    "watch": "npx vite build --watch",
+    "build": "npx vite build",
+    "clean": "rm -rf dist && rm -rf node_modules ",
+    "reset": "pnpm clean && pnpm install",
+    "watchtype": "tsc --project . --watch",
+    "type": "tsc --project . --paths null --emitDeclarationOnly --declaration"
+  },
+  "directories": {
+    "lib": "dist",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/utils.umd.js",
+    "module": "dist/utils.es.js",
+    "types": "dist/index.d.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/che3vinci/c3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/che3vinci/c3/issues"
+  },
+  "homepage": "https://github.com/che3vinci/c3#readme",
+  "dependencies": {
+    "@babel/preset-env": "^7.18.2",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "@types/jest": "^27.4.1",
+    "@types/lodash": "^4.14.178",
+    "@types/node": "^17.0.13",
+    "@types/qs": "^6.9.7",
+    "axios": "^0.26.1",
+    "copy-to-clipboard": "^3.3.1",
+    "dayjs": "^1.10.8",
+    "lodash": "^4.17.21",
+    "numeral": "^2.0.6",
+    "qs": "^6.10.3",
+    "tslib": "^2.3.1",
+    "vite": "^2.9.12"
+  },
+  "gitHead": "a080b5bb295baccb3f8477e15c372d7091a6a1cb",
+  "devDependencies": {
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@types/numeral": "^2.0.2"
+  }
+}

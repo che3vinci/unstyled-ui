@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "module": "esnext",
+    "jsx": "react",
+    "types": ["node", "jest"],
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "checkJs": false,
+    "skipLibCheck": true,
+    "incremental": true,
+    "sourceMap": true,
+    "baseUrl": "./",
+    "lib": ["ES2019", "DOM"],
+    "declaration": true,
+    "outDir": "dist"
+  },
+
+  "exclude": [
+    "./node_modules",
+    "node_modules/@vue/runtime-dom",
+    "./__mocks__",
+    "**/*.stories.*",
+    "commitlint.config.js",
+    "**/node_modules/**",
+    "**/dist/**",
+    "./jest.config.ts",
+    "./jestSetupTests.ts",
+    "./wallaby.js"
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "name": "root",
+  "private": true,
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=3"
+  },
+  "dependencies": {
+    "antd": "^4.18.9",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "resolutions": {
+    "@types/react": "17.0.2",
+    "@types/react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "vite": "^2.9.12",
+    "zx": "^7.0.0",
+    "jest": "^27.5.1",
+    "jest-extended": "^2.0.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.17.7",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.2",
+    "@babel/core": "^7.17.2",
+    "@c3/cli": "^1.0.100",
+    "@changesets/cli": "^2.22.0",
+    "@jest/types": "^28.1.1",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "@types/jest": "^27.4.1",
+    "@types/lodash": "^4.14.178",
+    "@types/node": "^17.0.13",
+    "@types/styled-components": "^5.1.21",
+    "@typescript-eslint/eslint-plugin": "^5.15.0",
+    "@typescript-eslint/parser": "^5.15.0",
+    "babel-loader": "^8.2.3",
+    "eslint": "^8.11.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": ">=6",
+    "js-beautify": "^1.14.0",
+    "lint-staged": ">=10",
+    "prettier": "2.6.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.5"
+  },
+  "scripts": {
+    "build-storybook": "build-storybook",
+    "prepare": "husky install",
+    "test": "echo ''",
+    "build": "echo ''",
+    "ci:version": "zx scripts/publish.mjs version ",
+    "ci:publish": "zx scripts/publish.mjs publish",
+    "clean": "rm -rf dist && rm -rf node_modules ",
+    "reset": "pnpm clean && pnpm install"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [],
+    "*.{js,jsx}": []
+  }
+}

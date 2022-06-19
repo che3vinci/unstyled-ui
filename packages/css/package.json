@@ -1,0 +1,52 @@
+{
+  "name": "@c3/css",
+  "version": "1.0.148",
+  "description": "Now I’m the model of a modern major general / The venerated Virginian veteran whose men are all / Lining up, to put me up on a pedestal / Writin’ letters to relatives / Embellishin’ my elegance and eloquence / But the elephant is in the room / The truth is in ya face when ya hear the British cannons go / BOOM",
+  "keywords": [],
+  "author": "che3vinci <che3vinci@gmail.com>",
+  "license": "ISC",
+  "main": "dist/css.umd.js",
+  "module": "dist/css.es.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "lib": "dist",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/che3vinci/c3.git"
+  },
+  "scripts": {
+    "test": "jest --config ../../jest.config.ts --rootDir .",
+    "build": "vite build   ",
+    "clean": "rm -rf dist && rm -rf node_modules ",
+    "reset": "pnpm clean && pnpm install",
+    "type": "tsc --project . --paths null --emitDeclarationOnly --declaration",
+    "watchtype": "tsc --noEmit --project . --watch"
+  },
+  "bugs": {
+    "url": "https://github.com/che3vinci/c3/issues"
+  },
+  "homepage": "https://github.com/che3vinci/c3#readme",
+  "gitHead": "a080b5bb295baccb3f8477e15c372d7091a6a1cb",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "@types/js-beautify": "^1.13.3",
+    "rollup-plugin-typescript2": "^0.31.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.5"
+  },
+  "peerDependencies": {
+    "styled-components": "^5.3.3"
+  },
+  "dependencies": {
+    "@c3/utils": "workspace:^"
+  }
+}

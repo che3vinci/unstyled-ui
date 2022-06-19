@@ -1,0 +1,15 @@
+{
+  "jest.autoRun": "off",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": false
+  },
+  "files.autoSave": "off",
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg"
+  }
+}
