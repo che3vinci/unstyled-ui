@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { Col } from '../';
 import { BaseProps } from '../Common';
-import { Abs, Fixed } from '../Layout';
+import { Abs, Fixed } from '../layout';
 
 export type ModalProps = Omit<BaseProps, 'content'> & {
   visible: boolean;

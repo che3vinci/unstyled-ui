@@ -3,7 +3,7 @@ import { removeNode } from '@c3/dom';
 import classNames from 'classnames';
 import React, { useEffect, useRef } from 'react';
 import { BaseProps } from '../Common';
-import { Row } from '../Layout';
+import { Row } from '../layout';
 
 export type ToastProps = Omit<BaseProps, 'content'> & {
   pos?: IPosition;

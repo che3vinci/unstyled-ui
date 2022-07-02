@@ -5,7 +5,7 @@ import {
   setComponentCssForKind,
   setComponentCssForStatus,
 } from '../Common';
-import { notInBlackList } from '../Layout';
+import { notInBlackList } from '../layout';
 
 export type IRawTextAreaProps = BaseProps<
   React.TextareaHTMLAttributes<HTMLTextAreaElement>

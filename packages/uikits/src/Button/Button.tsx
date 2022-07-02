@@ -3,7 +3,7 @@ import { cssProps } from '@c3/css';
 import React from 'react';
 import styled from 'styled-components';
 import { BaseProps, setComponentCssForStatus } from '../Common/index';
-import { notInBlackList } from '../Layout';
+import { notInBlackList } from '../layout';
 
 export type IButtonProps = BaseProps & {
   preventDefault?: boolean;

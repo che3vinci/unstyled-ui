@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import React, { useEffect, useMemo } from 'react';
 import { Row } from '..';
 import { BaseProps } from '../Common';
-import { Col } from '../Layout';
+import { Col } from '../layout';
 import { IRawListProps } from '../RawList';
 
 export type DefaultSwitchItem = {

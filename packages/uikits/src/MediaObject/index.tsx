@@ -1,6 +1,6 @@
 import React from 'react';
 import { BaseProps, extractClassNameAndProps } from '../Common';
-import { Col, Row } from '../Layout';
+import { Col, Row } from '../layout';
 
 export type MediaObjectProps = {
   icon?: React.ReactElement;

@@ -4,7 +4,7 @@ import _ from 'lodash';
 import React from 'react';
 import { css } from 'styled-components';
 import { AutoLongList, IAutoLongListProps } from '.';
-import { Box } from '../Layout';
+import { Box } from '../layout';
 
 const Template = (args: any) => <AutoLongList {...args} />;
 export const Default = Template.bind({}) as any as { args: any };

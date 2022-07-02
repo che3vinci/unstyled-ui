@@ -2,7 +2,7 @@ import { absYCenter, hidden } from '@c3/css';
 import { assert, isDecimal, multiply } from '@c3/utils';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { BaseProps } from '../Common';
-import { Row } from '../Layout';
+import { Row } from '../layout';
 import { Text } from '../Text';
 
 const PADDING = 10;

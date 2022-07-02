@@ -3,7 +3,7 @@ import { useMount, useUnmount } from '@c3/hooks';
 import { entries } from '@c3/utils';
 import * as echarts from 'echarts';
 import React, { useEffect, useRef } from 'react';
-import { Col } from '../../Layout';
+import { Col } from '../../layout';
 
 export interface IChartOption extends ICssProps {
   readonly options: echarts.EChartsOption;

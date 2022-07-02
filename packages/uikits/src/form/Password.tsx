@@ -7,7 +7,7 @@ import {
 import { useToggle } from '@c3/hooks';
 import React from 'react';
 import { BaseProps } from '../Common';
-import { Abs, Relative } from '../Layout';
+import { Abs, Relative } from '../layout';
 import { IRawInputProps, RawInput } from './RawInput';
 
 export interface IPasswordProps extends IRawInputProps {

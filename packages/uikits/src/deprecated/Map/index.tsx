@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { BaseProps } from '../../Common';
-import { Relative } from '../../Layout';
+import { Relative } from '../../layout';
 
 export interface IMapProps extends BaseProps {
   elements: JSX.Element[];

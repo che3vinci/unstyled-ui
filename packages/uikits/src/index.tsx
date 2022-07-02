@@ -9,7 +9,7 @@ export * from './ErrorBoundary';
 export * from './Form/index';
 export * from './Images';
 export * from './InfoBar';
-export * from './Layout';
+export * from './layout';
 export * from './Link';
 export * from './List';
 export * from './Loading';

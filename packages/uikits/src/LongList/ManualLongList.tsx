@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { BaseProps } from '../Common';
-import { Col } from '../Layout';
+import { Col } from '../layout';
 import { BaseListItem, List, ListProps } from '../List';
 
 type BaseType = BaseListItem;

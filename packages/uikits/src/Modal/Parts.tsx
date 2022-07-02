@@ -7,7 +7,7 @@ export {};
 // import { css } from 'styled-components';
 // import { Button } from '../Button';
 // import { BaseProps } from '../Common';
-// import { Row } from '../Layout';
+// import { Row } from '../layout';
 // import { ModalFooterProps, ModalTitleProps } from './Modal';
 
 // export const titlecss = css`

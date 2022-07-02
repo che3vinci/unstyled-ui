@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col } from '../Layout';
+import { Col } from '../layout';
 const App: React.FC = () => {
   return <Col>hello</Col>;
 };

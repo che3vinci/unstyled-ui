@@ -4,7 +4,7 @@ import { Direction, getAntiDirectin, IBox } from '@c3/utils';
 import React, { useEffect, useRef, useState } from 'react';
 import { BaseProps } from '../Common/types';
 import { Arrow } from '../index';
-import { Abs, Col, Relative } from '../Layout';
+import { Abs, Col, Relative } from '../layout';
 
 export type IToolTipProps = BaseProps & {
   placement?: Direction;

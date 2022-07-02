@@ -4,7 +4,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
 import { css } from 'styled-components';
 import { BaseProps } from '../Common';
-import { Col } from '../Layout';
+import { Col } from '../layout';
 
 const style = css`
   .slick-dots {

@@ -2,7 +2,7 @@ import { cssProps } from '@c3/css';
 import React from 'react';
 import styled from 'styled-components';
 import { BaseProps } from '../Common';
-import { notInBlackList } from '../Layout';
+import { notInBlackList } from '../layout';
 
 export type IAbsProps = BaseProps;
 export const Abs = styled.div.withConfig({
