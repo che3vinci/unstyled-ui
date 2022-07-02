@@ -1,22 +1,25 @@
 {
-  "name": "@c3/css",
-  "version": "1.0.148",
-  "description": "Now I’m the model of a modern major general / The venerated Virginian veteran whose men are all / Lining up, to put me up on a pedestal / Writin’ letters to relatives / Embellishin’ my elegance and eloquence / But the elephant is in the room / The truth is in ya face when ya hear the British cannons go / BOOM",
+  "name": "@c3/stitches",
+  "version": "1.0.1",
+  "description": "",
   "keywords": [],
   "author": "che3vinci <che3vinci@gmail.com>",
-  "license": "ISC",
-  "main": "dist/css.umd.js",
-  "module": "dist/css.es.js",
-  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "main": "dist/stitches.umd.js",
+  "module": "dist/stitches.es.js",
+  "types": "types/index.d.ts",
+  "type": "module",
   "directories": {
     "lib": "dist",
     "test": "__tests__"
   },
   "files": [
-    "dist"
+    "dist",
+    "types/*.d.ts"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "main": "dist/stitches.umd.js"
   },
   "repository": {
     "type": "git",
@@ -24,11 +27,9 @@
   },
   "scripts": {
     "test": "jest --config ../../jest.config.ts --rootDir .",
-    "build": "vite build   ",
+    "build": "vite build ",
     "clean": "rm -rf dist && rm -rf node_modules ",
-    "reset": "pnpm clean && pnpm install",
-    "type": "tsc --project . --paths null --emitDeclarationOnly --declaration",
-    "watchtype": "tsc --noEmit --project . --watch"
+    "reset": "pnpm clean && pnpm install"
   },
   "bugs": {
     "url": "https://github.com/che3vinci/c3/issues"
@@ -39,15 +40,16 @@
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-typescript": "^8.3.0",
     "@types/js-beautify": "^1.13.3",
+    "@types/qs": "^6.9.7",
     "rollup-plugin-typescript2": "^0.31.1",
     "tslib": "^2.3.1",
     "typescript": "^4.5.5"
   },
-  "peerDependencies": {
-    "styled-components": "^5.3.3"
-  },
   "dependencies": {
-    "@c3/utils": "workspace:^",
+    "@c3/css": "workspace:^1.0.148",
+    "@c3/utils": "workspace:^1.0.130",
+    "@stitches/core": "^1.2.8",
+    "lodash-es": "^4.17.21",
     "styled-components": "^5.3.3"
   }
 }

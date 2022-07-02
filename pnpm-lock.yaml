@@ -141,10 +141,12 @@ importers:
       '@rollup/plugin-typescript': ^8.3.0
       '@types/js-beautify': ^1.13.3
       rollup-plugin-typescript2: ^0.31.1
+      styled-components: ^5.3.3
       tslib: ^2.3.1
       typescript: ^4.5.5
     dependencies:
       '@c3/utils': link:../utils
+      styled-components: 5.3.5_ukrbqhh2t6r2q67fyfhmpyy5um
     devDependencies:
       '@rollup/plugin-commonjs': 21.1.0_rollup@2.75.6
       '@rollup/plugin-typescript': 8.3.3_a4s7325ov6m337p2dvgeh54tg4
@@ -189,6 +191,35 @@ importers:
     devDependencies:
       '@testing-library/react-hooks': 7.0.2_sfoxds7t5ydpegc3knd667wn6m
       '@types/js-cookie': 3.0.2
+
+  packages/stitches:
+    specifiers:
+      '@c3/css': workspace:^1.0.148
+      '@c3/utils': workspace:^1.0.130
+      '@rollup/plugin-commonjs': ^21.0.1
+      '@rollup/plugin-typescript': ^8.3.0
+      '@stitches/core': ^1.2.8
+      '@types/js-beautify': ^1.13.3
+      '@types/qs': ^6.9.7
+      lodash-es: ^4.17.21
+      rollup-plugin-typescript2: ^0.31.1
+      styled-components: ^5.3.3
+      tslib: ^2.3.1
+      typescript: ^4.5.5
+    dependencies:
+      '@c3/css': link:../css
+      '@c3/utils': link:../utils
+      '@stitches/core': 1.2.8
+      lodash-es: 4.17.21
+      styled-components: 5.3.5_ukrbqhh2t6r2q67fyfhmpyy5um
+    devDependencies:
+      '@rollup/plugin-commonjs': 21.1.0_rollup@2.75.6
+      '@rollup/plugin-typescript': 8.3.3_a4s7325ov6m337p2dvgeh54tg4
+      '@types/js-beautify': 1.13.3
+      '@types/qs': 6.9.7
+      rollup-plugin-typescript2: 0.31.2_fgms252lqu3rk7srzpqqayl4ya
+      tslib: 2.4.0
+      typescript: 4.7.3
 
   packages/uikits:
     specifiers:
@@ -2692,6 +2723,10 @@ packages:
       '@sinonjs/commons': 1.8.3
     dev: true
 
+  /@stitches/core/1.2.8:
+    resolution: {integrity: sha512-Gfkvwk9o9kE9r9XNBmJRfV8zONvXThnm1tcuojL04Uy5uRyqg93DC83lDebl0rocZCfKSjUv+fWYtMQmEDJldg==}
+    dev: false
+
   /@storybook/addons/6.5.8_sfoxds7t5ydpegc3knd667wn6m:
     resolution: {integrity: sha512-L3LmbsYP9tDHHvpr/yv8YuEkzym7SXp/jZ0km31tpG3EuZmgGu7MXPrZ2ymEw4PkAhQzztgRr23VTfKobGUojA==}
     peerDependencies:
@@ -4933,6 +4968,7 @@ packages:
 
   /core-js/3.22.8:
     resolution: {integrity: sha512-UoGQ/cfzGYIuiq6Z7vWL1HfkE9U9IZ4Ub+0XSiJTCzvbZzgPA69oDF2f+lgJ6dFFLEdjW5O6svvoKzXX23xFkA==}
+    deprecated: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
     requiresBuild: true
     dev: true
 
@@ -8399,6 +8435,10 @@ packages:
       p-locate: 5.0.0
     dev: true
 
+  /lodash-es/4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+    dev: false
+
   /lodash.debounce/4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
 
@@ -11834,7 +11874,7 @@ packages:
     dev: true
 
   /util-deprecate/1.0.2:
-    resolution: {integrity: sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=}
+    resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
     dev: true
 
   /util/0.10.3:
@@ -12135,7 +12175,7 @@ packages:
     dev: true
 
   /which-module/2.0.0:
-    resolution: {integrity: sha1-2e8H3Od7mQK4o6j6SzHD4/fm6Ho=}
+    resolution: {integrity: sha512-B+enWhmw6cjfVC7kS8Pj9pCrKSc5txArRyaYGe088shv/FGWH+0Rjx/xPgtsWfsUtS27FkP697E4DDhgrgoc0Q==}
     dev: true
 
   /which-pm/2.0.0:
