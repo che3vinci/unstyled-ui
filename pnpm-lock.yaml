@@ -10,7 +10,7 @@ importers:
     specifiers:
       '@babel/core': ^7.17.2
       '@babel/plugin-transform-modules-commonjs': ^7.17.7
-      '@c3/cli': workspace:^1.0.107
+      '@c3/cli': ^1.0.105
       '@changesets/cli': ^2.22.0
       '@jest/types': ^28.1.1
       '@rollup/plugin-commonjs': ^21.0.1
