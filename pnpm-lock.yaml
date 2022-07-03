@@ -140,12 +140,14 @@ importers:
       '@rollup/plugin-commonjs': ^21.0.1
       '@rollup/plugin-typescript': ^8.3.0
       '@types/js-beautify': ^1.13.3
+      csstype: ^3.1.0
       rollup-plugin-typescript2: ^0.31.1
       styled-components: ^5.3.3
       tslib: ^2.3.1
       typescript: ^4.5.5
     dependencies:
       '@c3/utils': link:../utils
+      csstype: 3.1.0
       styled-components: 5.3.5_ukrbqhh2t6r2q67fyfhmpyy5um
     devDependencies:
       '@rollup/plugin-commonjs': 21.1.0_rollup@2.75.6
@@ -220,6 +222,35 @@ importers:
       rollup-plugin-typescript2: 0.31.2_fgms252lqu3rk7srzpqqayl4ya
       tslib: 2.4.0
       typescript: 4.7.3
+
+  packages/ui-basic:
+    specifiers:
+      '@ant-design/icons': ^4.7.0
+      '@babel/core': ^7.17.5
+      '@c3/css': workspace:^
+      '@c3/dom': workspace:^
+      '@c3/hooks': workspace:^
+      '@c3/stitches': workspace:^1.0.2
+      '@c3/utils': workspace:^
+      '@types/js-beautify': ^1.13.3
+      babel-loader: ^8.2.3
+      classnames: ^2.3.1
+      csstype: ^3.1.0
+      storybook-builder-vite: ^0.1.17
+    dependencies:
+      '@ant-design/icons': 4.7.0_sfoxds7t5ydpegc3knd667wn6m
+      '@c3/css': link:../css
+      '@c3/dom': link:../dom
+      '@c3/hooks': link:../hooks
+      '@c3/stitches': link:../stitches
+      '@c3/utils': link:../utils
+      classnames: 2.3.1
+      csstype: 3.1.0
+    devDependencies:
+      '@babel/core': 7.18.2
+      '@types/js-beautify': 1.13.3
+      babel-loader: 8.2.5_dzrarqmejens5o5lr5bdn3kdtu
+      storybook-builder-vite: 0.1.23_egtrkxok56ikzqx7it2a2cqf4q
 
   packages/uikits:
     specifiers:
@@ -803,7 +834,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.12.9
-      '@babel/helper-plugin-utils': 7.10.4
+      '@babel/helper-plugin-utils': 7.17.12
       '@babel/plugin-syntax-object-rest-spread': 7.8.3_@babel+core@7.12.9
       '@babel/plugin-transform-parameters': 7.17.12_@babel+core@7.12.9
     dev: true

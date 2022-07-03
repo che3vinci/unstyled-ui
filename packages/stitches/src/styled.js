@@ -31,7 +31,6 @@ export const createStyledFunction = ({ config, css }) =>
             newProps.css = config.bpMapFnForStyle(key, css[key]);
           }
         }
-        console.log('newprops', newProps, config);
         const { props: forwardProps, deferredInjector } = cssComponent(newProps);
         delete forwardProps.as;
 
@@ -59,7 +58,7 @@ export const createStyledFunction = ({ config, css }) =>
       styledComponent.toString = toString;
       styledComponent[internal] = cssComponent[internal];
 
-
+      // eslint-disable-next-line react/display-name
       return React.memo(styledComponent, (prev, next) => {
         const prevKeys = Object.keys(prev);
         const nextKeys = Object.keys(next);
@@ -87,7 +86,8 @@ export const createStyledFunction = ({ config, css }) =>
               if (__DEV__) {
                 if (!isEqual(prev[key], next[key])) {
                   throw new Error(
-                    'error: "css" is considered as immutable,but its value changed. please set isImmutable to false'
+                    `error: "css" is considered as immutable,but its value changed.
+                    please set isImmutable to false`
                   );
                 }
               }
@@ -101,7 +101,6 @@ export const createStyledFunction = ({ config, css }) =>
         }
         return eq;
       });
-
     };
 
     return styled;

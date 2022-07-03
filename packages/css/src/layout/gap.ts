@@ -1,24 +1,13 @@
-import { css } from 'styled-components';
-import { rcss, ResponsiveInputValueType } from '../';
+import { ResponsiveInputValueType } from '../';
 
-export const gap = (gap: ResponsiveInputValueType) => {
-  return `& > *:not(:last-child) {
-    ${rcss({
-      marginRight: gap,
-    })}
-  }`;
-};
+export const rgap = (gap: ResponsiveInputValueType) => ({
+  '& > *:not(:last-child)': {
+    marginRight: gap,
+  },
+});
 
-export const vgap = (gap: ResponsiveInputValueType | string) => {
-  const md = Array.isArray(gap)
-    ? rcss({
-        marginBottom: gap,
-      })
-    : `margin-bottom:${gap}`;
-
-  return css`
-    & > *:not(:last-child) {
-      ${md}
-    }
-  `;
-};
+export const vgap = (gap: ResponsiveInputValueType) => ({
+  '& > *:not(:last-child)': {
+    marginBottom: gap,
+  },
+});

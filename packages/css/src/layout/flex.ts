@@ -1,4 +1,5 @@
-import { CSSObject } from 'styled-components';
+import type { CSSObject } from '../types';
+
 
 export const flexCenter: CSSObject = {
   display: 'flex',
