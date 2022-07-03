@@ -6,7 +6,7 @@ export * from './Common';
 export * from './CountDownBtn';
 export * from './deprecated/Map/index';
 export * from './ErrorBoundary';
-export * from './Form/index';
+export * from './form/index';
 export * from './Images';
 export * from './InfoBar';
 export * from './layout';
