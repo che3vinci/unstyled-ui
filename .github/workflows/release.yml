@@ -34,7 +34,7 @@ jobs:
         run: pnpm install
 
       - name: Make @c3/cli runable
-        run: pnpm --filter @c3/cli build
+        run: pnpm --filter @c3/cli... build
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
