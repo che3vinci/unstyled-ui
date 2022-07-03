@@ -8,9 +8,8 @@ const ls =
 
 export const __MOCK__ = !!ls.getItem('mock');
 
-//FIXME
-// export const __DEV__ = import.meta.env.DEV;
-export const __DEV__ = false;
+//TODO:
+export const __DEV__ = globalThis.location?.hostname === 'localhost';
 
 export const logtype = s(ls.getItem('dbg')).split(',');
 

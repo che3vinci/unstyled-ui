@@ -1,7 +1,7 @@
 import React from 'react';
 import { internal, createMemo, isVairants as isVariants } from './utils';
 import { isEqual } from 'lodash-es';
-import { isUndefined } from '@c3/utils';
+import { isUndefined, __DEV__ } from '@c3/utils';
 
 const createCssFunctionMap = createMemo();
 
@@ -59,6 +59,7 @@ export const createStyledFunction = ({ config, css }) =>
       styledComponent.toString = toString;
       styledComponent[internal] = cssComponent[internal];
 
+
       return React.memo(styledComponent, (prev, next) => {
         const prevKeys = Object.keys(prev);
         const nextKeys = Object.keys(next);
@@ -81,7 +82,15 @@ export const createStyledFunction = ({ config, css }) =>
             }
           }
           if (key === 'css') {
-            if (isUndefined(next[key].isImmutable) || next[key].isImmutable) {
+            const isImmutable = next[key].isImmutable;
+            if (isUndefined(isImmutable) || !!isImmutable) {
+              if (__DEV__) {
+                if (!isEqual(prev[key], next[key])) {
+                  throw new Error(
+                    'error: "css" is considered as immutable,but its value changed. please set isImmutable to false'
+                  );
+                }
+              }
               continue;
             }
           }
@@ -92,6 +101,7 @@ export const createStyledFunction = ({ config, css }) =>
         }
         return eq;
       });
+
     };
 
     return styled;

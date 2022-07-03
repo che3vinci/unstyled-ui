@@ -18,8 +18,7 @@
     "types/*.d.ts"
   ],
   "publishConfig": {
-    "access": "public",
-    "main": "dist/stitches.umd.js"
+    "access": "public"
   },
   "repository": {
     "type": "git",

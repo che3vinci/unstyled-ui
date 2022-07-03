@@ -3,7 +3,7 @@ export const bp2media = bps => {
     return {};
   }
   const res = {
-    m1: ` (max-width: ${bps[0]}px)`,
+    m1: ` (max-width: ${bps[0]-1}px)`,
   };
   bps
     .map((bp, i) => ` (min-width: ${bp}px)`)

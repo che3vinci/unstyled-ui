@@ -6,7 +6,7 @@ import { origin, rvw } from '@c3/css';
 // }}>
 
 //[mobile,laptop,desktop]
-export const convertResponsiveArrayForVariant = (value) => {
+export const convertResponsiveArrayForVariant = value => {
   const values = toArray(value);
   switch (values.length) {
     case 1: {
@@ -29,6 +29,11 @@ export const convertResponsiveArrayForVariant = (value) => {
   }
 };
 
+const globalStyle = {
+  '@m1': {},
+  '@m2': {},
+  '@m3': {},
+};
 export const convertResponsiveArrayForStyle = (key, value) => {
   const values = toArray(value);
   switch (values.length) {
