@@ -1,4 +1,4 @@
-import { getAnimiationFromChains } from '@c3/css';
+import { getAnimiationFromChains } from '@styless/css';
 import { css } from 'styled-components';
 
 export const deaultToastAnimation = css`

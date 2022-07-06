@@ -1,5 +1,5 @@
 import { LoadingOutlined } from '@ant-design/icons';
-import { cssProps } from '@c3/css';
+import { cssProps } from '@styless/css';
 import React from 'react';
 import styled from 'styled-components';
 import { BaseProps, setComponentCssForStatus } from '../Common/index';

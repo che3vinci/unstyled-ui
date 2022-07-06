@@ -3,7 +3,7 @@ import { BaseProps } from '../../stitches';
 import { Atomic } from '../Atomic';
 import { memo } from '../../utils';
 import { getRows, linearGradientText } from './styles';
-import { CSSProperties } from '@c3/css';
+import { CSSProperties } from '@styless/css';
 
 export type TextProps = BaseProps<HTMLAttributes<HTMLParagraphElement>> & {
   rows?: number;

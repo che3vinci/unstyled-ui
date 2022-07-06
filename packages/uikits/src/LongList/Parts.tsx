@@ -1,4 +1,4 @@
-import { nCol, ResponsiveInputValueType } from '@c3/css';
+import { nCol, ResponsiveInputValueType } from '@styless/css';
 import { css } from 'styled-components';
 
 export const gridListCss = (

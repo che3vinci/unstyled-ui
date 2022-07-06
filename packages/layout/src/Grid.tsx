@@ -1,4 +1,4 @@
-import { nCol } from '@c3/css';
+import { nCol } from '@styless/css';
 import * as CSS from 'csstype';
 import React from 'react';
 import { BaseProps } from '../stitches';

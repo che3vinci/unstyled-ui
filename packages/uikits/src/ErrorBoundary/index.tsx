@@ -1,4 +1,4 @@
-import { absXYCenter } from '@c3/css';
+import { absXYCenter } from '@styless/css';
 import React from 'react';
 import { Text } from '../Text/Text';
 

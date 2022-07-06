@@ -1,4 +1,4 @@
-import { ICssProps } from '@c3/css';
+import { ICssProps } from '@styless/css';
 import { Direction } from '@c3/utils';
 import React from 'react';
 import { Box } from '../layout';

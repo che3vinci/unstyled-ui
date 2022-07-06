@@ -3,7 +3,7 @@ import {
   cssPropList,
   shortCutMap,
   supportedPseEles,
-} from '@c3/css';
+} from '@styless/css';
 import { keys } from '@c3/utils';
 import type { StyledConfig } from 'styled-components';
 

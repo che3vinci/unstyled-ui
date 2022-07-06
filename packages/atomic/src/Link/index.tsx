@@ -1,5 +1,5 @@
 import { Atomic } from '../Atomic';
-import { link } from '@c3/css';
+import { link } from '@styless/css';
 import React from 'react';
 import { BaseProps, styled } from '../../stitches';
 import classNames from 'classnames';

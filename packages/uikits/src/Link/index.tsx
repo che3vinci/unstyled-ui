@@ -1,4 +1,4 @@
-import { cssProps, link } from '@c3/css';
+import { cssProps, link } from '@styless/css';
 import { omit } from '@c3/utils';
 import React from 'react';
 import styled from 'styled-components';

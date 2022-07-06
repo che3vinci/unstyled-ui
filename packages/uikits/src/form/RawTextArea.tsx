@@ -1,4 +1,4 @@
-import { cssProps, ThKind } from '@c3/css';
+import { cssProps, ThKind } from '@styless/css';
 import styled from 'styled-components';
 import {
   BaseProps,

@@ -1,4 +1,4 @@
-import { rcss } from '@c3/css';
+import { rcss } from '@styless/css';
 import React from 'react';
 import { css } from 'styled-components';
 import { BaseProps } from '../Common/index';

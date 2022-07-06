@@ -1,4 +1,4 @@
-import { CSSProperties } from '@c3/css';
+import { CSSProperties } from '@styless/css';
 
 export const linearGradientText = (
   bg: CSSProperties['background']

@@ -1,4 +1,4 @@
-import { ICssProps } from '@c3/css';
+import { ICssProps } from '@styless/css';
 
 export type BaseProps<T = React.HTMLAttributes<HTMLElement>> = ICssProps &
   Omit<

@@ -1,4 +1,4 @@
-import { cssProps } from '@c3/css';
+import { cssProps } from '@styless/css';
 import styled from 'styled-components';
 import { notInBlackList } from '..';
 import { BaseProps } from '../Common';

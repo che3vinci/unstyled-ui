@@ -1,5 +1,5 @@
 {
-  "name": "@c3/stitches",
+  "name": "@styless/stitches",
   "version": "1.0.2",
   "description": "",
   "keywords": [],
@@ -45,8 +45,7 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
-    "@c3/css": "workspace:^1.0.148",
-    "@c3/utils": "workspace:^1.0.130",
+    "@styless/css": "workspace:^",
     "@stitches/core": "^1.2.8",
     "lodash-es": "^4.17.21",
     "styled-components": "^5.3.3"

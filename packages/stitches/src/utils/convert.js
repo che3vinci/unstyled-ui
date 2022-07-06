@@ -1,5 +1,5 @@
 import { toArray } from '@c3/utils';
-import { origin, rvw } from '@c3/css';
+import { origin, rvw } from '@styless/css';
 
 // <Button type={{
 // @bp1: {

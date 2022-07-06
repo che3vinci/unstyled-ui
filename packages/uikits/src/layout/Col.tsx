@@ -1,4 +1,4 @@
-import { col, cssProps, vgap } from '@c3/css';
+import { col, cssProps, vgap } from '@styless/css';
 import { omit } from '@c3/utils';
 import React from 'react';
 import styled, { css } from 'styled-components';

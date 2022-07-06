@@ -1,7 +1,7 @@
 ---
-'@c3/css': patch
-'@c3/stitches': patch
-'@c3/ui-basic': patch
+'@styless/css': patch
+'@styless/stitches': patch
+'@styless/ui-basic': patch
 ---
 
 add ui-basic package

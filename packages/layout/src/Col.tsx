@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from './Box';
-import { col, vgap } from '@c3/css';
+import { col, vgap } from '@styless/css';
 import { BaseProps } from '../stitches';
 
 export const Col: React.FC<BaseProps> = (props) => {

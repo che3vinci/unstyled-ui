@@ -1,4 +1,4 @@
-import { isMobile } from '@c3/css';
+import { isMobile } from '@styless/css';
 import React from 'react';
 import { Col } from './Col';
 import { Row } from './Row';

@@ -1,4 +1,4 @@
-import type { ResponsiveInputValueType } from '@c3/css';
+import type { ResponsiveInputValueType } from '@styless/css';
 import type * as Native from './css';
 import type * as Config from './config';
 import type * as ThemeUtil from './theme';

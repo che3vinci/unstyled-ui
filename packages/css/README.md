@@ -1,11 +1,11 @@
-# `@c3/css`
+# `@styless/css`
 
 > TODO: description
 
 ## Usage
 
 ```
-import css from '@c3/css';
+import css from '@styless/css';
 
 ```
 

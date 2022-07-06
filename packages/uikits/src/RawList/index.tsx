@@ -1,4 +1,4 @@
-import { cssProps, gap, vgap } from '@c3/css';
+import { cssProps, gap, vgap } from '@styless/css';
 import { HVDirection, omit } from '@c3/utils';
 import React from 'react';
 import styled from 'styled-components';

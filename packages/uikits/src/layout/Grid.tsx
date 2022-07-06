@@ -1,4 +1,4 @@
-import { cssProps, nCol, ResponsiveInputValueType } from '@c3/css';
+import { cssProps, nCol, ResponsiveInputValueType } from '@styless/css';
 import React from 'react';
 import styled from 'styled-components';
 import { notInBlackList } from '.';

@@ -2,9 +2,9 @@ import {
   convertResponsiveArrayForStyle,
   convertResponsiveArrayForVariant,
   createStitches,
-} from '@c3/stitches';
-import type { CSS, VariantProps } from '@c3/stitches/types';
-import { Typography } from '@c3/css';
+} from '@styless/stitches';
+import type { CSS, VariantProps } from '@styless/stitches/types';
+import { Typography } from '@styless/css';
 import React from 'react';
 const config: Parameters<typeof createStitches>[0] = {
   utils: {

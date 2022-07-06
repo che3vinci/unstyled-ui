@@ -1,4 +1,4 @@
-import { cssProps, ICssPropsWithTheme } from '@c3/css';
+import { cssProps, ICssPropsWithTheme } from '@styless/css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';

@@ -11,6 +11,7 @@ coverage/
 **/**/.storybook/
 src/frontend/Javascript/library/block-chain-stuff/ethereum/deploy-local-server/node0*
 **/**/private
+**/**/*.log
 .eslintcache
 tsconfig.tsbuildinfo
 packages/**/log.txt

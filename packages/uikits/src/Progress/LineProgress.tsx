@@ -1,4 +1,4 @@
-import { absYCenter, hidden } from '@c3/css';
+import { absYCenter, hidden } from '@styless/css';
 import { assert, isDecimal, multiply } from '@c3/utils';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { BaseProps } from '../Common';

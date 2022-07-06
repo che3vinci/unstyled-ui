@@ -1,12 +1,12 @@
 {
-  "name": "@styless/uikits",
+  "name": "@styless/layout",
   "version": "1.0.0",
-  "description": "UIKITS",
+  "description": "uibasic",
   "keywords": [],
   "author": "che3vinci <che3vinci@gmail.com>",
   "license": "ISC",
-  "main": "dist/uikits.umd.js",
-  "module": "dist/uikits.es.js",
+  "main": "dist/ui-basic.umd.js",
+  "module": "dist/ui-basic.es.js",
   "types": "dist/index.d.ts",
   "directories": {
     "lib": "dist",
@@ -28,7 +28,7 @@
   },
   "scripts": {
     "test": "jest --config ../../jest.config.ts --rootDir .",
-    "build": "vite build  ",
+    "build": "vite build && pnpm type ",
     "clean": "rm -rf dist && rm -rf node_modules ",
     "reset": "pnpm clean && pnpm install",
     "type": "tsc --project . --paths null --emitDeclarationOnly --declaration",
@@ -43,24 +43,20 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@styless/css": "workspace:^",
+    "@styless/stitches": "workspace:^1.0.2",
+    "@stitches/react": "^1.2.8",
     "classnames": "^2.3.1",
-    "echarts": "^5.3.1",
-    "npm-force-resolutions": "^0.0.10",
-    "react-slick": "^0.28.1",
-    "slick-carousel": "^1.8.1",
-    "styled-components": "^5.3.3"
+    "csstype": "^3.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
     "@types/js-beautify": "^1.13.3",
-    "@types/react-slick": "^0.23.8",
+    "@vitejs/plugin-react": "^1.3.2",
     "babel-loader": "^8.2.3",
     "storybook-builder-vite": "^0.1.17"
   },
   "peerDependencies": {
-    "@ant-design/icons": "^4.7.0",
-    "@types/react-slick": "^0.23.8",
-    "react-slick": "^0.28.1"
+    "@ant-design/icons": "^4.7.0"
   },
   "gitHead": "a080b5bb295baccb3f8477e15c372d7091a6a1cb"
 }

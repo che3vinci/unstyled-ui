@@ -1,4 +1,4 @@
-import { fixedXCenter, IPosition } from '@c3/css';
+import { fixedXCenter, IPosition } from '@styless/css';
 import { removeNode } from '@c3/dom';
 import classNames from 'classnames';
 import React, { useEffect, useRef } from 'react';

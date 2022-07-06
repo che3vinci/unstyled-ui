@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from './Box';
-import { row, rgap } from '@c3/css';
+import { row, rgap } from '@styless/css';
 import { BaseProps } from '../stitches';
 
 
