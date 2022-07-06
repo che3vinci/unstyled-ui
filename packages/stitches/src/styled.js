@@ -28,10 +28,28 @@ export const createStyledFunction = ({ config, css }) =>
         const css = (props && props.css) || {};
         if (config.bpMapFnForStyle) {
           for (const key of Object.keys(css)) {
-            newProps.css = config.bpMapFnForStyle(key, css[key]);
+            if (!Array.isArray(css[key])) {
+              continue;
+            }
+            newProps.css = {
+              ...newProps.css,
+              ...config.bpMapFnForStyle(key, css[key]),
+            };
+            delete newProps.css[key];
           }
         }
-        const { props: forwardProps, deferredInjector } = cssComponent(newProps);
+        if (__DEV__) {
+          // console.log(
+          //   'styledComponent',
+          //   DefaultType.displayName || DefaultType.name
+          // );
+          // console.group( config, props, newProps);
+          // console.table('props', props, 'newprops', newProps);
+          console.log('newprops', newProps);
+        }
+
+        const { props: forwardProps, deferredInjector } =
+          cssComponent(newProps);
         delete forwardProps.as;
 
         forwardProps.ref = ref;
@@ -85,10 +103,12 @@ export const createStyledFunction = ({ config, css }) =>
             if (isUndefined(isImmutable) || !!isImmutable) {
               if (__DEV__) {
                 if (!isEqual(prev[key], next[key])) {
-                  throw new Error(
+                  console.error(
                     `error: "css" is considered as immutable,but its value changed.
                     please set isImmutable to false`
                   );
+                  eq = false;
+                  break;
                 }
               }
               continue;

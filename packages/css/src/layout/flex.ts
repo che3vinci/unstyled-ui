@@ -1,13 +1,13 @@
-import type { CSSObject } from '../types';
+import { CSSProperties } from './../types';
 
 
-export const flexCenter: CSSObject = {
+export const flexCenter: CSSProperties = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
 };
 
-export const flexYCenter: CSSObject = {
+export const flexYCenter: CSSProperties = {
   display: 'flex',
   justifyContent: 'flex-start',
   alignItems: 'center',

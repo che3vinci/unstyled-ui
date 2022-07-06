@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react';
+import { CSSProperties } from './../types';
 
 export const row = (
   justifyContent: CSSProperties['justifyContent'] = 'flex-start',

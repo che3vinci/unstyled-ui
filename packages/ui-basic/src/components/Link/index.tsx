@@ -1,15 +1,14 @@
 import { Atomic } from '../Atomic';
 import { link } from '@c3/css';
 import React from 'react';
-import { BaseProps } from '../../stitches';
+import { BaseProps, styled } from '../../stitches';
 import classNames from 'classnames';
-
 
 export type LinkProps = BaseProps<React.LinkHTMLAttributes<HTMLLinkElement>> & {
   to: string;
 };
 
-export const Link: React.FC<LinkProps> = props => {
+export const Link:React.FC<LinkProps> = (props: LinkProps) => {
   const { css, className, to, ...restProps } = props;
   return (
     <Atomic

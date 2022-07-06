@@ -1,9 +1,9 @@
-import { ResponsiveCSSProperties } from '../responsive';
+import { CSSProperties } from './../types';
 
 export const gradientRoundedBorder = (
   bgColor: string,
   gradient: string
-): ResponsiveCSSProperties => {
+): CSSProperties => {
   return {
     border: '1px solid transparent',
     backgroundImage: `linear-gradient(${bgColor}, ${bgColor}),${gradient}`,

@@ -6,7 +6,6 @@ export * from './color';
 export * from './divider';
 export * from './gradientRoundedBorder';
 export * from './hidden';
-export * from './img';
 export * from './link';
 export * from './list';
 export * from './mask';
