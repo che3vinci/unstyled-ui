@@ -28,11 +28,28 @@ export const createStyledFunction = ({ config, css }) =>
         const css = (props && props.css) || {};
         if (config.bpMapFnForStyle) {
           for (const key of Object.keys(css)) {
-            newProps.css = config.bpMapFnForStyle(key, css[key]);
+            if (!Array.isArray(css[key])) {
+              continue;
+            }
+            newProps.css = {
+              ...newProps.css,
+              ...config.bpMapFnForStyle(key, css[key]),
+            };
+            delete newProps.css[key];
           }
         }
-        console.log('newprops', newProps, config);
-        const { props: forwardProps, deferredInjector } = cssComponent(newProps);
+        if (__DEV__) {
+          // console.log(
+          //   'styledComponent',
+          //   DefaultType.displayName || DefaultType.name
+          // );
+          // console.group( config, props, newProps);
+          // console.table('props', props, 'newprops', newProps);
+          console.log('newprops', newProps);
+        }
+
+        const { props: forwardProps, deferredInjector } =
+          cssComponent(newProps);
         delete forwardProps.as;
 
         forwardProps.ref = ref;
@@ -59,7 +76,7 @@ export const createStyledFunction = ({ config, css }) =>
       styledComponent.toString = toString;
       styledComponent[internal] = cssComponent[internal];
 
-
+      // eslint-disable-next-line react/display-name
       return React.memo(styledComponent, (prev, next) => {
         const prevKeys = Object.keys(prev);
         const nextKeys = Object.keys(next);
@@ -86,9 +103,12 @@ export const createStyledFunction = ({ config, css }) =>
             if (isUndefined(isImmutable) || !!isImmutable) {
               if (__DEV__) {
                 if (!isEqual(prev[key], next[key])) {
-                  throw new Error(
-                    'error: "css" is considered as immutable,but its value changed. please set isImmutable to false'
+                  console.error(
+                    `error: "css" is considered as immutable,but its value changed.
+                    please set isImmutable to false`
                   );
+                  eq = false;
+                  break;
                 }
               }
               continue;
@@ -101,7 +121,6 @@ export const createStyledFunction = ({ config, css }) =>
         }
         return eq;
       });
-
     };
 
     return styled;

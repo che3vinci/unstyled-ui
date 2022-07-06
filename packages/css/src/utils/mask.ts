@@ -1,6 +1,6 @@
-import { ICssProps } from '../responsive';
+import { CSSProperties } from './../types';
 
-export const mask: ICssProps = {
+export const mask: CSSProperties = {
   position: 'fixed',
   top: '0',
   left: '0',

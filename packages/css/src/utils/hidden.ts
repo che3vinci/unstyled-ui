@@ -1,4 +1,4 @@
-import { ResponsiveCSSProperties } from '../responsive/type';
-export const hidden: ResponsiveCSSProperties = {
+import { CSSProperties } from './../types';
+export const hidden: CSSProperties = {
   display: 'none',
 };

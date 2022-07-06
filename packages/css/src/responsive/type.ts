@@ -1,26 +1,27 @@
 import React from 'react';
 import { css } from 'styled-components';
 import { ComponentStatus } from '../theme';
+import { CSSProperties, RCSSProperties } from '../types';
 import { Typography } from '../utils';
 import { supportedPseEles } from './selector/pse-ele-selector';
 export type CSSRawInputValueType = string | number | boolean;
 
-export type CSSProperties = React.CSSProperties;
+// export type CSSProperties = React.CSSProperties;
 
-export type ResponsiveInputValueType =
-  | CSSRawInputValueType
-  | CSSRawInputValueType[];
+// export type ResponsiveInputValueType =
+//   | CSSRawInputValueType
+//   | CSSRawInputValueType[];
 
 export type ResponsiveInputValueArrayType = CSSRawInputValueType[];
 
 export type ResponsiveOutputValueType = string[];
 
 export type cssValuesConvertRulesFn = (
-  values: ResponsiveInputValueType
+  values: RCSSProperties
 ) => [string, string, string];
 
 export type ResponsiveCSSProperties = {
-  [key in keyof CSSProperties]: ResponsiveInputValueType;
+  [key in keyof CSSProperties]: RCSSProperties;
 };
 
 export type ShortCutProperitesType = Record<
@@ -53,12 +54,12 @@ export type ShortCutProperitesType = Record<
 
 export type ICssProps = ResponsiveCSSProperties & {
   dbg?: boolean;
-  round?: ResponsiveInputValueType;
-  ar?: ResponsiveInputValueType;
+  round?: RCSSProperties;
+  ar?: RCSSProperties;
   className?: string;
   as?: keyof HTMLElementTagNameMap;
 } & {
-  [key in keyof ShortCutProperitesType]?: ResponsiveInputValueType;
+  [key in keyof ShortCutProperitesType]?: RCSSProperties;
 } & {
   [key in Exclude<ComponentStatus, 'normal'>]?: ResponsiveCSSProperties;
 } & {

@@ -1,29 +1,25 @@
-import { css } from 'styled-components';
-import { rcss, ResponsiveInputValueType, toResponsiveArray } from '../';
-
+import { toArray } from '@c3/utils';
+import * as CSS from 'csstype';
 export const nCol = (
-  num: ResponsiveInputValueType,
-  width: ResponsiveInputValueType,
-  height: ResponsiveInputValueType,
-  rgap: ResponsiveInputValueType = [0],
-  cgap: ResponsiveInputValueType = [0]
+  num: number | number[],
+  width: CSS.Properties['width'] | CSS.Properties['width'][],
+  height: CSS.Properties['height'] | CSS.Properties['width'][],
+  rgap: CSS.Properties['rowGap'] | CSS.Properties['rowGap'][] = [0],
+  cgap: CSS.Properties['columnGap'] | CSS.Properties['columnGap'][] = [0]
 ) => {
-  const _num = toResponsiveArray(num);
-  const _width = toResponsiveArray(width);
-  if (_num.length !== _width.length) {
+  const _nums = toArray(num);
+  const _widths = toArray(width);
+  if (_nums.length !== _widths.length) {
     throw new Error('must have same length');
   }
-  return css`
-    display: grid;
-    justify-content: center;
-    ${rcss({
-      gridTemplateColumns: _num.map(
-        (e, idx) => `repeat(${e}, ${_width[idx]}px)`
-      ) as ResponsiveInputValueType,
-      gridAutoRows: height,
-      rowGap: rgap,
-      columnGap: cgap,
-    })}
-    ${rcss({})}
-  `;
+  return {
+    display: 'grid',
+    justifyContent: 'center',
+    gridAutoRows: height,
+    rowGap: rgap,
+    columnGap: cgap,
+    gridTemplateColumns: _nums.map(
+      (e, idx) => `repeat(${e}, ${_widths[idx]}px)`
+    ),
+  };
 };

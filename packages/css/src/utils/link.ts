@@ -1,6 +1,7 @@
-import { css } from 'styled-components';
+import * as CSS from 'csstype';
 
-export const link = () => css`
-  text-decoration: none;
-  cursor: pointer;
-`;
+export const link = (props: CSS.Properties): CSS.Properties => ({
+  textDecoration: 'none',
+  cursor: 'pointer',
+  ...props,
+});

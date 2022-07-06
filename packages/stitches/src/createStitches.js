@@ -9,7 +9,7 @@ export const createStitches = config => {
     config: Object.assign(instance.config, config),
     css: instance.css,
   });
-  window.stitch = instance;
-  window.config = config;
+  globalThis.stitch = instance;
+  globalThis.config = config;
   return instance;
 };

@@ -1,16 +1,15 @@
-import { css } from 'styled-components';
+import { CSSProperties } from './../types';
 
-//TODO: use ResponseInputValue
-export const divider = (color: string) => css`
-  & > *:not(:last-child) {
-    border-bottom: 1px solid ${color};
-  }
-`;
+export const divider = (color: CSSProperties['color']) => ({
+  '& > *:not(:last-child)': {
+    borderBottom: `1px solid ${color}`,
+  },
+});
 
-export const divider_p = (color: string) => css`
-  & > *:not(:last-child)::after {
-    width: 1px;
-    background-color: ${color};
-    height: 100%;
-  }
-`;
+export const divider_p = (color: string) => ({
+  '& > *:not(:last-child)::after': {
+    width: '1px',
+    backgroundColor: `${color}`,
+    height: '100%',
+  },
+});

@@ -4,3 +4,4 @@ export * from './layout';
 export * from './responsive';
 export * from './theme/index';
 export * from './utils/index';
+export * from './types';

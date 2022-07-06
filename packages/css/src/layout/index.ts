@@ -8,4 +8,3 @@ export * from './gap';
 export * from './grid';
 export * from './misc';
 export * from './row';
-export * from './screencenter';

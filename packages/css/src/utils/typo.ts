@@ -1,12 +1,11 @@
-import { ResponsiveInputValueType } from '..';
-import { ResponsiveCSSProperties } from './../responsive/type';
+import { RCSSProperties } from './../types';
 
 export type Typography = {
-  fontSize: ResponsiveInputValueType;
-  fontWeight: ResponsiveInputValueType;
-  lineHeight?: ResponsiveInputValueType;
-  letterSpacing?: ResponsiveInputValueType;
-  fontFamily?: ResponsiveInputValueType;
+  fontSize: RCSSProperties['fontSize'];
+  fontWeight: RCSSProperties['fontWeight'];
+  lineHeight?: RCSSProperties['lineHeight'];
+  letterSpacing?: RCSSProperties['letterSpacing'];
+  fontFamily?: RCSSProperties['fontFamily'];
 };
 
 export const typo = ({
@@ -15,7 +14,7 @@ export const typo = ({
   lineHeight,
   fontFamily,
   letterSpacing,
-}: Typography): ResponsiveCSSProperties => {
+}: Typography): RCSSProperties => {
   return {
     fontSize,
     fontWeight,
