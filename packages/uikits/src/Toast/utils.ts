@@ -1,4 +1,4 @@
-import { getAnimiationFromChains } from '@c3/css';
+import { getAnimiationFromChains } from '@unstyled-ui/css';
 import { css } from 'styled-components';
 
 export const deaultToastAnimation = css`

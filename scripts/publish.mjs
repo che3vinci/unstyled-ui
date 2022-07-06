@@ -10,10 +10,6 @@ run({
     const packages = [
       'utils',
       'css',
-      'dom',
-      'hooks',
-      'api',
-      'crypto',
       'uikits',
     ];
     for (let pkg of packages) {

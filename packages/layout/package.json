@@ -1,0 +1,63 @@
+{
+  "name": "@unstyled-ui/layout",
+  "version": "1.0.0",
+  "description": "uibasic",
+  "keywords": [],
+  "author": "che3vinci <che3vinci@gmail.com>",
+  "license": "ISC",
+  "main": "dist/layout.umd.js",
+  "module": "dist/layout.es.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "lib": "dist",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/che3vinci/c3.git"
+  },
+  "resolutions": {
+    "@types/react": "17.0.2",
+    "@types/react-dom": "17.0.2"
+  },
+  "scripts": {
+    "test": "jest --config ../../jest.config.ts --rootDir .",
+    "build": "vite build && pnpm type ",
+    "clean": "rm -rf dist && rm -rf node_modules ",
+    "reset": "pnpm clean && pnpm install",
+    "type": "tsc --project . --paths null --emitDeclarationOnly --declaration",
+    "watchtype": "tsc --project . --watch",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "bugs": {
+    "url": "https://github.com/che3vinci/c3/issues"
+  },
+  "homepage": "https://github.com/che3vinci/c3#readme",
+  "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "@stitches/react": "^1.2.8",
+    "@unstyled-ui/core": "workspace:^1.0.0",
+    "@unstyled-ui/css": "workspace:^",
+    "@unstyled-ui/stitches": "workspace:^1.0.2",
+    "classnames": "^2.3.1",
+    "csstype": "^3.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@types/js-beautify": "^1.13.3",
+    "@vitejs/plugin-react": "^1.3.2",
+    "babel-loader": "^8.2.3",
+    "storybook-builder-vite": "^0.1.17"
+  },
+  "peerDependencies": {
+    "@ant-design/icons": "^4.7.0"
+  },
+  "gitHead": "a080b5bb295baccb3f8477e15c372d7091a6a1cb"
+}

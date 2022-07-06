@@ -21,7 +21,7 @@ export default defineConfig({
         'antd',
         'lodash',
         'copy-to-clipboard',
-        '@c3/uikits',
+        '@unstyled-ui/uikits',
         '@c3/utils',
       ],
       plugins: [commonjs(), rollupTypescript()], // `commonjs` plugin include 'required' to single file

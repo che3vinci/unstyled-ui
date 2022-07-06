@@ -1,4 +1,4 @@
-import { ICssProps } from '@c3/css';
+import { ICssProps } from '@unstyled-ui/css';
 import { useMount, useUnmount } from '@c3/hooks';
 import { entries } from '@c3/utils';
 import * as echarts from 'echarts';

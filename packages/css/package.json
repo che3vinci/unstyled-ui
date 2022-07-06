@@ -1,6 +1,6 @@
 {
-  "name": "@c3/css",
-  "version": "1.0.148",
+  "name": "@unstyled-ui/css",
+  "version": "1.0.0",
   "description": "Now I’m the model of a modern major general / The venerated Virginian veteran whose men are all / Lining up, to put me up on a pedestal / Writin’ letters to relatives / Embellishin’ my elegance and eloquence / But the elephant is in the room / The truth is in ya face when ya hear the British cannons go / BOOM",
   "keywords": [],
   "author": "che3vinci <che3vinci@gmail.com>",
@@ -24,7 +24,7 @@
   },
   "scripts": {
     "test": "jest --config ../../jest.config.ts --rootDir .",
-    "build": "vite build   ",
+    "build": "vite build  && pnpm type ",
     "clean": "rm -rf dist && rm -rf node_modules ",
     "reset": "pnpm clean && pnpm install",
     "type": "tsc --project . --paths null --emitDeclarationOnly --declaration",
@@ -47,7 +47,7 @@
     "styled-components": "^5.3.3"
   },
   "dependencies": {
-    "@c3/utils": "workspace:^",
+    "@c3/utils": "^1.0.130",
     "csstype": "^3.1.0",
     "styled-components": "^5.3.3"
   }

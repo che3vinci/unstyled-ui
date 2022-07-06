@@ -1,4 +1,4 @@
-import { nCol } from '@c3/css';
+import { nCol } from '@unstyled-ui/css';
 import { s } from '@c3/utils';
 import _ from 'lodash';
 import React from 'react';

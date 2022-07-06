@@ -1,6 +1,6 @@
 {
-  "name": "@c3/uikits",
-  "version": "1.0.204",
+  "name": "@unstyled-ui/uikits",
+  "version": "1.0.0",
   "description": "UIKITS",
   "keywords": [],
   "author": "che3vinci <che3vinci@gmail.com>",
@@ -42,10 +42,7 @@
   "homepage": "https://github.com/che3vinci/c3#readme",
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@c3/css": "workspace:^",
-    "@c3/dom": "workspace:^",
-    "@c3/hooks": "workspace:^",
-    "@c3/utils": "workspace:^",
+    "@unstyled-ui/css": "workspace:^",
     "classnames": "^2.3.1",
     "echarts": "^5.3.1",
     "npm-force-resolutions": "^0.0.10",

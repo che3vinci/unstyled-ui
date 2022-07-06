@@ -1,4 +1,4 @@
-import { flexCenter } from '@c3/css';
+import { flexCenter } from '@unstyled-ui/css';
 import React from 'react';
 import { BaseProps } from '../Common';
 import { Box } from '../layout/Box';

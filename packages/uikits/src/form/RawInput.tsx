@@ -1,4 +1,4 @@
-import { cssProps } from '@c3/css';
+import { cssProps } from '@unstyled-ui/css';
 import React from 'react';
 import styled from 'styled-components';
 import { BaseProps, setComponentCssForStatus } from '../Common';

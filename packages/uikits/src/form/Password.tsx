@@ -3,7 +3,7 @@ import {
   absYCenter,
   ResponsiveInputValueType,
   toResponsiveArray,
-} from '@c3/css';
+} from '@unstyled-ui/css';
 import { useToggle } from '@c3/hooks';
 import React from 'react';
 import { BaseProps } from '../Common';

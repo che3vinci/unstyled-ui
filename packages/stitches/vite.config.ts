@@ -15,7 +15,7 @@ export default defineConfig({
         /node:*/,
         'tslib',
         '@stitches/core',
-        '@c3/css',
+        '@unstyled-ui/css',
         '@c3/utils',
         'react',
       ],

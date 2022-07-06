@@ -1,4 +1,4 @@
-import { absXCenter, ResponsiveInputValueType } from '@c3/css';
+import { absXCenter, ResponsiveInputValueType } from '@unstyled-ui/css';
 import { getBoxInPage } from '@c3/dom';
 import { Direction, getAntiDirectin, IBox } from '@c3/utils';
 import React, { useEffect, useRef, useState } from 'react';

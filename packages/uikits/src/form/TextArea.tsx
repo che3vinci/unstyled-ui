@@ -1,4 +1,4 @@
-import { ThKind } from '@c3/css';
+import { ThKind } from '@unstyled-ui/css';
 import React, { ForwardRefRenderFunction } from 'react';
 import { Col } from '..';
 import { BaseProps } from '../Common';

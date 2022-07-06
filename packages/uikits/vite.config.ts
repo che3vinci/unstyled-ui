@@ -21,7 +21,7 @@ export default defineConfig({
         'react-dom',
         '@ant-design/icons',
         'antd',
-        '@c3/css',
+        '@unstyled-ui/css',
         '@c3/utils',
         '@c3/hooks',
         '@c3/dom',

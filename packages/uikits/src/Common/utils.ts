@@ -5,7 +5,7 @@ import {
   status,
   Theme,
   ThKind,
-} from '@c3/css';
+} from '@unstyled-ui/css';
 import { entries, immutableAssign, omit, toArray } from '@c3/utils';
 import classNames from 'classnames';
 import { css } from 'styled-components';

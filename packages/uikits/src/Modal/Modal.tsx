@@ -1,4 +1,4 @@
-import { absXYCenter, mask } from '@c3/css';
+import { absXYCenter, mask } from '@unstyled-ui/css';
 import { Fn, omit } from '@c3/utils';
 import classNames from 'classnames';
 import React from 'react';

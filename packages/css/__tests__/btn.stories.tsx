@@ -1,4 +1,4 @@
-import { btn, theme } from '@c3/css';
+import { btn, theme } from '@unstyled-ui/css';
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 
