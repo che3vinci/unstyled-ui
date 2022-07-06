@@ -1,1 +1,0 @@
-export { initMakeApi } from './api';
