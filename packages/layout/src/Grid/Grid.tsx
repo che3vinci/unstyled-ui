@@ -1,8 +1,8 @@
-import { nCol } from '@unstyled-ui/css';
 import * as CSS from 'csstype';
 import React from 'react';
 import { BaseProps } from '@unstyled-ui/core';
-import { Box } from './Box';
+import { Box } from '../Box';
+import { nCol } from './grid.utils';
 export type GridProps = BaseProps & {
   cols: number | number[];
   cellWidth: CSS.Properties['width'] | CSS.Properties['width'][];

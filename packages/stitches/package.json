@@ -48,8 +48,6 @@
     "@c3/utils": "^1.0.130",
     "@stitches/core": "^1.2.8",
     "@unstyled-ui/css": "workspace:^",
-    "@unstyled-ui/responsive": "workspace:^1.0.0",
-    "lodash-es": "^4.17.21",
-    "styled-components": "^5.3.3"
+    "@unstyled-ui/responsive": "workspace:^1.0.0"
   }
 }

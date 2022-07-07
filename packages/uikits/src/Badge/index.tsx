@@ -1,7 +1,6 @@
-import { flexCenter } from '@unstyled-ui/css';
 import React from 'react';
-import { BaseProps } from '../Common';
-import { Box } from '../layout/Box';
+import { BaseProps } from '@unstyled-ui/core';
+import { Box, flexCenter } from '@unstyled-ui/layout';
 
 export type BadgeProps = BaseProps & {
   value: string | number;

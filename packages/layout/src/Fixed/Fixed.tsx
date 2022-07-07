@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { styled, BaseProps } from '@unstyled-ui/core';
-import { Box } from './Box';
+import { Box } from '../Box';
 
 export type IFixedProps = BaseProps;
 

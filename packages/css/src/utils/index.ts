@@ -1,7 +1,6 @@
 export * from './arrow';
 export * from './bg';
 export * from './border';
-export * from './button';
 export * from './color';
 export * from './divider';
 export * from './gradientRoundedBorder';

@@ -1,5 +1,4 @@
 import commonjs from '@rollup/plugin-commonjs';
-import rollupTypescript from '@rollup/plugin-typescript';
 import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/

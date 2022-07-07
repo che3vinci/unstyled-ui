@@ -1,4 +1,4 @@
-import { CSSProperties, RCSSProperties } from '../types';
+import { CSSProperties, RCSSProperties } from '@unstyled-ui/css';
 
 export interface IYPosition {
   top?: RCSSProperties['top'];
@@ -19,7 +19,7 @@ export const xCenter = (position: IAbsPosition) => (ypos?: IYPosition) => {
     left: '50%',
     position,
     transform: 'translateX(-50%)',
-  };
+  } as RCSSProperties;
 };
 export const yCenter = (postion: IAbsPosition) => (xpos?: IXPosition) => {
   return {
@@ -28,7 +28,7 @@ export const yCenter = (postion: IAbsPosition) => (xpos?: IXPosition) => {
     position: postion,
     top: '50%',
     transform: 'translateY(-50%)',
-  };
+  } as RCSSProperties;
 };
 export const xyCenter = (position: IAbsPosition) => () => {
   return {
@@ -36,7 +36,7 @@ export const xyCenter = (position: IAbsPosition) => () => {
     left: '50%',
     top: '50%',
     transform: 'translate(-50%,-50%) ',
-  };
+  } as RCSSProperties;
 };
 
 export const absXCenter = xCenter('absolute');
@@ -45,7 +45,12 @@ export const absYCenter = yCenter('absolute');
 
 export const absXYCenter = xyCenter('absolute');
 
-export const abs = ({ left, top, right, bottom }: IPosition) => {
+export const abs = ({
+  left,
+  top,
+  right,
+  bottom,
+}: IPosition): RCSSProperties => {
   return { position: 'absolute', left, right, top, bottom };
 };
 

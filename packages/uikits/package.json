@@ -22,7 +22,6 @@
     "type": "git",
     "url": "git+https://github.com/che3vinci/c3.git"
   },
-
   "scripts": {
     "test": "jest --config ../../jest.config.ts --rootDir .",
     "build": "vite build  ",
@@ -39,7 +38,9 @@
   "homepage": "https://github.com/che3vinci/c3#readme",
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@unstyled-ui/css": "workspace:^",
+    "@unstyled-ui/core": "workspace:^1.0.0",
+    "@unstyled-ui/css": "workspace:^1.0.0",
+    "@unstyled-ui/layout": "workspace:^1.0.0",
     "classnames": "^2.3.1",
     "echarts": "^5.3.1",
     "npm-force-resolutions": "^0.0.10",

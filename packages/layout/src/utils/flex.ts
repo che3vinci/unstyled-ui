@@ -1,5 +1,4 @@
-import { CSSProperties } from './../types';
-
+import { CSSProperties } from '@unstyled-ui/css';
 
 export const flexCenter: CSSProperties = {
   display: 'flex',
