@@ -1,4 +1,3 @@
-import { UnstyledProvider } from '@unstyled-ui/core';
 import React from 'react';
 import { Text } from '../src';
 const App = () => {
