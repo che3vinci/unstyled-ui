@@ -1,6 +1,5 @@
 export * from './Badge';
 export * from './Card';
-export * from './Charts';
 export * from './Common';
 export * from './CountDownBtn';
 export * from './ErrorBoundary';

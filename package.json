@@ -6,9 +6,12 @@
     "pnpm": ">=3"
   },
   "dependencies": {
-    "@c3/utils": "^1.0.130"
+    "@c3/utils": "^1.0.130",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
-
   "devDependencies": {
     "@babel/core": "^7.17.2",
     "@babel/plugin-transform-modules-commonjs": "^7.17.7",
