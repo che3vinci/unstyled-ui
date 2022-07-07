@@ -1,30 +1,7 @@
-import {
-  convertResponsiveArrayForStyle,
-  convertResponsiveArrayForVariant,
-  createStitches,
-} from '@unstyled-ui/stitches';
-import type { CSS, VariantProps } from '@unstyled-ui/stitches';
+import { createStitches } from '@unstyled-ui/stitches';
 import type Stitches from '@unstyled-ui/stitches/types/stitches';
-import { Typography } from '@unstyled-ui/css';
 import React from 'react';
-
-export type Config = Parameters<typeof createStitches>[0];
-
-const config: Config = {
-  utils: {
-    w: (value: string | number | (string | number)[]) => ({ width: value }),
-    typo: (value: Typography) => ({ ...value }),
-  },
-  breakpoints: [768, 1366],
-  bpMapFnForVariant: convertResponsiveArrayForVariant,
-  bpMapFnForStyle: convertResponsiveArrayForStyle,
-};
-
-export type BaseProps<
-  Attr extends React.HTMLAttributes<HTMLElement> = React.HTMLAttributes<HTMLElement>
-> = VariantProps<any> & {
-  css?: CSS<typeof config>;
-} & Attr;
+import { Config, config } from './configure';
 
 type CtxValueType = {
   styled: Stitches['styled'];
@@ -34,10 +11,16 @@ const Ctx = React.createContext<CtxValueType>({
   styled: {} as Stitches['styled'],
 });
 
-export const UnstyledProvider = ({ value }: { value: Config }) => {
+
+export const UnstyledProvider = ({
+  value,
+  ...restProps
+}: {
+  value?: Config;
+}) => {
   const cfg = { ...config, ...(value || {}) };
   const { styled } = createStitches(cfg);
-  return <Ctx.Provider value={{ styled }} />;
+  return <Ctx.Provider value={{ styled }} {...restProps} />;
 };
 
 export const useStitches = () => {

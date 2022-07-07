@@ -16,6 +16,7 @@ export default defineConfig({
         'tslib',
         '@stitches/core',
         '@unstyled-ui/css',
+        '@unstyled-ui/responsive',
         '@c3/utils',
         'react',
       ],

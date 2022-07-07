@@ -1,5 +1,5 @@
 import { toArray } from '@c3/utils';
-import { origin, rvw } from '@unstyled-ui/css';
+import { origin, rvw } from '@unstyled-ui/responsive';
 
 // <Button type={{
 // @bp1: {

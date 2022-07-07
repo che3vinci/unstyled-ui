@@ -1,7 +1,10 @@
 import { isNumber } from '@c3/utils';
-// import { isMobile } from '../base/device';
-// import { desktopDesignWidth, mobileDesignWidth } from '../theme';
 import { FixedPxReg } from './constants';
+import { isMobile } from './device';
+
+//TODO: fixme
+export const mobileDesignWidth = 750;
+export const desktopDesignWidth = 1366;
 
 export const pxToVw = (px: number, refWidth: number) =>
   `${(px / refWidth) * 100}vw`;
@@ -25,9 +28,9 @@ export const fontVw = (px: number, refWidth: number) => {
   return `calc(${base}px + ${vw(px - base, refWidth)})`;
 };
 
-// export const rvw = (px: string | number, refWidth: number) => {
-//   // return isMobile ? vw(px, mobileDesignWidth) : vw(px, desktopDesignWidth);
-// };
+export const rvw = (px: string | number) => {
+  return isMobile ? vw(px, mobileDesignWidth) : vw(px, desktopDesignWidth);
+};
 
 export const origin = (x: string | number) => {
   if (typeof x === 'string') {
