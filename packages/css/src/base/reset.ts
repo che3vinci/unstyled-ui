@@ -1,6 +1,4 @@
-import { css } from 'styled-components';
-
-export const resetAntdStyle = () => css`
+export const normalizecss = () => `
   *,
   p,
   span,
@@ -17,11 +15,7 @@ export const resetAntdStyle = () => css`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: ${props => props.theme.fontFamily};
     line-height: normal;
-    ${props => props.theme.mobile} {
-      max-width: 100vw;
-    }
   }
   img {
     max-width: 100%;

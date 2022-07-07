@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react';
+import { CSSProperties } from '../types';
 
 export const col = (
   fx: CSSProperties['alignItems'] = 'center',

@@ -1,4 +1,4 @@
-export {}
+export {};
 // import { css } from 'styled-components';
 // import { rcss, ResponsiveCSSProperties } from '../responsive';
 

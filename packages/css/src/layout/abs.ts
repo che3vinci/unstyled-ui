@@ -1,13 +1,12 @@
-import { ResponsiveInputValueType } from '../responsive';
-import { CSSProperties } from './../responsive/type';
+import { CSSProperties, RCSSProperties } from '../types';
 
 export interface IYPosition {
-  top?: ResponsiveInputValueType;
-  bottom?: ResponsiveInputValueType;
+  top?: RCSSProperties['top'];
+  bottom?: RCSSProperties['bottom'];
 }
 export interface IXPosition {
-  left?: ResponsiveInputValueType;
-  right?: ResponsiveInputValueType;
+  left?: RCSSProperties['left'];
+  right?: RCSSProperties['right'];
 }
 export type IAbsPosition = 'fixed' | 'absolute';
 

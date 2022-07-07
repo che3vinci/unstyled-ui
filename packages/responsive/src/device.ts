@@ -1,8 +1,8 @@
 const isDevice = (device: string) => {
-  if (!window.matchMedia) {
+  if (!globalThis.matchMedia) {
     throw new Error('not browser enviroment in isDevice()');
   }
-  const { matches } = window.matchMedia(device);
+  const { matches } = globalThis.matchMedia(device);
   return matches;
 };
 

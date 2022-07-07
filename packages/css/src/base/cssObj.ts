@@ -1,5 +1,5 @@
 import { kebabCase } from 'lodash';
-import { CSSProperties } from '../responsive';
+import { CSSProperties } from '../types';
 
 export const cssObj2Str = (css: CSSProperties) => {
   let res = '';
