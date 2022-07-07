@@ -1,1 +1,1 @@
-export * from './stitches';
+export * from './UnstyledProvider';
