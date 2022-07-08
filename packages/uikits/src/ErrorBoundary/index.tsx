@@ -23,7 +23,7 @@ export class ErrorBoundary extends React.Component<Props, ErrorState> {
   render() {
     if (this.state.hasError) {
       return (
-        <Text {...absXYCenter()} className="uu-error-boundary">
+        <Text css={{ ...absXYCenter() }} className="uu-error-boundary">
           Something went wrong.
         </Text>
       );

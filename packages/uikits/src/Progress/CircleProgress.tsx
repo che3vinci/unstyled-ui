@@ -1,7 +1,7 @@
 import { GradientStop } from '@c3/utils';
 import React from 'react';
-import { Box } from '..';
-import { BaseProps } from '../Common';
+import { Box } from '@unstyled-ui/layout';
+import { BaseProps } from '@unstyled-ui/core';
 
 export type CircleProgressProps = BaseProps & {
   progress: number;
@@ -28,7 +28,7 @@ export const CircleProgress: React.FC<CircleProgressProps> = props => {
 
   const length = 2 * Math.PI * radius;
   return (
-    <Box {...restProps} width={width} height={width}>
+    <Box {...restProps} css={{ width: _width, height: _height }}>
       <svg
         viewBox={`0 0 ${_width} ${_height}`}
         xmlns="http://www.w3.org/2000/svg"

@@ -5,16 +5,11 @@
 // import { getStyledConfig } from '../layout/shouldForwardProp';
 // export type InputState = 'placeholder' | 'focus' | 'error' | 'blur'; //blur: have content and blur
 
+import { styled } from '@unstyled-ui/core';
+
 // export interface IRawInputProps
 //   extends BaseProps<React.InputHTMLAttributes<HTMLInputElement>> {
 //   status?: InputState;
 // }
 
-// export const RawInput = styled.input.withConfig(
-//   getStyledConfig('c3-input')
-// )<IRawInputProps>`
-//   ${props => setComponentCssForStatus(props, 'input')}
-
-//   ${props => cssProps(props)};
-// ` as React.FC<IRawInputProps>;
-export {};
+export const RawInput = styled('input');

@@ -16,6 +16,7 @@ export default defineConfig({
         'tslib',
         '@ant-design/icons',
         '@unstyled-ui/css',
+        '@c3/utils',
         '@unstyled-ui/stitches',
       ],
       plugins: [commonjs()], // `commonjs` plugin include 'required' to single file

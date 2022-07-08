@@ -81,7 +81,6 @@ export const Switcher = <Item extends BaseSwitchItem>({
           return (
             <NavItem.type
               onClick={(evt: React.MouseEvent) => {
-                console.log('clickSwitcherItem', e);
                 if (enableHash) {
                   setHash(e.id);
                 } else {
