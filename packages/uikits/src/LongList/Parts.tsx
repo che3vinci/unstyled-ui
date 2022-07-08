@@ -1,16 +1,17 @@
-import { nCol, ResponsiveInputValueType } from '@unstyled-ui/css';
-import { css } from 'styled-components';
+// import { nCol, ResponsiveInputValueType } from '@unstyled-ui/css';
+// import { css } from 'styled-components';
 
-export const gridListCss = (
-  num: ResponsiveInputValueType,
-  width: ResponsiveInputValueType,
-  height: ResponsiveInputValueType,
-  rgap: ResponsiveInputValueType = [0],
-  cgap: ResponsiveInputValueType = [0]
-) => {
-  return css`
-    .c3-list {
-      ${nCol(num, width, height, rgap, cgap)}
-    }
-  `;
-};
+// export const gridListCss = (
+//   num: ResponsiveInputValueType,
+//   width: ResponsiveInputValueType,
+//   height: ResponsiveInputValueType,
+//   rgap: ResponsiveInputValueType = [0],
+//   cgap: ResponsiveInputValueType = [0]
+// ) => {
+//   return css`
+//     .c3-list {
+//       ${nCol(num, width, height, rgap, cgap)}
+//     }
+//   `;
+// };
+export {};

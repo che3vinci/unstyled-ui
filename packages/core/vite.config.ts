@@ -7,18 +7,19 @@ export default defineConfig({
   build: {
     lib: {
       entry: './src/index.ts',
-      name: 'common',
+      name: 'core',
       formats: ['iife', 'es', 'umd'],
     },
     rollupOptions: {
       external: [
         /node:*/,
         'tslib',
+        'react',
         '@ant-design/icons',
         '@unstyled-ui/css',
         '@unstyled-ui/stitches',
       ],
-      plugins: [commonjs()], // `commonjs` plugin include 'required' to single file
+      plugins: [commonjs()],
     },
   },
 });

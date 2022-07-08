@@ -1,16 +1,6 @@
 // jest.config.ts
 import type { Config } from '@jest/types';
-const esModules = [
-  'zx',
-  'globby',
-  'globby/node_modules/slash',
-  'slash',
-  'node-fetch',
-  'data-uri-to-buffer',
-  'fetch-blob',
-  'formdata-polyfill',
-  'chalk',
-].join('|');
+
 // Sync object
 const config: Config.InitialOptions = {
   verbose: true,
@@ -31,7 +21,6 @@ const config: Config.InitialOptions = {
   watchPathIgnorePatterns: ['/node_modules/', '/dist/', '/.git/'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json'],
   rootDir: __dirname,
-  // transformIgnorePatterns: [`packages/cli/node_modules/(?!${esModules})`],
   transformIgnorePatterns: [],
 };
 

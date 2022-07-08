@@ -45,9 +45,8 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
-    "@unstyled-ui/css": "workspace:^",
     "@stitches/core": "^1.2.8",
-    "lodash-es": "^4.17.21",
-    "styled-components": "^5.3.3"
+    "@unstyled-ui/css": "workspace:^",
+    "@unstyled-ui/responsive": "workspace:^1.0.0"
   }
 }

@@ -14,15 +14,9 @@ export default defineConfig({
       external: [
         /node:*/,
         'tslib',
-        'fs-extra',
-        'styled-components',
-        'polished',
         'react',
-        'antd',
         'lodash',
-        'copy-to-clipboard',
-        '@unstyled-ui/uikits',
-        '@c3/utils',
+        '@c3/utils'
       ],
       plugins: [commonjs(), rollupTypescript()], // `commonjs` plugin include 'required' to single file
     },

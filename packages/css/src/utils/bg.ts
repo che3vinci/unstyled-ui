@@ -1,4 +1,4 @@
-import { CSSProperties } from './../responsive/type';
+import { CSSProperties } from '../types';
 
 export const bg = (
   url: string,

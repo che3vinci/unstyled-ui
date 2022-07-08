@@ -5,4 +5,6 @@ export * from './AutoRC';
 export * from './Fixed';
 export * from './Grid';
 export * from './Stack';
+export * from './Abs';
 export * from './Relative';
+export * from './utils';

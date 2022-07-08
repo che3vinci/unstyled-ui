@@ -13,26 +13,20 @@ export default defineConfig({
     rollupOptions: {
       external: [
         /node:*/,
-        'styled-components',
-        'polished',
         'tslib',
 
         'react',
         'react-dom',
         '@ant-design/icons',
-        'antd',
         '@unstyled-ui/css',
+        '@unstyled-ui/core',
         '@c3/utils',
         '@c3/hooks',
-        '@c3/dom',
-        'echarts',
-        'react-slick',
-        'slick-carousel',
         'lodash',
         'deepmerge',
         'classnames',
       ],
-      plugins: [commonjs(), rollupTypescript()], // `commonjs` plugin include 'required' to single file
+      plugins: [commonjs(), rollupTypescript()],
     },
   },
 });

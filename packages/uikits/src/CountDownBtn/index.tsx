@@ -1,8 +1,8 @@
 import { useCountDown } from '@c3/hooks';
 import React, { useCallback, useEffect } from 'react';
-import { Button, IButtonProps } from '..';
+import { Button, ButtonProps } from '@unstyled-ui/atomic';
 
-export interface ICountDownProps extends Omit<IButtonProps, 'onChange'> {
+export interface ICountDownProps extends Omit<ButtonProps, 'onChange'> {
   defaultText: string;
   onStart?: () => void;
   onFinish?: () => void;

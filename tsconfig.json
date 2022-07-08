@@ -22,7 +22,6 @@
 
   "exclude": [
     "./node_modules",
-    "node_modules/@vue/runtime-dom",
     "./__mocks__",
     "**/*.stories.*",
     "commitlint.config.js",

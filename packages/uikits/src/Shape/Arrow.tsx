@@ -1,9 +1,9 @@
-import { ICssProps } from '@unstyled-ui/css';
 import { Direction } from '@c3/utils';
 import React from 'react';
-import { Box } from '../layout';
+import { Box } from '@unstyled-ui/layout';
+import type { BaseProps } from '@unstyled-ui/core';
 
-export interface IArrowProps extends Omit<ICssProps, 'direction'> {
+export interface IArrowProps extends Omit<BaseProps, 'direction'> {
   directionx: Direction;
 }
 
@@ -31,9 +31,7 @@ export const Arrow: React.FC<IArrowProps> = ({
   return (
     <Box
       className="c3-arrow"
-      width={width}
-      height={height}
-      clipPath={`polygon(${polygon})`}
+      css={{ width, height, clipPath: `polygon(${polygon})` }}
       {...props}
     />
   );

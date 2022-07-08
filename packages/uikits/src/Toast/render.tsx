@@ -1,7 +1,7 @@
 import { getNewAppendedNode } from '@c3/dom';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BaseProps } from '../Common';
+import { BaseProps } from '@unstyled-ui/core';
 import { Toast } from './Toast';
 import { deaultToastAnimation, getDefaultAnimation } from './utils';
 
