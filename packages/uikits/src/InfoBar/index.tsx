@@ -1,8 +1,7 @@
 import { HVDirection } from '@c3/utils';
 import React from 'react';
-import { BaseProps } from '../Common';
-import { Col } from '../layout';
-import { Row } from '../layout/Row';
+import { BaseProps } from '@unstyled-ui/core';
+import { Row, Col } from '@unstyled-ui/layout';
 
 export interface IInfoProps extends BaseProps {
   direction?: HVDirection;

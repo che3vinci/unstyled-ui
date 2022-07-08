@@ -6,15 +6,14 @@
     "pnpm": ">=3"
   },
   "dependencies": {
-    "@c3/utils": "^1.0.130",
-    "@types/react": "^18.0.15",
-    "@types/react-dom": "^18.0.6",
+    "@c3/hooks": "1.0.172",
+    "@c3/utils": "^1.0.132",
     "lodash": "^4.17.21",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.2",
+    "@babel/core": "^7.18.2",
     "@babel/plugin-transform-modules-commonjs": "^7.17.7",
     "@changesets/cli": "^2.22.0",
     "@jest/types": "^28.1.1",
@@ -23,6 +22,8 @@
     "@types/jest": "^27.4.1",
     "@types/lodash": "^4.14.178",
     "@types/node": "^17.0.13",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.2",
     "@typescript-eslint/eslint-plugin": "^5.15.0",
     "@typescript-eslint/parser": "^5.15.0",
     "babel-loader": "^8.2.3",

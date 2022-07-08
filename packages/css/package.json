@@ -45,7 +45,6 @@
   },
   "peerDependencies": {},
   "dependencies": {
-    "@c3/utils": "^1.0.130",
     "csstype": "^3.1.0"
   }
 }

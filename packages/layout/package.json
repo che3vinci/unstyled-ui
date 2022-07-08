@@ -5,8 +5,8 @@
   "keywords": [],
   "author": "che3vinci <che3vinci@gmail.com>",
   "license": "ISC",
-  "main": "dist/layout.umd.js",
-  "module": "dist/layout.es.js",
+  "main": "src/index.tsx",
+  "module": "src/index.tsx",
   "types": "dist/index.d.ts",
   "directories": {
     "lib": "dist",
@@ -16,7 +16,10 @@
     "dist"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "main": "dist/layout.umd.js",
+    "module": "src/index.ts",
+    "types": "dist/index.d.ts"
   },
   "repository": {
     "type": "git",
@@ -39,6 +42,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@stitches/react": "^1.2.8",
+    "@unstyled-ui/common": "workspace:^1.0.0",
     "@unstyled-ui/core": "workspace:^1.0.0",
     "@unstyled-ui/css": "workspace:^",
     "@unstyled-ui/responsive": "workspace:^1.0.0",
@@ -50,8 +54,7 @@
     "@babel/core": "^7.17.5",
     "@types/js-beautify": "^1.13.3",
     "@vitejs/plugin-react": "^1.3.2",
-    "babel-loader": "^8.2.3",
-    "storybook-builder-vite": "^0.1.17"
+    "babel-loader": "^8.2.3"
   },
   "peerDependencies": {
     "@ant-design/icons": "^4.7.0"

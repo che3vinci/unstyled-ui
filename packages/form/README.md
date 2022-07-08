@@ -5,6 +5,6 @@
 ## Usage
 
 ```
-import uikits from '@unstyled-ui/atomic';
+import uikits from '@unstyled-ui/form';
 
 ```

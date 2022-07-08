@@ -1,6 +1,7 @@
 import React from 'react';
-import { BaseProps, extractClassNameAndProps } from '../Common';
-import { Col, Row } from '../layout';
+import { Col, Row } from '@unstyled-ui/layout';
+import { BaseProps } from '@unstyled-ui/core';
+import classNames from 'classnames';
 
 export type MediaObjectProps = {
   icon?: React.ReactElement;
@@ -15,13 +16,11 @@ export const MediaObject: React.FC<MediaObjectProps> = props => {
   return (
     <Row {...restProps}>
       {icon && (
-        <icon.type
-          {...extractClassNameAndProps('c3-media-object-icon', icon.props)}
-        />
+        <icon.type className={classNames('uu-mo-icon', icon.props.className)} />
       )}
       <Col fx="flex-start" {...contentProps}>
         <title.type
-          {...extractClassNameAndProps('c3-media-object-title', title.props)}
+          className={classNames('uu-mo-title', title.props.className)}
         />
         {description}
       </Col>

@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
-import { BaseProps } from '../Common';
-import { Col } from '../layout';
+import { BaseProps } from '@unstyled-ui/core';
+import { Col } from '@unstyled-ui/layout';
 import { BaseListItem, List, ListProps } from '../List';
 
 type BaseType = BaseListItem;
@@ -32,7 +32,7 @@ export const ManualLongList = <T extends BaseType>(
         updateList={updateList}
         hvDirection={hvDirection}
         emptyNode={emptyNode}
-        {...listCssProps}
+        css={{ ...listCssProps }}
       />
       {loadNextTip}
     </Col>

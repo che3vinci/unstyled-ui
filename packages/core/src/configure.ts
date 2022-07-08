@@ -1,4 +1,4 @@
-import { Typography } from '@unstyled-ui/css';
+import { CSSProperties, Typography } from '@unstyled-ui/css';
 import {
   convertResponsiveArrayForStyle,
   convertResponsiveArrayForVariant,
@@ -8,9 +8,11 @@ import {
 export type Config = NonNullable<Parameters<typeof createStitches>[0]>;
 
 export const config: Config = {
+  prefix: 'uu',
   utils: {
-    w: (value: string | number | (string | number)[]) => ({ width: value }),
+    w: (value: CSSProperties['width']) => ({ width: value }),
     typo: (value: Typography) => ({ ...value }),
+    round: () => ({ borderRadius: 10000000 }),
   },
   breakpoints: [768, 1366],
   bpMapFnForVariant: convertResponsiveArrayForVariant,

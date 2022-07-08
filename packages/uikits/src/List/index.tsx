@@ -1,9 +1,9 @@
-import { col, row } from '@unstyled-ui/css';
+import { col, row } from '@unstyled-ui/layout';
 import { useExclusive } from '@c3/hooks';
 import { Color, HVDirection, IDable, isEmpty } from '@c3/utils';
 import classNames from 'classnames';
 import React from 'react';
-import { BaseProps } from '../Common';
+import { BaseProps } from '@unstyled-ui/core';
 import { RawList } from '../RawList';
 
 export type BaseListItem = IDable & { active?: boolean };
@@ -35,7 +35,7 @@ export const List = <T extends BaseListItem>(props: ListProps<T>) => {
       width="100%"
       className={classNames('c3-list', className)}
       hvDirection={hvDirection}
-      {...dir}
+      css={{ ...dir }}
       {...restProps}
     >
       {_isEmpty

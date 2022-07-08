@@ -1,6 +1,6 @@
 import React from 'react';
-import { Row } from '..';
-import { BaseProps } from '../Common';
+import { Row } from '@unstyled-ui/layout';
+import { BaseProps } from '@unstyled-ui/core';
 import { RawInput } from './RawInput';
 
 export interface IInputProps extends BaseProps {

@@ -2,9 +2,8 @@ import { getHash, useExclusive, useHashChange } from '@c3/hooks';
 import { HVDirection } from '@c3/utils';
 import classNames from 'classnames';
 import React, { useEffect, useMemo } from 'react';
-import { Row } from '..';
-import { BaseProps } from '../Common';
-import { Col } from '../layout';
+import { BaseProps } from '@unstyled-ui/core';
+import { Col, Row } from '@unstyled-ui/layout';
 import { IRawListProps } from '../RawList';
 
 export type DefaultSwitchItem = {

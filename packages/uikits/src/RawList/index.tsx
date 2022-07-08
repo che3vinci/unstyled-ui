@@ -1,9 +1,7 @@
-import { cssProps, gap, vgap } from '@unstyled-ui/css';
-import { HVDirection, omit } from '@c3/utils';
+import { HVDirection } from '@c3/utils';
+import { BaseProps } from '@unstyled-ui/core';
+import { Box, rgap, vgap } from '@unstyled-ui/layout';
 import React from 'react';
-import styled from 'styled-components';
-import { notInBlackList } from '..';
-import { BaseProps } from '../Common';
 
 export type IRawListProps = BaseProps<
   React.OlHTMLAttributes<HTMLOListElement>
@@ -11,14 +9,17 @@ export type IRawListProps = BaseProps<
   ordered?: boolean;
   hvDirection?: HVDirection;
 };
-
-export const RawList = styled.ul.withConfig({
-  componentId: 'c3-list',
-  shouldForwardProp: prop => notInBlackList(prop),
-})<IRawListProps>`
-  list-style: none;
-  ${props =>
-    props.gap &&
-    (props.hvDirection === 'vertical' ? vgap(props.gap) : gap(props.gap))}
-  ${props => cssProps(omit(props, ['gap']))}
-` as React.FC<IRawListProps>;
+export const RawList: React.FC<IRawListProps> = props => {
+  const { css: { gap, ...restCss } = {}, ...restProps } = props;
+  return (
+    <Box
+      as="ul"
+      css={{
+        listStyle: 'none',
+        ...(props.hvDirection === 'vertical' ? vgap(gap) : rgap(gap)),
+        ...restCss,
+      }}
+      {...restProps}
+    />
+  );
+};

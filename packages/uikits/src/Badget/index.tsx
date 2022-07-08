@@ -6,10 +6,16 @@ export type BadgeProps = BaseProps & {
   value: string | number;
 };
 
-export const Badge: React.FC<BadgeProps> = props => {
+export const Badget: React.FC<BadgeProps> = props => {
   const { value, ...restProps } = props;
   return (
-    <Box round {...flexCenter} {...restProps}>
+    <Box
+      css={{
+        round: true,
+        ...flexCenter,
+      }}
+      {...restProps}
+    >
       {value}
     </Box>
   );

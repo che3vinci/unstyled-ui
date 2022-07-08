@@ -1,9 +1,8 @@
-import { fixedXCenter, IPosition } from '@unstyled-ui/css';
 import { removeNode } from '@c3/dom';
 import classNames from 'classnames';
 import React, { useEffect, useRef } from 'react';
-import { BaseProps } from '../Common';
-import { Row } from '../layout';
+import { BaseProps } from '@unstyled-ui/core';
+import { Row, fixedXCenter, IPosition } from '@unstyled-ui/layout';
 
 export type ToastProps = Omit<BaseProps, 'content'> & {
   pos?: IPosition;
@@ -27,13 +26,15 @@ export const Toast: React.FC<ToastProps> = props => {
   }, [duration]);
   return (
     <Row
-      fx="center"
+      css={{
+        fx: 'center',
+        gap: '0.5',
+        zIndex: 100,
+        ...fixedXCenter({ top: 110 }),
+        ...pos,
+      }}
       ref={ref}
-      gap="0.5em"
       className={classNames('c3-toast', className)}
-      zIndex="100"
-      {...fixedXCenter({ top: 110 })}
-      {...pos}
       {...restProps}
     >
       {children}

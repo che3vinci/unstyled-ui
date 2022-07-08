@@ -39,7 +39,6 @@
   "homepage": "https://github.com/che3vinci/c3#readme",
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@c3/utils": "^1.0.130",
     "@stitches/react": "^1.2.8",
     "@unstyled-ui/css": "workspace:^1.0.0",
     "@unstyled-ui/stitches": "workspace:^1.0.2",
@@ -50,8 +49,7 @@
     "@babel/core": "^7.17.5",
     "@types/js-beautify": "^1.13.3",
     "@vitejs/plugin-react": "^1.3.2",
-    "babel-loader": "^8.2.3",
-    "storybook-builder-vite": "^0.1.17"
+    "babel-loader": "^8.2.3"
   },
   "peerDependencies": {
     "@ant-design/icons": "^4.7.0"

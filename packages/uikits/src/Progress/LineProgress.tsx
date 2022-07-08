@@ -1,9 +1,9 @@
-import { absYCenter, hidden } from '@unstyled-ui/css';
+import { hidden } from '@unstyled-ui/css';
 import { assert, isDecimal, multiply } from '@c3/utils';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { BaseProps } from '../Common';
-import { Row } from '../layout';
-import { Text } from '../Text';
+import { BaseProps } from '@unstyled-ui/core';
+import { Row, absYCenter } from '@unstyled-ui/layout';
+import { Text } from '@unstyled-ui/atomic';
 
 const PADDING = 10;
 export type LineProgressProps = {
@@ -86,10 +86,12 @@ export const LineProgress: React.FC<LineProgressProps> = ({
       >
         <Text
           className="info"
-          textAlign="right"
+          css={{
+            textAlign: 'right',
+            ...absYCenter(pos),
+            ...(!showInfo && hidden),
+          }}
           ref={textRef}
-          {...absYCenter(pos)}
-          {...(!showInfo && hidden)}
         >
           {percent}
         </Text>

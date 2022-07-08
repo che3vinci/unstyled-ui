@@ -1,6 +1,6 @@
-import { absXYCenter } from '@unstyled-ui/css';
+import { absXYCenter } from '@unstyled-ui/layout';
 import React from 'react';
-import { Text } from '../Text/Text';
+import { Text } from '@unstyled-ui/atomic';
 
 export type ErrorState = {
   hasError: boolean;
@@ -23,12 +23,7 @@ export class ErrorBoundary extends React.Component<Props, ErrorState> {
   render() {
     if (this.state.hasError) {
       return (
-        <Text
-          {...absXYCenter()}
-          className="c3-errorboundary"
-          fontSize={[40]}
-          whiteSpace="nowrap"
-        >
+        <Text {...absXYCenter()} className="uu-error-boundary">
           Something went wrong.
         </Text>
       );

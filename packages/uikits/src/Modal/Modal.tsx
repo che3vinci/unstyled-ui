@@ -1,10 +1,9 @@
-import { absXYCenter, mask } from '@unstyled-ui/css';
+import { mask } from '@unstyled-ui/css';
 import { Fn, omit } from '@c3/utils';
 import classNames from 'classnames';
 import React from 'react';
-import { Col } from '../';
-import { BaseProps } from '../Common';
-import { Abs, Fixed } from '../layout';
+import { BaseProps } from '@unstyled-ui/core';
+import { Abs, Fixed, Col, absXYCenter } from '@unstyled-ui/layout';
 
 export type ModalProps = Omit<BaseProps, 'content'> & {
   visible: boolean;
@@ -38,7 +37,7 @@ export const Modal: React.FC<ModalProps> = ({
   const display = visible ? 'flex' : 'none';
 
   return (
-    <Fixed style={{ display }} {...mask} bg="rgba(0,0,0,0.8)" {...maskProps}>
+    <Fixed css={{ display, ...mask, bg: 'rgba(0,0,0,0.8)' }} {...maskProps}>
       <Col
         position="relative"
         className={classNames('c3-modal', className)}
@@ -81,7 +80,7 @@ export const Modal: React.FC<ModalProps> = ({
             {...omit(cancelBtn?.props, ['onClick'])}
           />
         )}
-        {showLoading && <Abs {...absXYCenter()}>{loadingIcon}</Abs>}
+        {showLoading && <Abs css={{ ...absXYCenter() }}>{loadingIcon}</Abs>}
       </Col>
     </Fixed>
   );
