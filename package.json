@@ -54,7 +54,9 @@
     "@storybook/addon-essentials": "^6.5.9",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-interactions": "^6.5.9",
-    "@storybook/testing-library": "^0.0.13"
+    "@storybook/testing-library": "^0.0.13",
+    "@storybook/builder-webpack4": "^6.5.9",
+    "@storybook/manager-webpack4": "^6.5.9"
   },
   "scripts": {
     "build-storybook": "build-storybook",
