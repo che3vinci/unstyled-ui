@@ -67,22 +67,26 @@ export const LineProgress: React.FC<LineProgressProps> = ({
 
   return (
     <Row
-      fx="flex-start"
-      round
-      background="rgba(0,0,0,0.1)"
-      overflow="hidden"
+      css={{
+        fx: 'flex-start',
+        round: true,
+        background: 'rgba(0,0,0,0.1)',
+        overflow: 'hidden',
+      }}
       ref={barRef}
       {...props}
     >
       <Row
-        round
-        width={percent}
-        height="100%"
-        fx="flex-end"
+        css={{
+          round: true,
+          width: percent,
+          height: '100%',
+          fx: 'flex-end',
+          position: 'relative',
+        }}
         className="cur-progress"
         {...progressProps}
         test-id="cur-progress"
-        position="relative"
       >
         <Text
           className="info"

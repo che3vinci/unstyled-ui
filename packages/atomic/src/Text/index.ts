@@ -1,3 +1,3 @@
 export * from './Text';
 export * from './Vairant';
-export * from './styles.utils';
+export * from './text.utils';

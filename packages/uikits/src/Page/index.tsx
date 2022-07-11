@@ -1,11 +1,12 @@
 import React from 'react';
-import { BaseProps } from '../Common';
-import { Col } from '../layout/Col';
+import { BaseProps } from '@unstyled-ui/core';
+import { Col } from '@unstyled-ui/layout';
 
 type IPageProps = {
   nav: JSX.Element;
   footer?: JSX.Element;
 } & BaseProps;
+
 const Page: React.FC<IPageProps> = ({
   nav,
   children: main,
@@ -13,7 +14,10 @@ const Page: React.FC<IPageProps> = ({
   ...props
 }) => {
   return (
-    <Col position="relative" fx="stretch" width="100%" {...props}>
+    <Col
+      css={{ position: 'relative', fx: 'stretch', width: '100%' }}
+      {...props}
+    >
       {nav}
       {main}
       {footer}

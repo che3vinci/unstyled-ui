@@ -1,5 +1,5 @@
 import { Atomic } from '../Atomic';
-import { link } from './styles';
+import { link } from './link.utils';
 import React from 'react';
 import { BaseProps, styled } from '@unstyled-ui/core';
 import classNames from 'classnames';

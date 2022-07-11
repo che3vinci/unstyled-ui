@@ -7,12 +7,16 @@ export type BadgeProps = BaseProps & {
 };
 
 export const Badget: React.FC<BadgeProps> = props => {
-  const { value, ...restProps } = props;
+  const { value, css, ...restProps } = props;
   return (
     <Box
       css={{
         round: true,
         ...flexCenter,
+        borderWidth: '1px',
+        borderStyle: 'solid',
+        aspectRatio: 1,
+        ...css,
       }}
       {...restProps}
     >

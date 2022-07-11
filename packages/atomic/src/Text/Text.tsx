@@ -1,7 +1,7 @@
 import React, { HTMLAttributes } from 'react';
 import { BaseProps } from '@unstyled-ui/core';
 import { Atomic } from '../Atomic';
-import { getRows, linearGradientText } from './styles.utils';
+import { getRows, linearGradientText } from './text.utils';
 import { CSSProperties } from '@unstyled-ui/css';
 
 export type TextProps = BaseProps<HTMLAttributes<HTMLParagraphElement>> & {

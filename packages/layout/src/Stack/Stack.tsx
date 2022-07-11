@@ -1,5 +1,5 @@
 import React from 'react';
-import { Relative } from './Relative';
+import { Relative } from '../Relative';
 import { BaseProps } from '@unstyled-ui/core';
 import classnames from 'classnames';
 

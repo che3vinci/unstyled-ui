@@ -28,7 +28,7 @@ export const Toast: React.FC<ToastProps> = props => {
     <Row
       css={{
         fx: 'center',
-        gap: '0.5',
+        gap: 0.5,
         zIndex: 100,
         ...fixedXCenter({ top: 110 }),
         ...pos,

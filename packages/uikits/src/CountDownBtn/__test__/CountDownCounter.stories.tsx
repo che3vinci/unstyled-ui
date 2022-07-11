@@ -1,10 +1,7 @@
 import React from 'react';
 import { CountDownBtn, ICountDownProps } from '..';
-import { BaseProps } from '../../Common';
 
-const Template = (args: Omit<ICountDownProps, keyof BaseProps>) => (
-  <CountDownBtn {...args} />
-);
+const Template = (args: any) => <CountDownBtn {...args} />;
 
 export const Default = Template.bind({});
 
@@ -14,13 +11,13 @@ Default.args = {
     console.log('start...');
   },
   onChange: left => {
-    // console.log('leftTime', left);
+    console.log('leftTime', left);
   },
   onFinish: () => {
     console.log('finished');
   },
   defaultText: 'click me',
-} as Omit<ICountDownProps, keyof BaseProps>;
+} as ICountDownProps;
 
 export default {
   component: CountDownBtn,

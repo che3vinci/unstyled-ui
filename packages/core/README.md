@@ -1,10 +1,10 @@
-# `@unstyled-ui/uikits`
+# `@unstyled-ui/core`
 
 > TODO: description
 
 ## Usage
 
 ```
-import uikits from '@unstyled-ui/uikits';
+import core from '@unstyled-ui/core';
 
 ```

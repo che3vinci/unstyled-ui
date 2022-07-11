@@ -1,7 +1,8 @@
 import { mock } from '@c3/utils';
 import React from 'react';
 import { IInfoProps, InfoBar } from '.';
-import { Col, Icon, Text } from '../';
+import { Icon, Text } from '@unstyled-ui/atomic';
+import { Col } from '@unstyled-ui/layout';
 
 const Template = args => <InfoBar {...args} />;
 export const VertialInfoBar = Template.bind({});
@@ -9,7 +10,14 @@ VertialInfoBar.args = {
   direction: 'vertical',
   icon: <Icon src={mock.getRandomPic()} />,
   text: (
-    <Col fx="center" gap={[5]} color="#2F5071" fontSize={[35, 15]}>
+    <Col
+      css={{
+        fx: 'center',
+        gap: 5,
+        color: '#2F5071',
+        fontSize: 35,
+      }}
+    >
       <p>Oooooops!</p>
       <p>Finding Nothing</p>
     </Col>
@@ -17,9 +25,10 @@ VertialInfoBar.args = {
 } as IInfoProps;
 
 export const HorizontalInfoBar = Template.bind({});
+
 HorizontalInfoBar.args = {
   direction: 'horizontal',
-  icon: <Icon src={mock.getRandomPic()} />,
+  icon: <Icon src={mock.getRandomPic()} css={{ width: 100 }} />,
   text: (
     <Text>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
