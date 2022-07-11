@@ -1,6 +1,6 @@
 {
   "name": "@unstyled-ui/form",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "form",
   "keywords": [],
   "author": "che3vinci <che3vinci@gmail.com>",
@@ -25,6 +25,7 @@
   "scripts": {
     "test": "jest --config ../../jest.config.ts --rootDir .",
     "build": "vite build && pnpm type ",
+    "buildOnly": "vite build",
     "clean": "rm -rf dist && rm -rf node_modules ",
     "reset": "pnpm clean && pnpm install",
     "type": "tsc --project . --paths null --emitDeclarationOnly --declaration",

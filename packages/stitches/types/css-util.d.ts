@@ -1,4 +1,3 @@
-import type { ResponsiveInputValueType } from '@unstyled-ui/css';
 import type * as Native from './css';
 import type * as Config from './config';
 import type * as ThemeUtil from './theme';
@@ -11,6 +10,8 @@ export interface CSSProperties
   extends Native.StandardLonghandProperties,
     Native.StandardShorthandProperties,
     Native.SvgProperties {}
+
+
 
 type ValueByPropertyName<PropertyName> =
   PropertyName extends keyof CSSProperties
@@ -36,10 +37,10 @@ type CSSValue<K> =
   | Util.Index
   | undefined;
 export type CSS<
-  Media = {},
-  Theme = {},
+  Media = Record<string,never>,
+  Theme = Record<string,never>,
   ThemeMap = Config.DefaultThemeMap,
-  Utils = {}
+  Utils = Record<string,never>
 > =
   // nested at-rule css styles
   {

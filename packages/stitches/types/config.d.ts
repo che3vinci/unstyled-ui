@@ -53,8 +53,10 @@ declare namespace ConfigType {
   };
 
   /** Utility interface. */
-  export type Utils<T = Record<string, unknown>> = {
-    [Property in keyof T]: T[Property] extends (value: infer V) => {}
+  export type Utils<T = Record<string, never>> = {
+    [Property in keyof T]: T[Property] extends (
+      value: infer V
+    ) => Record<string, unknown>
       ?
           | T[Property]
           | ((value: V) => {
