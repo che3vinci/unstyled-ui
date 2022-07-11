@@ -5,9 +5,9 @@
   "keywords": [],
   "author": "che3vinci <che3vinci@gmail.com>",
   "license": "MIT",
-  "main": "dist/stitches.umd.js",
-  "module": "dist/stitches.es.js",
-  "types": "types/index.d.ts",
+  "main": "src/index.js",
+  "module": "src/index.js",
+  "types": "src/index.js",
   "type": "module",
   "directories": {
     "lib": "dist",
@@ -18,7 +18,11 @@
     "types/*.d.ts"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "main": "dist/stitches.umd.js",
+    "module": "dist/stitches.es.js",
+    "types": "types/index.d.ts",
+    "type": "module"
   },
   "repository": {
     "type": "git",

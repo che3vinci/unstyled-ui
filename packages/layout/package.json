@@ -7,7 +7,7 @@
   "license": "ISC",
   "main": "src/index.tsx",
   "module": "src/index.tsx",
-  "types": "dist/index.d.ts",
+  "types": "src/index.tsx",
   "directories": {
     "lib": "dist",
     "test": "__tests__"

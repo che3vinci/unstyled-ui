@@ -27,7 +27,7 @@ const utils = {
   h: (h: RCSSProperties['height']) => ({ height: h }),
   typo: (value: Typography) => ({ ...value }),
   round: () => ({ borderRadius: 10000000 }),
-};
+} as const;
 const theme = {};
 
 export type Config = _Config<'uu', typeof theme, DefaultThemeMap, typeof utils>;
