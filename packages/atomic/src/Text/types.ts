@@ -1,4 +1,4 @@
-import { RCSSProperties } from 'packages/core';
+import { RCSSProperties } from '@unstyled-ui/core';
 
 export type Typography = {
   fontSize: RCSSProperties['fontSize'];

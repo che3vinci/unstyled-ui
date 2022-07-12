@@ -9,6 +9,7 @@ export type BadgeProps = BaseProps & {
 export const Badget: React.FC<BadgeProps> = props => {
   const { value, css, ...restProps } = props;
   return (
+    //@ts-ignore
     <Box
       css={{
         round: true,
