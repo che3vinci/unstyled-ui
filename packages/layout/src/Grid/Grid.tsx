@@ -17,6 +17,8 @@ export const Grid: React.FC<GridProps> = props => {
     <Box
       //@ts-ignore
       css={{
+        //@ts-ignore
+        overflow: 'hidden',
         ...nCol(cols, cellWidth, cellHeight, rowGap, colGap),
         ...css,
       }}

@@ -1,5 +1,5 @@
 import { isNumber } from '@c3/utils';
-import { FixedPxReg } from './constants';
+import { KeepPxReg } from './constants';
 import { isMobile } from './device';
 
 //TODO: fixme
@@ -14,9 +14,10 @@ export const vw = (px: string | number, refWidth: number) => {
     return pxToVw(px, refWidth);
   }
   if (typeof px === 'string') {
-    if (FixedPxReg.test(px)) {
+    if (KeepPxReg.test(px)) {
       return px.replace('_', '');
     }
+    //if there is no px,it will keep original string
     return px.replace(/(\d+)px/g, (m, p) => pxToVw(+p, refWidth));
   }
 
@@ -34,7 +35,7 @@ export const rvw = (px: string | number) => {
 
 export const origin = (x: string | number) => {
   if (typeof x === 'string') {
-    if (FixedPxReg.test(x)) {
+    if (KeepPxReg.test(x)) {
       return x.replace('_', '');
     }
     return x;

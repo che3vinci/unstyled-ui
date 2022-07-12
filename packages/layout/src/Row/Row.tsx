@@ -14,7 +14,6 @@ export const Row: React.FC<BaseProps> = props => {
     <Box
       //@ts-ignore
       css={{ ...row(fx, fy), ...rgap(gap), ...restCss }}
-      data-id="c3-row"
       {...restProps}
     />
   );

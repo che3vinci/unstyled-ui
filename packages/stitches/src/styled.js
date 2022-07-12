@@ -30,6 +30,13 @@ export const createStyledFunction = ({ config, css }) =>
             if (!Array.isArray(css[key])) {
               continue;
             }
+            if (css[key].length === 1) {
+              newProps.css = {
+                ...newProps.css,
+                [key]: css[key][0],
+              };
+              continue;
+            }
             newProps.css = {
               ...newProps.css,
               ...config.bpMapFnForStyle(key, css[key]),
