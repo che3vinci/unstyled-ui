@@ -7,11 +7,11 @@ run({
     await $`pnpm install`;
   },
   async build() {
-    await $`pnpm -r type`;
     await $`pnpm -r buildOnly`;
+    await $`pnpm -r type`;
   },
   async publish() {
-    await $`pnpm -r buildOnly`;
-    // await $`pnpm publish -r  --no-git-checks `;
+    await this.build();
+    await $`pnpm publish -r  --no-git-checks `;
   },
 });

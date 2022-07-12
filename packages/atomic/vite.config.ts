@@ -18,12 +18,11 @@ export default defineConfig({
         'react-dom',
         '@ant-design/icons',
         '@unstyled-ui/css',
+        '@unstyled-ui/core',
         '@c3/utils',
         '@c3/hooks',
         '@unstyled-ui/stitches',
         '@c3/dom',
-        'lodash',
-        'deepmerge',
         'classnames',
       ],
       plugins: [commonjs()], // `commonjs` plugin include 'required' to single file

@@ -9,6 +9,7 @@ export const Stack: React.FC<StackProps> = props => {
   const { children, className, ...restProps } = props;
 
   return (
+    //@ts-ignore
     <Relative className={classnames(className, 'c3-stack')} {...restProps}>
       {React.Children.toArray(children).map(e => {
         if (!React.isValidElement(e)) {

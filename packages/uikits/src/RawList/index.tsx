@@ -14,9 +14,10 @@ export const RawList: React.FC<IRawListProps> = props => {
   return (
     <Box
       as="ul"
-      //@ts-ignore
       css={{
+        //@ts-ignore
         listStyle: 'none',
+        //@ts-ignore
         ...(props.hvDirection === 'vertical' ? vgap(gap) : rgap(gap)),
         ...restCss,
       }}

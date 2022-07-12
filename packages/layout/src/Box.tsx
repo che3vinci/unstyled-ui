@@ -1,10 +1,4 @@
 import { styled } from '@unstyled-ui/core';
-// import { createStitches } from '@stitches/react';
-// const { styled } = createStitches({
-//   utils: {
-//     round: () => ({ borderRadius: '50%' }),
-//   },
-// });
 
 export const Box = styled('div', {
   display: 'flex',

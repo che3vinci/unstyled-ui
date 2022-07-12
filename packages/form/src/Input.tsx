@@ -21,7 +21,8 @@ export const Input: React.FC<IInputProps> = ({
   return (
     <Row fx="flex-start" {...props}>
       {prevNode}
-      <RawInput value={value} onChange={onChange} {...inputProps}></RawInput>
+      {/* @ts-ignore */}
+      <RawInput value={value} onChange={onChange} {...inputProps} />
       {nextNode}
     </Row>
   );

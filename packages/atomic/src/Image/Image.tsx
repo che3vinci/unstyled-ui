@@ -6,8 +6,9 @@ import React from 'react';
 export type ImageProps = BaseProps<React.ImgHTMLAttributes<HTMLImageElement>>;
 
 export const Image: React.FC<ImageProps> = props => {
-  const { css, className, ...restProps } = props;
+  const { css = {}, className, ...restProps } = props;
   return (
+    //@ts-ignore
     <Atomic
       as="img"
       className={classNames(className, 'c3-image')}

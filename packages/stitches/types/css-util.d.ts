@@ -11,8 +11,6 @@ export interface CSSProperties
     Native.StandardShorthandProperties,
     Native.SvgProperties {}
 
-
-
 type ValueByPropertyName<PropertyName> =
   PropertyName extends keyof CSSProperties
     ? CSSProperties[PropertyName]
@@ -36,11 +34,12 @@ type CSSValue<K> =
   | ThemeUtil.ScaleValue
   | Util.Index
   | undefined;
+
 export type CSS<
-  Media = Record<string,never>,
-  Theme = Record<string,never>,
+  Media = Record<string, never>,
+  Theme = Record<string, never>,
   ThemeMap = Config.DefaultThemeMap,
-  Utils = Record<string,never>
+  Utils = Record<string, never>
 > =
   // nested at-rule css styles
   {

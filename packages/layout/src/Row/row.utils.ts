@@ -1,9 +1,9 @@
-import { CSSProperties } from '@unstyled-ui/core';
+import {  RCSSProperties } from '@unstyled-ui/core';
 
 export const row = (
-  fx: CSSProperties['justifyContent'] = 'flex-start',
-  fy: CSSProperties['alignItems'] = 'center'
-): CSSProperties => ({
+  fx: RCSSProperties['justifyContent'] = 'flex-start',
+  fy: RCSSProperties['alignItems'] = 'center'
+): RCSSProperties => ({
   display: 'flex',
   alignItems: fx,
   justifyContent: fy,
