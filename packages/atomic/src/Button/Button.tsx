@@ -33,6 +33,7 @@ export const Button: React.FC<ButtonProps> = props => {
     <Atomic
       as="button"
       onClick={handleClick}
+      //@ts-ignore
       css={{ ...(loading ? { gap: '1em' } : {}), ...button(), ...css }}
       {...restProps}
     >

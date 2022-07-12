@@ -1,13 +1,13 @@
 {
   "name": "@unstyled-ui/stitches",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "keywords": [],
   "author": "che3vinci <che3vinci@gmail.com>",
   "license": "MIT",
   "main": "src/index.js",
   "module": "src/index.js",
-  "types": "src/index.js",
+  "types": "types/index.d.ts",
   "type": "module",
   "directories": {
     "lib": "dist",
@@ -52,6 +52,6 @@
   "dependencies": {
     "@stitches/core": "^1.2.8",
     "@unstyled-ui/css": "workspace:^",
-    "@unstyled-ui/responsive": "workspace:^1.0.0"
+    "@unstyled-ui/responsive": "workspace:^1.0.2"
   }
 }

@@ -1,4 +1,4 @@
-// import { nCol, ResponsiveInputValueType } from '@unstyled-ui/css';
+// import { nCol, ResponsiveInputValueType } from '@unstyled-ui/core';
 // import { css } from 'styled-components';
 
 // export const gridListCss = (

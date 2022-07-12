@@ -11,7 +11,7 @@ run({
     await $`pnpm -r buildOnly`;
   },
   async publish() {
-    await this.build();
-    await $`pnpm publish -r  --no-git-checks `;
+    await $`pnpm -r buildOnly`;
+    // await $`pnpm publish -r  --no-git-checks `;
   },
 });

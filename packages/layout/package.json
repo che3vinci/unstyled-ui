@@ -1,6 +1,6 @@
 {
   "name": "@unstyled-ui/layout",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "uibasic",
   "keywords": [],
   "author": "che3vinci <che3vinci@gmail.com>",
@@ -44,10 +44,10 @@
     "@ant-design/icons": "^4.7.0",
     "@stitches/react": "^1.2.8",
     "@unstyled-ui/common": "workspace:^1.0.0",
-    "@unstyled-ui/core": "workspace:^1.0.0",
+    "@unstyled-ui/core": "workspace:^1.0.2",
     "@unstyled-ui/css": "workspace:^",
-    "@unstyled-ui/responsive": "workspace:^1.0.0",
-    "@unstyled-ui/stitches": "workspace:^1.0.2",
+    "@unstyled-ui/responsive": "workspace:^1.0.2",
+    "@unstyled-ui/stitches": "workspace:^1.0.4",
     "classnames": "^2.3.1",
     "csstype": "^3.1.0"
   },

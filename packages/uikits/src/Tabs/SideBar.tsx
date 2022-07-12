@@ -6,5 +6,6 @@ export type SideBarProps<T extends BaseSwitchItem> = Omit<
   'direction'
 >;
 export const SideBar = <T extends BaseSwitchItem>(props: SideBarProps<T>) => (
-  <Switcher direction="vertical" {...props}></Switcher>
+  //@ts-ignore
+  <Switcher direction="vertical" {...props} />
 );

@@ -1,23 +1,24 @@
-import * as CSS from 'csstype';
 import React from 'react';
-import { BaseProps } from '@unstyled-ui/core';
+import { BaseProps, RCSSProperties } from '@unstyled-ui/core';
 import { Box } from '../Box';
 import { nCol } from './grid.utils';
-export type GridProps = BaseProps & {
+export type GridProps = {
   cols: number | number[];
-  cellWidth: CSS.Properties['width'] | CSS.Properties['width'][];
-  cellHeight: CSS.Properties['height'] | CSS.Properties['height'][];
-  rowGap: CSS.Properties['rowGap'] | CSS.Properties['rowGap'][];
-  colGap: CSS.Properties['columnGap'] | CSS.Properties['columnGap'][];
-};
+  cellWidth: RCSSProperties['width'];
+  cellHeight: RCSSProperties['height'];
+  rowGap: RCSSProperties['rowGap'];
+  colGap: RCSSProperties['columnGap'];
+} & BaseProps;
 
 export const Grid: React.FC<GridProps> = props => {
-  const { css, cols, cellWidth, cellHeight, colGap, rowGap, ...restProps } = props;
+  const { css, cols, cellWidth, cellHeight, colGap, rowGap, ...restProps } =
+    props;
   return (
     <Box
+      //@ts-ignore
       css={{
         ...nCol(cols, cellWidth, cellHeight, rowGap, colGap),
-        ...css
+        ...css,
       }}
       {...restProps}
     />

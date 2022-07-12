@@ -1,4 +1,4 @@
-import { CSSProperties } from './../types';
+import { CSSProperties } from '@unstyled-ui/core';
 
 export const divider = (color: CSSProperties['color']) => ({
   '& > *:not(:last-child)': {

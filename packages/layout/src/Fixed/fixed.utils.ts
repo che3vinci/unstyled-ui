@@ -1,4 +1,4 @@
-import { RCSSProperties } from '@unstyled-ui/css';
+import { RCSSProperties } from '@unstyled-ui/core';
 import { IPosition, xCenter, xyCenter, yCenter } from '../Abs';
 
 export const fixed = (pos: IPosition): RCSSProperties => ({

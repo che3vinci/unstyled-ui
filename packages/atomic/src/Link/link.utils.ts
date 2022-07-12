@@ -1,6 +1,6 @@
-import * as CSS from 'csstype';
+import {RCSSProperties} from '@unstyled-ui/core';
 
-export const link = (props?: CSS.Properties): CSS.Properties => ({
+export const link = (props?: RCSSProperties): RCSSProperties => ({
   textDecoration: 'none',
   cursor: 'pointer',
   ...(props || {}),

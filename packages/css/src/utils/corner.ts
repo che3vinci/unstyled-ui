@@ -1,4 +1,4 @@
-import { CSSProperties } from './../types';
+import { CSSProperties } from '@unstyled-ui/core';
 // only show the corner border css
 
 export const gradientRoundedBorder = (

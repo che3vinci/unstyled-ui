@@ -2,7 +2,7 @@ import React, { HTMLAttributes } from 'react';
 import { BaseProps } from '@unstyled-ui/core';
 import { Atomic } from '../Atomic';
 import { getRows, linearGradientText } from './text.utils';
-import { CSSProperties } from '@unstyled-ui/css';
+import { CSSProperties } from '@unstyled-ui/core';
 
 export type TextProps = BaseProps<HTMLAttributes<HTMLParagraphElement>> & {
   rows?: number;
@@ -18,6 +18,7 @@ export const Text = React.memo((props: React.PropsWithChildren<TextProps>) => {
   if (gradient) {
     newCss = { ...newCss, ...linearGradientText(gradient) };
   }
+  //@ts-ignore
   return <Atomic as="p" css={{ ...newCss, ...css }} {...restProps} />;
 });
 Text.displayName = 'Text';

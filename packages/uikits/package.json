@@ -1,6 +1,6 @@
 {
   "name": "@unstyled-ui/uikits",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "UIKITS",
   "keywords": [],
   "author": "che3vinci <che3vinci@gmail.com>",
@@ -40,10 +40,10 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@c3/dom": "^1.0.99",
-    "@unstyled-ui/atomic": "workspace:^1.0.0",
-    "@unstyled-ui/core": "workspace:^1.0.0",
+    "@unstyled-ui/atomic": "workspace:^1.0.3",
+    "@unstyled-ui/core": "workspace:^1.0.2",
     "@unstyled-ui/css": "workspace:^",
-    "@unstyled-ui/layout": "workspace:^1.0.0",
+    "@unstyled-ui/layout": "workspace:^1.0.2",
     "classnames": "^2.3.1"
   },
   "devDependencies": {
