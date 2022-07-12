@@ -15,7 +15,7 @@ export {};
 // };
 
 // export const RawTextArea = styled.textarea.withConfig({
-//   componentId: 'c3-textarea',
+//   componentId: 'uu-textarea',
 //   shouldForwardProp: prop => notInBlackList(prop),
 // })<IRawTextAreaProps>`
 //   width: 100%;

@@ -34,7 +34,7 @@ export const Toast: React.FC<ToastProps> = props => {
         ...pos,
       }}
       ref={ref}
-      className={classNames('c3-toast', className)}
+      className={classNames('uu-toast', className)}
       {...restProps}
     >
       {children}

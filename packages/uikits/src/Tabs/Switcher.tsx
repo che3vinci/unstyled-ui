@@ -4,7 +4,6 @@ import classNames from 'classnames';
 import React, { useEffect, useMemo } from 'react';
 import { BaseProps } from '@unstyled-ui/core';
 import { Col, Row } from '@unstyled-ui/layout';
-import { IRawListProps } from '../RawList';
 
 export type DefaultSwitchItem = {
   title: string;
@@ -24,12 +23,13 @@ export type SwitcherProps<Item> = {
   direction: HVDirection;
   menuConfig: MenuConfig<Item>;
   updateConfig: (config: MenuConfig<Item>) => void;
-  navProps?: IRawListProps;
+  navProps?: BaseProps;
   enableHash?: boolean;
   renderItem?: (item: Item) => JSX.Element;
   afterSwitch?: (item: Item) => void;
   renderContent?: (item: Item) => JSX.Element;
 } & BaseProps;
+
 export const Switcher = <Item extends BaseSwitchItem>({
   menuConfig,
   updateConfig,
@@ -68,9 +68,9 @@ export const Switcher = <Item extends BaseSwitchItem>({
     }
   }, [direction]);
   return (
-    <hv.Layout className={classNames('c3-switcher', className)} {...props}>
+    <hv.Layout className={classNames('uu-switcher', className)} {...props}>
       <hv.navLayout
-        className={classNames('c3-switcher-menu-bar', navClassName)}
+        className={classNames('uu-switcher-menu-bar', navClassName)}
         {...navxProps}
       >
         {menuConfig.map(e => {

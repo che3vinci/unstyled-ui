@@ -14,7 +14,7 @@ export const Link: React.FC<LinkProps> = (props: LinkProps) => {
     //@ts-ignore
     <Atomic
       as="a"
-      className={classNames(className, 'c3-link')}
+      className={classNames(className, 'uu-link')}
       //@ts-ignore
       css={{ ...link(), ...css }}
       href={to}

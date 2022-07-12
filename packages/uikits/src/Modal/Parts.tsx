@@ -13,7 +13,7 @@ export {};
 // export const titlecss = css`
 //   width: 100%;
 //   color: white;
-//   .c3-modal-close-btn {
+//   .uu-modal-close-btn {
 //     position: absolute;
 //     ${rcss({
 //       fontSize: [30, 22],
@@ -26,9 +26,9 @@ export {};
 // export const TitleBar: React.FC<ModalTitleProps> = props => {
 //   const { onClose = noop, title, ...restProps } = props;
 //   return (
-//     <Row fx="space-between" className="c3-modal-title" {...restProps}>
+//     <Row fx="space-between" className="uu-modal-title" {...restProps}>
 //       {title}
-//       <span className="c3-modal-close-btn">
+//       <span className="uu-modal-close-btn">
 //         <CloseCircleOutlined onClick={onClose} />
 //       </span>
 //     </Row>

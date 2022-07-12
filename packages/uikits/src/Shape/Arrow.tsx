@@ -30,7 +30,7 @@ export const Arrow: React.FC<IArrowProps> = ({
   }
   return (
     <Box
-      className="c3-arrow"
+      className="uu-arrow"
       css={{ width, height, clipPath: `polygon(${polygon})` }}
       {...props}
     />

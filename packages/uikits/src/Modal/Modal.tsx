@@ -40,7 +40,7 @@ export const Modal: React.FC<ModalProps> = ({
     <Fixed css={{ display, ...mask, bg: 'rgba(0,0,0,0.8)' }} {...maskProps}>
       <Col
         position="relative"
-        className={classNames('c3-modal', className)}
+        className={classNames('uu-modal', className)}
         {...props}
       >
         {closeBtn && (

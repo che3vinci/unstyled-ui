@@ -1,16 +1,18 @@
+import { useTouchBottom } from '@c3/hooks';
 import React, { useRef } from 'react';
 import { BaseProps } from '@unstyled-ui/core';
 import { Col } from '@unstyled-ui/layout';
 import { BaseListItem, List, ListProps } from '../List';
 
 type BaseType = BaseListItem;
-export type IManualLongListProps<T extends BaseType> = {
+export type IAutoLongListProps<T extends BaseType> = {
   loadNextTip?: React.ReactElement;
+  loadNextPage: () => void;
   listCssProps?: BaseProps;
 } & ListProps<T>;
 
-export const ManualLongList = <T extends BaseType>(
-  props: IManualLongListProps<T>
+export const AutoLoadingList = <T extends BaseType>(
+  props: IAutoLongListProps<T>
 ): JSX.Element => {
   const {
     renderItem,
@@ -18,11 +20,13 @@ export const ManualLongList = <T extends BaseType>(
     updateList,
     hvDirection,
     emptyNode,
+    loadNextPage,
     loadNextTip,
     listCssProps,
     ...restProps
   } = props;
   const ref = useRef<HTMLDivElement | null>(null);
+  useTouchBottom(ref.current, loadNextPage);
 
   return (
     <Col fx="stretch" width="100%" ref={ref} {...restProps}>
