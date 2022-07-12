@@ -1,6 +1,6 @@
 {
   "name": "@unstyled-ui/responsive",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "uibasic",
   "keywords": [],
   "author": "che3vinci <che3vinci@gmail.com>",
@@ -28,6 +28,7 @@
   "scripts": {
     "test": "jest --config ../../jest.config.ts --rootDir .",
     "build": "vite build && pnpm type ",
+    "buildOnly": "vite build",
     "clean": "rm -rf dist && rm -rf node_modules ",
     "reset": "pnpm clean && pnpm install",
     "type": "tsc --project . --paths null --emitDeclarationOnly --declaration",
@@ -42,8 +43,8 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@stitches/react": "^1.2.8",
-    "@unstyled-ui/css": "workspace:^1.0.0",
-    "@unstyled-ui/stitches": "workspace:^1.0.2",
+    "@unstyled-ui/css": "workspace:^1.0.2",
+    "@unstyled-ui/stitches": "workspace:^1.0.4",
     "classnames": "^2.3.1",
     "csstype": "^3.1.0"
   },

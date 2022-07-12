@@ -1,11 +1,11 @@
 import { toArray } from '@c3/utils';
-import * as CSS from 'csstype';
+import { RCSSProperties } from '@unstyled-ui/core';
 export const nCol = (
   num: number | number[],
-  width: CSS.Properties['width'] | CSS.Properties['width'][],
-  height: CSS.Properties['height'] | CSS.Properties['width'][],
-  rgap: CSS.Properties['rowGap'] | CSS.Properties['rowGap'][] = [0],
-  cgap: CSS.Properties['columnGap'] | CSS.Properties['columnGap'][] = [0]
+  width: RCSSProperties['width'],
+  height: RCSSProperties['height'],
+  rgap: RCSSProperties['rowGap'] = 0,
+  cgap: RCSSProperties['columnGap'] = 0
 ) => {
   const _nums = toArray(num);
   const _widths = toArray(width);

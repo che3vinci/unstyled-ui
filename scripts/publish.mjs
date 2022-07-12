@@ -6,34 +6,12 @@ run({
     await $`pnpm changeset version`;
     await $`pnpm install`;
   },
-  async publish() {
-    const packages = [
-      'utils',
-      'css',
-      'uikits',
-    ];
-    for (let pkg of packages) {
-      cd(`packages/${pkg}`);
-      await $`pnpm type`;
-      cd('../..');
-    }
-    await $`pnpm -r build`;
-    await $`pnpm publish -r --report-summary --no-git-checks `;
+  async build() {
+    await $`pnpm -r type`;
+    await $`pnpm -r buildOnly`;
   },
-async  cleanLog(){
-      const packages = [
-      'utils',
-      'css',
-      'dom',
-      'hooks',
-      'api',
-      'crypto',
-      'uikits',
-    ];
-      for (let pkg of packages) {
-      cd(`packages/${pkg}`);
-      await $`echo '' > CHANGELOG.md`;
-      cd('../..');
-    }
-  }
+  async publish() {
+    await $`pnpm -r buildOnly`;
+    // await $`pnpm publish -r  --no-git-checks `;
+  },
 });

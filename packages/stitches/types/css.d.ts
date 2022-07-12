@@ -1584,7 +1584,7 @@ export interface StandardLonghandProperties {
    * **Initial value**: `0`
    *
    */
-  marginBottom?: Property.MarginBottom;
+  paddingBottom?: Property.MarginBottom;
   /**
    * The **`margin-inline`** CSS shorthand property is a shorthand property that defines both the logical inline start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
    *

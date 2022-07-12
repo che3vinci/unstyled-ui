@@ -1,4 +1,4 @@
-import { CSSProperties, RCSSProperties } from '@unstyled-ui/css';
+import { CSSProperties, RCSSProperties } from '@unstyled-ui/core';
 
 export interface IYPosition {
   top?: RCSSProperties['top'];

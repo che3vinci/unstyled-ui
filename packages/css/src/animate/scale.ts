@@ -1,6 +1,6 @@
 //transform-origin:
 
-import { CSSProperties } from '../types';
+import { CSSProperties } from '@unstyled-ui/core';
 
 export const scale = (scale: CSSProperties['scale']) => {
   return {

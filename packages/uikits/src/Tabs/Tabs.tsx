@@ -5,5 +5,6 @@ export type TabsProps<T extends BaseSwitchItem> = Omit<
   'direction'
 >;
 export const Tabs = <T extends BaseSwitchItem>(props: TabsProps<T>) => (
-  <Switcher direction="horizontal" {...props}></Switcher>
+  //@ts-ignore
+  <Switcher direction="horizontal" {...props} />
 );

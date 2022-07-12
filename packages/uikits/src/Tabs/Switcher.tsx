@@ -20,7 +20,7 @@ export type BaseSwitchItem = {
 
 export type MenuConfig<T> = T[];
 
-export type SwitcherProps<Item> = BaseProps & {
+export type SwitcherProps<Item> = {
   direction: HVDirection;
   menuConfig: MenuConfig<Item>;
   updateConfig: (config: MenuConfig<Item>) => void;
@@ -29,7 +29,7 @@ export type SwitcherProps<Item> = BaseProps & {
   renderItem?: (item: Item) => JSX.Element;
   afterSwitch?: (item: Item) => void;
   renderContent?: (item: Item) => JSX.Element;
-};
+} & BaseProps;
 export const Switcher = <Item extends BaseSwitchItem>({
   menuConfig,
   updateConfig,

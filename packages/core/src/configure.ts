@@ -1,14 +1,10 @@
-import { RCSSProperties, Typography } from '@unstyled-ui/css';
+import { utils } from './util';
 import {
   convertResponsiveArrayForStyle,
   convertResponsiveArrayForVariant,
-  createStitches,
   DefaultThemeMap,
 } from '@unstyled-ui/stitches';
-import type {
-  ConfigType,
-  CreateStitches,
-} from '@unstyled-ui/stitches/types/config';
+import type { ConfigType } from '@unstyled-ui/stitches/types/config';
 
 type _Config<Prefix, Theme, ThemeMap, Utils> = {
   prefix?: ConfigType.Prefix<Prefix>;
@@ -21,13 +17,6 @@ type _Config<Prefix, Theme, ThemeMap, Utils> = {
   bpMapFnForStyle?: ConfigType.BPMapFnForStyle;
 };
 
-// @ts-ignore
-const utils = {
-  w: (w: RCSSProperties['width']) => ({ width: w }),
-  h: (h: RCSSProperties['height']) => ({ height: h }),
-  typo: (value: Typography) => ({ ...value }),
-  round: () => ({ borderRadius: 10000000 }),
-};
 const theme = {};
 
 export type Config = _Config<'uu', typeof theme, DefaultThemeMap, typeof utils>;

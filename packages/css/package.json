@@ -1,13 +1,13 @@
 {
   "name": "@unstyled-ui/css",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Now I’m the model of a modern major general / The venerated Virginian veteran whose men are all / Lining up, to put me up on a pedestal / Writin’ letters to relatives / Embellishin’ my elegance and eloquence / But the elephant is in the room / The truth is in ya face when ya hear the British cannons go / BOOM",
   "keywords": [],
   "author": "che3vinci <che3vinci@gmail.com>",
   "license": "ISC",
-  "main": "dist/css.umd.js",
-  "module": "dist/css.es.js",
-  "types": "dist/index.d.ts",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "types": "src/index.ts",
   "directories": {
     "lib": "dist",
     "test": "__tests__"
@@ -16,7 +16,10 @@
     "dist"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "main": "dist/css.umd.js",
+    "module": "dist/css.es.js",
+    "types": "dist/index.d.ts"
   },
   "repository": {
     "type": "git",
@@ -24,7 +27,8 @@
   },
   "scripts": {
     "test": "jest --config ../../jest.config.ts --rootDir .",
-    "build": "vite build  && pnpm type ",
+    "build": "vite build && pnpm type ",
+    "buildOnly": "vite build",
     "clean": "rm -rf dist && rm -rf node_modules ",
     "reset": "pnpm clean && pnpm install",
     "type": "tsc --project . --paths null --emitDeclarationOnly --declaration",
@@ -43,8 +47,8 @@
     "tslib": "^2.3.1",
     "typescript": "^4.5.5"
   },
-  "peerDependencies": {},
   "dependencies": {
+    "@unstyled-ui/core": "workspace:^1.0.2",
     "csstype": "^3.1.0"
   }
 }

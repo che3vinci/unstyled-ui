@@ -3,8 +3,6 @@ export * from './bg';
 export * from './border';
 export * from './color';
 export * from './divider';
-export * from './gradientRoundedBorder';
 export * from './hidden';
 export * from './list';
 export * from './mask';
-export * from './typo';

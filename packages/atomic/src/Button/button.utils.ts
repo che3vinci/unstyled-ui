@@ -4,8 +4,5 @@ export const button = (disabled = false) => {
     alignItems: 'center',
     justifyContent: 'center',
     cursor: disabled ? 'not-allowed' : 'pointer',
-    height: '1.6em',
-    padding: '0 0.8em',
-    backgroundColor: 'transparent',
   };
 };

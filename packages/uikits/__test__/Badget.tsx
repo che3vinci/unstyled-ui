@@ -1,8 +1,6 @@
-import React from 'react';
-import { Col } from '@unstyled-ui/layout';
 import { BaseProps } from '@unstyled-ui/core';
+import React from 'react';
 import { Badget } from '../src';
-
 export type AppProps = BaseProps;
 
 const App: React.FC<AppProps> = props => {

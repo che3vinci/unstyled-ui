@@ -1,4 +1,4 @@
-import { CSSProperties } from '@unstyled-ui/css';
+import { CSSProperties } from '@unstyled-ui/core';
 
 export const flexCenter: CSSProperties = {
   display: 'flex',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Relative } from './Relative';
+import { Relative } from '../Relative';
 import { BaseProps } from '@unstyled-ui/core';
 import classnames from 'classnames';
 
@@ -14,7 +14,9 @@ export const Stack: React.FC<StackProps> = props => {
         if (!React.isValidElement(e)) {
           throw new Error('TypeError:children must be reactElement');
         }
-        return <e.type position="absolute" key={e.key} {...e.props} />;
+        return (
+          <e.type css={{ position: 'absolute' }} key={e.key} {...e.props} />
+        );
       })}
     </Relative>
   );

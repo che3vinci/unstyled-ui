@@ -4,7 +4,9 @@ import type Stitches from './stitches';
 /** Configuration Interface */
 declare namespace ConfigType {
   export type Breakpoints = number[];
-  export type BPMapFnForVariant = (value: string | number | (string | number)[]) => string;
+  export type BPMapFnForVariant = (
+    value: string | number | (string | number)[]
+  ) => string;
   export type BPMapFnForStyle = (
     key: string,
     value: string | number | (string | number)[]
@@ -36,7 +38,10 @@ declare namespace ConfigType {
     zIndices?: { [token in number | string]: boolean | number | string };
   } & {
     [Scale in keyof T]: {
-      [Token in keyof T[Scale]]: T[Scale][Token] extends boolean | number | string
+      [Token in keyof T[Scale]]: T[Scale][Token] extends
+        | boolean
+        | number
+        | string
         ? T[Scale][Token]
         : boolean | number | string;
     };
@@ -48,8 +53,10 @@ declare namespace ConfigType {
   };
 
   /** Utility interface. */
-  export type Utils<T = {}> = {
-    [Property in keyof T]: T[Property] extends (value: infer V) => {}
+  export type Utils<T = Record<string, never>> = {
+    [Property in keyof T]: T[Property] extends (
+      value: infer V
+    ) => Record<string, unknown>
       ?
           | T[Property]
           | ((value: V) => {

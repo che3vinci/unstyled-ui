@@ -1,13 +1,13 @@
-import { CSS } from '@unstyled-ui/stitches';
+import { CSSProps } from '@unstyled-ui/core';
 
-export const rgap = (gap: CSS['gap']): CSS => ({
+export const rgap = (gap: CSSProps['gap']): CSSProps => ({
   '& > *:not(:last-child)': {
     marginRight: gap,
   },
 });
 
-export const vgap = (gap: CSS['gap']): CSS => ({
+export const vgap = (gap: CSSProps['gap']): CSSProps => ({
   '& > *:not(:last-child)': {
-    marginBottom: gap,
+    paddingBottom: gap,
   },
 });
