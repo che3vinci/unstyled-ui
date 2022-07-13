@@ -1,5 +1,5 @@
 import React from 'react';
-import { CountDownBtn, ICountDownProps } from '..';
+import { CountDownBtn, ICountDownProps } from '.';
 
 const Template = (args: any) => <CountDownBtn {...args} />;
 
