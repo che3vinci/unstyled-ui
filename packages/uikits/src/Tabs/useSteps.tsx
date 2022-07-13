@@ -31,5 +31,5 @@ export const useSteps = <T extends BaseSwitchItem>(
     [direction, menuConfig]
   );
 
-  return [_Switcher, goNext, goPrev];
+  return [_Switcher, goNext, goPrev] as const;
 };
