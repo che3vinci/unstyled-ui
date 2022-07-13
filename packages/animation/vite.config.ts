@@ -7,11 +7,18 @@ export default defineConfig({
   build: {
     lib: {
       entry: './src/index.ts',
-      name: 'common',
+      name: 'animation',
       formats: ['iife', 'es', 'umd'],
     },
     rollupOptions: {
-      external: [/node:*/, 'tslib', 'classnames'],
+      external: [
+        /node:*/,
+        'tslib',
+        'react',
+        'react-dom',
+        '@ant-design/icons',
+        '@unstyled-ui/core',
+      ],
       plugins: [commonjs()],
     },
   },

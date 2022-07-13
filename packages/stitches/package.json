@@ -1,6 +1,6 @@
 {
   "name": "@unstyled-ui/stitches",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "keywords": [],
   "author": "che3vinci <che3vinci@gmail.com>",
@@ -52,6 +52,6 @@
   "dependencies": {
     "@stitches/core": "^1.2.8",
     "@unstyled-ui/css": "workspace:^",
-    "@unstyled-ui/responsive": "workspace:^1.0.2"
+    "@unstyled-ui/responsive": "workspace:^1.0.4"
   }
 }

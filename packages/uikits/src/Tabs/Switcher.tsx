@@ -54,7 +54,7 @@ export const Switcher = <Item extends BaseSwitchItem>({
   }, [direction]);
   return (
     <hv.Layout className="uu-switcher" {...restProps}>
-      <hv.navLayout className="uu-switcher-bar">
+      <hv.navLayout className="uu-switcher-navbar">
         {menuConfig.map(e => {
           const NavItem = renderItem?.(e) || e.renderItem?.<Item>(e) || (
             <span>-please supply renderItem function-</span>

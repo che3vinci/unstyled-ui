@@ -101,15 +101,42 @@ importers:
       vite: 2.9.12
       zx: 7.0.0
 
+  packages/animation:
+    specifiers:
+      '@ant-design/icons': ^4.7.0
+      '@babel/core': ^7.17.5
+      '@stitches/react': ^1.2.8
+      '@types/js-beautify': ^1.13.3
+      '@unstyled-ui/core': workspace:^1.0.4
+      '@unstyled-ui/css': workspace:^
+      '@unstyled-ui/stitches': workspace:^1.0.6
+      '@vitejs/plugin-react': ^1.3.2
+      babel-loader: ^8.2.3
+      classnames: ^2.3.1
+      csstype: ^3.1.0
+    dependencies:
+      '@ant-design/icons': 4.7.0_biqbaboplfbrettd7655fr4n2y
+      '@stitches/react': 1.2.8_react@18.2.0
+      '@unstyled-ui/core': link:../core
+      '@unstyled-ui/css': link:../css
+      '@unstyled-ui/stitches': link:../stitches
+      classnames: 2.3.1
+      csstype: 3.1.0
+    devDependencies:
+      '@babel/core': 7.18.2
+      '@types/js-beautify': 1.13.3
+      '@vitejs/plugin-react': 1.3.2
+      babel-loader: 8.2.5_dzrarqmejens5o5lr5bdn3kdtu
+
   packages/atomic:
     specifiers:
       '@ant-design/icons': ^4.7.0
       '@babel/core': ^7.17.5
       '@stitches/react': ^1.2.8
       '@types/js-beautify': ^1.13.3
-      '@unstyled-ui/core': workspace:^1.0.2
+      '@unstyled-ui/core': workspace:^1.0.4
       '@unstyled-ui/css': workspace:^
-      '@unstyled-ui/stitches': workspace:^1.0.4
+      '@unstyled-ui/stitches': workspace:^1.0.6
       '@vitejs/plugin-react': ^1.3.2
       babel-loader: ^8.2.3
       classnames: ^2.3.1
@@ -134,9 +161,9 @@ importers:
       '@babel/core': ^7.17.5
       '@stitches/react': ^1.2.8
       '@types/js-beautify': ^1.13.3
-      '@unstyled-ui/core': workspace:^1.0.2
+      '@unstyled-ui/core': workspace:^1.0.4
       '@unstyled-ui/css': workspace:^
-      '@unstyled-ui/stitches': workspace:^1.0.4
+      '@unstyled-ui/stitches': workspace:^1.0.6
       '@vitejs/plugin-react': ^1.3.2
       babel-loader: ^8.2.3
       classnames: ^2.3.1
@@ -178,8 +205,8 @@ importers:
       '@babel/core': ^7.17.5
       '@stitches/react': ^1.2.8
       '@types/js-beautify': ^1.13.3
-      '@unstyled-ui/css': workspace:^1.0.2
-      '@unstyled-ui/stitches': workspace:^1.0.4
+      '@unstyled-ui/css': workspace:^1.0.4
+      '@unstyled-ui/stitches': workspace:^1.0.6
       '@vitejs/plugin-react': ^1.3.2
       babel-loader: ^8.2.3
       classnames: ^2.3.1
@@ -202,7 +229,7 @@ importers:
       '@rollup/plugin-commonjs': ^21.0.1
       '@rollup/plugin-typescript': ^8.3.0
       '@types/js-beautify': ^1.13.3
-      '@unstyled-ui/core': workspace:^1.0.2
+      '@unstyled-ui/core': workspace:^1.0.4
       csstype: ^3.1.0
       rollup-plugin-typescript2: ^0.31.1
       tslib: ^2.3.1
@@ -223,10 +250,10 @@ importers:
       '@ant-design/icons': ^4.7.0
       '@babel/core': ^7.17.5
       '@types/js-beautify': ^1.13.3
-      '@unstyled-ui/core': workspace:^1.0.2
+      '@unstyled-ui/core': workspace:^1.0.4
       '@unstyled-ui/css': workspace:^
-      '@unstyled-ui/layout': workspace:^1.0.2
-      '@unstyled-ui/stitches': workspace:^1.0.4
+      '@unstyled-ui/layout': workspace:^1.0.7
+      '@unstyled-ui/stitches': workspace:^1.0.6
       '@vitejs/plugin-react': ^1.3.2
       babel-loader: ^8.2.3
       classnames: ^2.3.1
@@ -251,11 +278,11 @@ importers:
       '@babel/core': ^7.17.5
       '@stitches/react': ^1.2.8
       '@types/js-beautify': ^1.13.3
-      '@unstyled-ui/common': workspace:^1.0.0
-      '@unstyled-ui/core': workspace:^1.0.2
+      '@unstyled-ui/common': workspace:^1.0.3
+      '@unstyled-ui/core': workspace:^1.0.4
       '@unstyled-ui/css': workspace:^
-      '@unstyled-ui/responsive': workspace:^1.0.2
-      '@unstyled-ui/stitches': workspace:^1.0.4
+      '@unstyled-ui/responsive': workspace:^1.0.4
+      '@unstyled-ui/stitches': workspace:^1.0.6
       '@vitejs/plugin-react': ^1.3.2
       babel-loader: ^8.2.3
       classnames: ^2.3.1
@@ -282,8 +309,8 @@ importers:
       '@babel/core': ^7.17.5
       '@stitches/react': ^1.2.8
       '@types/js-beautify': ^1.13.3
-      '@unstyled-ui/css': workspace:^1.0.2
-      '@unstyled-ui/stitches': workspace:^1.0.4
+      '@unstyled-ui/css': workspace:^1.0.4
+      '@unstyled-ui/stitches': workspace:^1.0.6
       '@vitejs/plugin-react': ^1.3.2
       babel-loader: ^8.2.3
       classnames: ^2.3.1
@@ -309,7 +336,7 @@ importers:
       '@types/js-beautify': ^1.13.3
       '@types/qs': ^6.9.7
       '@unstyled-ui/css': workspace:^
-      '@unstyled-ui/responsive': workspace:^1.0.2
+      '@unstyled-ui/responsive': workspace:^1.0.4
       rollup-plugin-typescript2: ^0.31.1
       tslib: ^2.3.1
       typescript: ^4.5.5
@@ -331,10 +358,10 @@ importers:
       '@ant-design/icons': ^4.7.0
       '@babel/core': ^7.17.5
       '@c3/dom': ^1.0.99
-      '@unstyled-ui/atomic': workspace:^1.0.3
-      '@unstyled-ui/core': workspace:^1.0.2
+      '@unstyled-ui/atomic': workspace:^1.0.5
+      '@unstyled-ui/core': workspace:^1.0.4
       '@unstyled-ui/css': workspace:^
-      '@unstyled-ui/layout': workspace:^1.0.2
+      '@unstyled-ui/layout': workspace:^1.0.7
       babel-loader: ^8.2.3
       classnames: ^2.3.1
     dependencies:

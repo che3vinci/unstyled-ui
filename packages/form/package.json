@@ -1,6 +1,6 @@
 {
   "name": "@unstyled-ui/form",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "form",
   "keywords": [],
   "author": "che3vinci <che3vinci@gmail.com>",
@@ -39,10 +39,10 @@
   "homepage": "https://github.com/che3vinci/c3#readme",
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@unstyled-ui/core": "workspace:^1.0.2",
+    "@unstyled-ui/core": "workspace:^1.0.4",
     "@unstyled-ui/css": "workspace:^",
-    "@unstyled-ui/layout": "workspace:^1.0.2",
-    "@unstyled-ui/stitches": "workspace:^1.0.4",
+    "@unstyled-ui/layout": "workspace:^1.0.7",
+    "@unstyled-ui/stitches": "workspace:^1.0.6",
     "classnames": "^2.3.1"
   },
   "devDependencies": {

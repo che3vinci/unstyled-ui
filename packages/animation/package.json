@@ -1,13 +1,13 @@
 {
-  "name": "@unstyled-ui/atomic",
-  "version": "1.0.5",
+  "name": "@unstyled-ui/animation",
+  "version": "1.0.1",
   "description": "uibasic",
   "keywords": [],
   "author": "che3vinci <che3vinci@gmail.com>",
   "license": "ISC",
-  "main": "src/index.tsx",
-  "module": "src/index.tsx",
-  "types": "src/index.tsx",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "types": "src/index.ts",
   "directories": {
     "lib": "dist",
     "test": "__tests__"
@@ -17,8 +17,8 @@
   ],
   "publishConfig": {
     "access": "public",
-    "main": "dist/atomic.umd.js",
-    "module": "dist/atomic.es.js",
+    "main": "dist/animation.umd.js",
+    "module": "dist/animation.es.js",
     "types": "dist/index.d.ts"
   },
   "repository": {
