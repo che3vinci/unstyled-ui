@@ -1,5 +1,6 @@
 import React from 'react';
-import { MenuConfig, Switcher, SwitcherProps } from './Switcher';
+import { MenuConfig, SwitcherProps } from './Switcher';
+import { useSwitcher } from './useSwitcher';
 
 type Item = {
   id: string;
@@ -18,15 +19,15 @@ const config: MenuConfig<Item> = [
     isSelected: true,
     renderContent: () => <span>content</span>,
     renderItem: () => {
-      return <span>xx</span>;
+      return <span>profile</span>;
     },
   },
   {
     id: '222',
-    title: '2222',
+    title: 'name',
     to: '/account#222',
     isSelected: false,
-    renderContent: () => <span>hello,w222</span>,
+    renderContent: () => <span>content2</span>,
     renderItem: () => {
       return <span>222</span>;
     },
@@ -34,21 +35,25 @@ const config: MenuConfig<Item> = [
 ];
 
 const App = props => {
-  return <Switcher {...props}></Switcher>;
+  const Switcher = useSwitcher(props.menuConfig, props.direction);
+  return Switcher;
 };
 const Template = (args: any) => <App {...args} />;
-export const switcher = Template.bind({});
 
-switcher.args = {
-  direction: 'vertical',
+export const HoriontalSwitcher = Template.bind({});
+HoriontalSwitcher.args = {
   menuConfig: config,
-  updateConfig: () => {},
-  afterSwitch: () => {
-    console.log('after click');
-  },
+  direction: 'horizontal',
+} as SwitcherProps<Item>;
+
+
+export const VerticalSwitcher = Template.bind({});
+VerticalSwitcher.args = {
+  menuConfig: config,
+  direction: 'vertical',
 } as SwitcherProps<Item>;
 
 export default {
-  component: Switcher,
+  component: App,
   title: 'Switcher',
 };

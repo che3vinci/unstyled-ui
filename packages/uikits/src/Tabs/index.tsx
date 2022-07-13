@@ -1,4 +1,3 @@
-export * from './Menus';
-export * from './SideBar';
 export * from './Switcher';
-export * from './Tabs';
+export * from './Variants';
+export * from './useSwitcher';
