@@ -20,5 +20,6 @@ export default defineConfig({
         '@unstyled-ui/stitches',
       ],
       plugins: [commonjs()],
+    },
   },
 });
