@@ -5,7 +5,7 @@ import React from 'react';
 import { BaseProps } from '@unstyled-ui/core';
 import { Abs, Fixed, Col, absXYCenter } from '@unstyled-ui/layout';
 
-export type ModalProps = Omit<BaseProps, 'content'> & {
+export type ModalProps = {
   visible: boolean;
   closeBtn?: React.ReactElement;
   okBtn?: React.ReactElement;
@@ -16,14 +16,12 @@ export type ModalProps = Omit<BaseProps, 'content'> & {
   showLoading?: boolean;
   loadingIcon?: JSX.Element;
   onClose?: Fn;
-  maskProps?: BaseProps;
-};
+} & BaseProps;
 
 export const Modal: React.FC<ModalProps> = ({
   visible,
   closeBtn,
   body,
-  maskProps,
   onCancel,
   onOK,
   onClose,
@@ -32,17 +30,18 @@ export const Modal: React.FC<ModalProps> = ({
   loadingIcon,
   cancelBtn,
   className,
-  ...props
+  css,
+  ...restProps
 }) => {
   const display = visible ? 'flex' : 'none';
-
   return (
-    <Fixed css={{ display, ...mask, bg: 'rgba(0,0,0,0.8)' }} {...maskProps}>
-      <Col
-        position="relative"
-        className={classNames('uu-modal', className)}
-        {...props}
-      >
+    <Fixed
+      className="uu-mask"
+      //@ts-ignore
+      css={{ ...mask, display, bg: 'rgba(0,0,0,0.8)', ...css }}
+      {...restProps}
+    >
+      <Col position="relative" className={classNames('uu-modal', className)}>
         {closeBtn && (
           <closeBtn.type
             onClick={onClose}
