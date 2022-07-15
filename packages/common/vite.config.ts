@@ -12,7 +12,7 @@ export default defineConfig({
     },
     rollupOptions: {
       external: [/node:*/, 'tslib', 'classnames'],
-      plugins: [commonjs()], // `commonjs` plugin include 'required' to single file
+      plugins: [commonjs()],
     },
   },
 });

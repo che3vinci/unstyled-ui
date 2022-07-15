@@ -5,15 +5,15 @@ import { TextProps, Text } from './Text';
 
 export const Title: React.FC<TextProps> = props => {
   const { className, ...restProps } = props;
-  return <Text as="h1" className={classnames('c3-title', className)} {...restProps} />;
+  return <Text as="h1" className={classnames('uu-title', className)} {...restProps} />;
 };
 
 export const SubTitle: React.FC<TextProps> = props => {
   const { className, ...restProps } = props;
-  return <Text as="h2" className={classnames('c3-subtitle', className)} {...restProps} />;
+  return <Text as="h2" className={classnames('uu-subtitle', className)} {...restProps} />;
 };
 
 export const Description: React.FC<TextProps> = props => {
   const { className, ...restProps } = props;
-  return <Text as="p" className={classnames('c3-description', className)} {...restProps} />;
+  return <Text as="p" className={classnames('uu-description', className)} {...restProps} />;
 };

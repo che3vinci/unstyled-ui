@@ -11,7 +11,7 @@ export const Image: React.FC<ImageProps> = props => {
     //@ts-ignore
     <Atomic
       as="img"
-      className={classNames(className, 'c3-image')}
+      className={classNames(className, 'uu-image')}
       css={{
         objectFit: 'cover',
         objectPosition: 'center',

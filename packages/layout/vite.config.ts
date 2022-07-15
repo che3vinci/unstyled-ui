@@ -22,7 +22,7 @@ export default defineConfig({
         '@unstyled-ui/stitches',
         'classnames',
       ],
-      plugins: [commonjs()], // `commonjs` plugin include 'required' to single file
+      plugins: [commonjs()], 
     },
   },
 });

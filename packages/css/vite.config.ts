@@ -18,7 +18,7 @@ export default defineConfig({
         'lodash',
         '@c3/utils'
       ],
-      plugins: [commonjs(), rollupTypescript()], // `commonjs` plugin include 'required' to single file
+      plugins: [commonjs(), rollupTypescript()], 
     },
   },
 });

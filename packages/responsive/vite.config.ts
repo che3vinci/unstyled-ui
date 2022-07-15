@@ -19,7 +19,7 @@ export default defineConfig({
         '@c3/utils',
         '@unstyled-ui/stitches',
       ],
-      plugins: [commonjs()], // `commonjs` plugin include 'required' to single file
+      plugins: [commonjs()],
     },
   },
 });

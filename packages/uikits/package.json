@@ -1,13 +1,13 @@
 {
   "name": "@unstyled-ui/uikits",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "UIKITS",
   "keywords": [],
   "author": "che3vinci <che3vinci@gmail.com>",
   "license": "ISC",
-  "main": "dist/uikits.umd.js",
-  "module": "dist/uikits.es.js",
-  "types": "dist/index.d.ts",
+  "main": "src/index.tsx",
+  "module": "src/index.tsx",
+  "types": "src/index.tsx",
   "directories": {
     "lib": "dist",
     "test": "__tests__"
@@ -16,7 +16,10 @@
     "dist"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "main": "dist/uikits.umd.js",
+    "module": "dist/uikits.es.js",
+    "types": "dist/index.d.ts"
   },
   "repository": {
     "type": "git",
@@ -40,10 +43,10 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@c3/dom": "^1.0.99",
-    "@unstyled-ui/atomic": "workspace:^1.0.3",
-    "@unstyled-ui/core": "workspace:^1.0.2",
+    "@unstyled-ui/atomic": "workspace:^1.0.5",
+    "@unstyled-ui/core": "workspace:^1.0.4",
     "@unstyled-ui/css": "workspace:^",
-    "@unstyled-ui/layout": "workspace:^1.0.2",
+    "@unstyled-ui/layout": "workspace:^1.0.7",
     "classnames": "^2.3.1"
   },
   "devDependencies": {

@@ -25,7 +25,7 @@ export default defineConfig({
         '@c3/dom',
         'classnames',
       ],
-      plugins: [commonjs()], // `commonjs` plugin include 'required' to single file
+      plugins: [commonjs()],
     },
   },
 });

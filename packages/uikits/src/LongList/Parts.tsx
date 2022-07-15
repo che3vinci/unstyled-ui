@@ -9,7 +9,7 @@
 //   cgap: ResponsiveInputValueType = [0]
 // ) => {
 //   return css`
-//     .c3-list {
+//     .uu-list {
 //       ${nCol(num, width, height, rgap, cgap)}
 //     }
 //   `;

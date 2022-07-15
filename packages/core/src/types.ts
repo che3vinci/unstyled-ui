@@ -15,7 +15,7 @@ export type CSSProps = CSS<
   Config['utils']
 >;
 export type RCSSProps = {
-  [k in keyof CSSProps]?: CSSProps[k] | CSSProps[k][];
+  [K in keyof CSSProps]?: CSSProps[K] | CSSProps[K][];
 };
 
 export type BaseProps<

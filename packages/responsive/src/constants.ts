@@ -1,1 +1,1 @@
-export const FixedPxReg = /^_-?\d+\.?\d*/;
+export const KeepPxReg = /^_-?\d+\.?\d*/;

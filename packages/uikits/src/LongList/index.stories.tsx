@@ -38,7 +38,7 @@
 //   height: [200],
 //   overflow: 'scroll',
 //   css: css`
-//     .c3-list {
+//     .uu-list {
 //       ${nCol([3], [100], [200])}
 //     }
 //   `,

@@ -1,11 +1,6 @@
 import { toArray } from '@c3/utils';
 import { origin, rvw } from '@unstyled-ui/responsive';
 
-// <Button type={{
-// @bp1: {
-// }}>
-
-//[mobile,laptop,desktop]
 export const convertResponsiveArrayForVariant = value => {
   const values = toArray(value);
   switch (values.length) {
@@ -37,6 +32,8 @@ const globalStyle = {
 export const convertResponsiveArrayForStyle = (key, value) => {
   const values = toArray(value);
   switch (values.length) {
+    case 1:
+      break;
     case 2:
       globalStyle['@m1'] = { ...globalStyle['@m1'], [key]: rvw(values[0]) };
       globalStyle['@m2'] = { ...globalStyle['@m2'], [key]: rvw(values[1]) };
@@ -51,7 +48,9 @@ export const convertResponsiveArrayForStyle = (key, value) => {
       };
       break;
     default:
-      throw new Error(`invalid para:${JSON.stringify(values)} `);
+      throw new Error(
+        `invalid para:key:${key},value:${JSON.stringify(values)} `
+      );
   }
   return globalStyle;
 };

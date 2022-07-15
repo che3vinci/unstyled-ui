@@ -64,8 +64,8 @@
     "prepare": "husky install",
     "ci:version": "zx scripts/publish.mjs version ",
     "ci:publish": "zx scripts/publish.mjs publish",
-      "clean": "rm -rf dist  ",
-      "reset": "pnpm clean && rm -rf node_modules && pnpm install",
+    "clean": "rm -rf dist  ",
+    "reset": "pnpm clean && rm -rf node_modules && pnpm install",
     "storybook": "start-storybook -p 6006"
   },
   "lint-staged": {

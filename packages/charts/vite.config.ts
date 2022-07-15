@@ -25,7 +25,7 @@ export default defineConfig({
         'deepmerge',
         'classnames',
       ],
-      plugins: [commonjs()], // `commonjs` plugin include 'required' to single file
+      plugins: [commonjs()], 
     },
   },
 });

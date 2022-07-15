@@ -1,10 +1,9 @@
-import { getHash, useExclusive, useHashChange } from '@c3/hooks';
-import { HVDirection } from '@c3/utils';
-import classNames from 'classnames';
-import React, { useEffect, useMemo } from 'react';
+import { useExclusive } from '@c3/hooks';
+import { HVDirection, noop } from '@c3/utils';
 import { BaseProps } from '@unstyled-ui/core';
 import { Col, Row } from '@unstyled-ui/layout';
-import { IRawListProps } from '../RawList';
+import classNames from 'classnames';
+import React, { useMemo } from 'react';
 
 export type DefaultSwitchItem = {
   title: string;
@@ -23,56 +22,39 @@ export type MenuConfig<T> = T[];
 export type SwitcherProps<Item> = {
   direction: HVDirection;
   menuConfig: MenuConfig<Item>;
-  updateConfig: (config: MenuConfig<Item>) => void;
-  navProps?: IRawListProps;
-  enableHash?: boolean;
+  updateConfig?: (config: MenuConfig<Item>) => void;
   renderItem?: (item: Item) => JSX.Element;
   afterSwitch?: (item: Item) => void;
   renderContent?: (item: Item) => JSX.Element;
 } & BaseProps;
+
 export const Switcher = <Item extends BaseSwitchItem>({
   menuConfig,
   updateConfig,
-  navProps,
   afterSwitch,
   direction,
-  enableHash = true,
-  className,
   renderItem,
   renderContent,
-  ...props
+  ...restProps
 }: SwitcherProps<Item>) => {
-  const on = useExclusive(menuConfig, 'isSelected', updateConfig);
+  const on = useExclusive(menuConfig, 'isSelected', updateConfig || noop);
   const activeItem = useMemo(
     () => menuConfig.find(e => e.isSelected),
     [menuConfig]
   );
-  const [, setHash] = useHashChange((hash: string) => {
-    enableHash && on(hash);
-  });
 
-  useEffect(() => {
-    const hash = getHash();
-    enableHash && hash && on(hash);
-  }, [enableHash, on]);
-
-  const { className: navClassName, ...navxProps } = navProps || {};
   const hv = useMemo(() => {
     if (direction === 'horizontal') {
       return {
         navLayout: Row,
         Layout: Col,
       };
-    } else {
-      return { navLayout: Col, Layout: Row };
     }
+    return { navLayout: Col, Layout: Row };
   }, [direction]);
   return (
-    <hv.Layout className={classNames('c3-switcher', className)} {...props}>
-      <hv.navLayout
-        className={classNames('c3-switcher-menu-bar', navClassName)}
-        {...navxProps}
-      >
+    <hv.Layout className="uu-switcher" {...restProps}>
+      <hv.navLayout className="uu-switcher-navbar">
         {menuConfig.map(e => {
           const NavItem = renderItem?.(e) || e.renderItem?.<Item>(e) || (
             <span>-please supply renderItem function-</span>
@@ -81,11 +63,7 @@ export const Switcher = <Item extends BaseSwitchItem>({
           return (
             <NavItem.type
               onClick={(evt: React.MouseEvent) => {
-                if (enableHash) {
-                  setHash(e.id);
-                } else {
-                  on(e.id);
-                }
+                on(e.id);
                 onClick && onClick(evt);
                 afterSwitch && afterSwitch(e);
               }}
