@@ -4,11 +4,12 @@ import React, { useCallback, useMemo, useState } from 'react';
 import { BaseSwitchItem, MenuConfig, Switcher } from './Switcher';
 
 export const useSteps = <T extends BaseSwitchItem>(
-  menuconfig: MenuConfig<T>,
+  menuConfig: MenuConfig<T>,
+  updateConfig: (menu: MenuConfig<T>) => void,
   direction: HVDirection
 ) => {
-  const [menuConfig, setMenuconfig] = useState(menuconfig);
-  const on = useExclusive(menuConfig, 'isSelected', setMenuconfig);
+  // const [menuConfig, setMenuconfig] = useState(menuconfig);
+  const on = useExclusive(menuConfig, 'isSelected', updateConfig);
   const activeIndex = useMemo(
     () => menuConfig.findIndex(e => e.isSelected),
     [menuConfig]

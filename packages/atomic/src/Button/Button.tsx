@@ -18,7 +18,6 @@ export const Button: React.FC<ButtonProps> = props => {
   const { preventDefault, onClick, loading, children, css, ...restProps } =
     props;
 
-  console.log('css', css);
   const handleClick = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
       if (preventDefault) {
