@@ -1,11 +1,34 @@
-import { RCSSProperties } from './types';
-type Typography = {
+import { RCSSProperties, CSSProperties } from './types';
+export type Typography = {
   fontSize: RCSSProperties['fontSize'];
   fontWeight: RCSSProperties['fontWeight'];
   lineHeight?: RCSSProperties['lineHeight'];
   letterSpacing?: RCSSProperties['letterSpacing'];
   fontFamily?: RCSSProperties['fontFamily'];
 };
+export type Animation = Pick<
+  CSSProperties,
+  | 'animationName'
+  | 'animationDelay'
+  | 'animationDirection'
+  | 'animationDuration'
+  | 'animationIterationCount'
+  | 'animationTimingFunction'
+  | 'animationFillMode'
+  | 'animationPlayState'
+  | 'animation'
+>;
+// export type Animation = {
+//   name: RCSSProperties['animationName'];
+//   delay: RCSSProperties['animationDelay'];
+//   direction: RCSSProperties['animationDirection'];
+//   duration: RCSSProperties['animationDuration'];
+//   iterationCount: RCSSProperties['animationIterationCount'];
+//   timingFunction: RCSSProperties['animationTimingFunction'];
+//   fillMode: RCSSProperties['animationFillMode'];
+//   playState: RCSSProperties['animationPlayState'];
+//   animation: RCSSProperties['animation'];
+// };
 
 export const utils = {
   w: (w: RCSSProperties['width']) => ({ width: w }),
@@ -51,5 +74,10 @@ export const utils = {
   //others shortcuts
   bg: (bg: RCSSProperties['background']) => ({ background: bg }),
 
-  round: () => ({ borderRadius: 10000000 }),
+  round: (x = true) => ({ borderRadius: 10000000 }),
+  anime: (options: Animation) => ({
+    animationFillMode: 'forwards',
+
+    ...options,
+  }),
 };
