@@ -50,6 +50,7 @@ importers:
       prettier: 2.6.1
       react: ^17.0.2
       react-dom: ^17.0.2
+      react-icons: ^4.4.0
       tslib: ^2.3.1
       typescript: ^4.5.5
       vite: ^2.9.12
@@ -61,6 +62,7 @@ importers:
       lodash: 4.17.21
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
+      react-icons: 4.4.0_react@17.0.2
     devDependencies:
       '@babel/core': 7.18.2
       '@babel/plugin-transform-modules-commonjs': 7.18.2_@babel+core@7.18.2
@@ -134,6 +136,7 @@ importers:
       '@babel/core': ^7.17.5
       '@stitches/react': ^1.2.8
       '@types/js-beautify': ^1.13.3
+      '@unstyled-ui/animation': workspace:^1.0.2
       '@unstyled-ui/core': workspace:^1.0.4
       '@unstyled-ui/css': workspace:^
       '@unstyled-ui/stitches': workspace:^1.0.6
@@ -144,6 +147,7 @@ importers:
     dependencies:
       '@ant-design/icons': 4.7.0_biqbaboplfbrettd7655fr4n2y
       '@stitches/react': 1.2.8_react@18.2.0
+      '@unstyled-ui/animation': link:../animation
       '@unstyled-ui/core': link:../core
       '@unstyled-ui/css': link:../css
       '@unstyled-ui/stitches': link:../stitches
@@ -230,12 +234,14 @@ importers:
       '@rollup/plugin-typescript': ^8.3.0
       '@types/js-beautify': ^1.13.3
       '@unstyled-ui/core': workspace:^1.0.4
+      '@unstyled-ui/layout': workspace:^1.0.8
       csstype: ^3.1.0
       rollup-plugin-typescript2: ^0.31.1
       tslib: ^2.3.1
       typescript: ^4.5.5
     dependencies:
       '@unstyled-ui/core': link:../core
+      '@unstyled-ui/layout': link:../layout
       csstype: 3.1.0
     devDependencies:
       '@rollup/plugin-commonjs': 21.1.0_rollup@2.75.6
@@ -358,15 +364,17 @@ importers:
       '@ant-design/icons': ^4.7.0
       '@babel/core': ^7.17.5
       '@c3/dom': ^1.0.99
+      '@unstyled-ui/animation': workspace:^1.0.2
       '@unstyled-ui/atomic': workspace:^1.0.5
       '@unstyled-ui/core': workspace:^1.0.4
       '@unstyled-ui/css': workspace:^
-      '@unstyled-ui/layout': workspace:^1.0.7
+      '@unstyled-ui/layout': workspace:^1.0.8
       babel-loader: ^8.2.3
       classnames: ^2.3.1
     dependencies:
       '@ant-design/icons': 4.7.0_biqbaboplfbrettd7655fr4n2y
       '@c3/dom': 1.0.99
+      '@unstyled-ui/animation': link:../animation
       '@unstyled-ui/atomic': link:../atomic
       '@unstyled-ui/core': link:../core
       '@unstyled-ui/css': link:../css
@@ -13674,6 +13682,14 @@ packages:
       react-dom: 17.0.2_react@17.0.2
       react-is: 17.0.2
     dev: true
+
+  /react-icons/4.4.0_react@17.0.2:
+    resolution: {integrity: sha512-fSbvHeVYo/B5/L4VhB7sBA1i2tS8MkT0Hb9t2H1AVPkwGfVHLJCqyr2Py9dKMxsyM63Eng1GkdZfbWj+Fmv8Rg==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 17.0.2
+    dev: false
 
   /react-inspector/5.1.1_react@17.0.2:
     resolution: {integrity: sha512-GURDaYzoLbW8pMGXwYPDBIv6nqei4kK7LPRZ9q9HCZF54wqXz/dnylBp/kfE9XmekBhHvLDdcYeyIwSrvtOiWg==}
