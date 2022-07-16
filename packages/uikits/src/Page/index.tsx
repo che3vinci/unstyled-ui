@@ -2,12 +2,12 @@ import React from 'react';
 import { BaseProps } from '@unstyled-ui/core';
 import { Col } from '@unstyled-ui/layout';
 
-type IPageProps = {
+type PageProps = {
   nav: JSX.Element;
   footer?: JSX.Element;
 } & BaseProps;
 
-const Page: React.FC<IPageProps> = ({
+export const Page: React.FC<PageProps> = ({
   nav,
   children: main,
   footer,
@@ -24,4 +24,3 @@ const Page: React.FC<IPageProps> = ({
     </Col>
   );
 };
-export default Page;

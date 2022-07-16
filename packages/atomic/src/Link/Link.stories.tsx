@@ -1,6 +1,12 @@
 import { mock } from '@c3/utils';
 import React from 'react';
 import { Link, LinkProps } from './Link';
+export default {
+  component: Link,
+  title: 'atomic/Link',
+};
+
+
 
 const Template = (args: any) => <Link {...args} />;
 
@@ -11,7 +17,3 @@ Default.args = {
   children: 'clickme',
 } as LinkProps;
 
-export default {
-  component: Link,
-  title: 'Link',
-};

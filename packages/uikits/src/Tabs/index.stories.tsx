@@ -4,7 +4,7 @@ import { useSwitcher } from './useSwitcher';
 import { useSteps } from './useSteps';
 export default {
   component: Switcher,
-  title: 'Switcher',
+  title: 'uikits/Switcher',
 };
 
 type Item = {

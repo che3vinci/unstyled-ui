@@ -1,4 +1,3 @@
-import { mock } from '@c3/utils';
 import React from 'react';
 import { BaseProps, styled } from '.';
 
@@ -32,5 +31,5 @@ DeepClsVisitor.args = {
 
 export default {
   component: App,
-  title: 'Core',
+  title: 'core/Core',
 };

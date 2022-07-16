@@ -1,5 +1,9 @@
 import React from 'react';
 import { Text } from '..';
+
+
+
+
 const Template = (args: any) => <Text {...args} />;
 
 export const TwoLineText = Template.bind({}) as any as { args: any };
@@ -16,5 +20,5 @@ TwoLineText.args = {
 
 export default {
   component: Text,
-  title: 'Text',
+  title: 'atomic/Text',
 };

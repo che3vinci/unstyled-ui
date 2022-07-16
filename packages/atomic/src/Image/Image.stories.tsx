@@ -2,6 +2,12 @@ import { mock } from '@c3/utils';
 import React from 'react';
 import { Image, ImageProps } from './Image';
 
+export default {
+  component: Image,
+  title: 'atomic/Image',
+};
+
+
 const Template = (args: any) => <Image {...args} />;
 
 export const Default = Template.bind({});
@@ -14,7 +20,3 @@ Default.args = {
   },
 } as ImageProps;
 
-export default {
-  component: Image,
-  title: 'Image',
-};
