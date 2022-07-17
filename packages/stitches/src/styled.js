@@ -44,15 +44,17 @@ export const createStyledFunction = ({ config, css }) =>
             delete newProps.css[key];
           }
         }
-        if (__DEV__) {
-          console.log('newprops', newProps);
-        }
+
 
         const { props: forwardProps, deferredInjector } =
           cssComponent(newProps);
         delete forwardProps.as;
 
         forwardProps.ref = ref;
+         if (__DEV__) {
+           console.log('newprops', newProps);
+           console.log('forwardProps', forwardProps);
+         }
 
         if (deferredInjector) {
           return React.createElement(

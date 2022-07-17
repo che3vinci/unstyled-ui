@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { styled } from '.';
 
 const Box = styled('div', {
@@ -49,3 +49,12 @@ export const DeepClsVisitor = () => (
     </div>
   </Box>
 );
+export const ForwardRef = () => {
+  const ref = React.useRef<HTMLDivElement>(null);
+  const [tagName, setTagName] = React.useState<string>('');
+  useEffect(() => {
+    setTagName(ref.current?.tagName || '');
+  }, [ref]);
+
+  return <Box ref={ref}>tagName:{tagName || 'null'}</Box>;
+};
