@@ -6,7 +6,7 @@ import {
 } from '@c3/hooks';
 import { IBox } from '@c3/utils';
 import { BaseProps } from '@unstyled-ui/core';
-import { Box, Relative } from '@unstyled-ui/layout';
+import { absXCenter, absYCenter, Box, Relative } from '@unstyled-ui/layout';
 import React, {
   useCallback,
   useEffect,
@@ -28,6 +28,7 @@ export const Dropdown: React.FC<DropdownProps> = props => {
     overlay,
     placement = 'bottom',
     children,
+    css = {},
     ...restProps
   } = props;
   if (!React.isValidElement(children)) {
@@ -82,18 +83,19 @@ export const Dropdown: React.FC<DropdownProps> = props => {
 
   const [pos, setPos] = useState<IPosition>({});
   const watch = useBoundingClientRect((box: IBox<number>) => {
+    console.log('box,', box);
     switch (placement) {
       case 'bottom':
-        setPos({ top: box.height });
+        setPos(absXCenter({ top: box.height }));
         break;
       case 'top':
-        setPos({ bottom: 0 });
+        setPos(absXCenter({ bottom: 0 }));
         break;
       case 'left':
-        setPos({ right: box.width });
+        setPos(absYCenter({ right: box.width }));
         break;
       case 'right':
-        setPos({ left: 0 });
+        setPos(absYCenter({ left: box.width }));
         break;
       default:
         throw new Error(
@@ -102,12 +104,18 @@ export const Dropdown: React.FC<DropdownProps> = props => {
     }
   });
   useEffect(() => {
-    watch(ref.current);
+    ref.current && watch(ref.current);
   }, [watch]);
 
   return (
-    <Relative {...restProps} onClick={onClickContainer}>
-      <children.type {...childProps} ref={ref} />
+    //@ts-ignore
+    <Relative
+      css={{ w: 'max-content', ...css }}
+      {...restProps}
+      onClick={onClickContainer}
+      ref={ref}
+    >
+      <children.type {...childProps} />
       <Box style={{ position: 'absolute', ...pos }}>{visible && overlay}</Box>
     </Relative>
   );
