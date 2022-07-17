@@ -30,6 +30,9 @@ export type Animation = Pick<
 //   animation: RCSSProperties['animation'];
 // };
 
+const pseudoElements = ['before', 'after'];
+const pseudoClasses = ['hover', 'focus', 'active'];
+
 export const utils = {
   w: (w: RCSSProperties['width']) => ({ width: w }),
   h: (h: RCSSProperties['height']) => ({ height: h }),
@@ -74,10 +77,14 @@ export const utils = {
   //others shortcuts
   bg: (bg: RCSSProperties['background']) => ({ background: bg }),
 
-  round: (x = true) => ({ borderRadius: 10000000 }),
   anime: (options: Animation) => ({
     animationFillMode: 'forwards',
-
     ...options,
   }),
+  ...pseudoElements.map((pseudo: string) => ({
+    [`_${pseudo}`]: (css: RCSSProperties) => ({ [`&::${pseudo}`]: css }),
+  })),
+  ...pseudoClasses.map((pseudo: string) => ({
+    [`_${pseudo}`]: (css: RCSSProperties) => ({ [`&:${pseudo}`]: css }),
+  })),
 };
