@@ -6,23 +6,32 @@ export default {
   title: 'uikits/Dropdown',
 };
 const Overlay = (
-  <ul style={{ border: '1px solid red' }}>
-    <li>1</li>
-    <li>2</li>
+  <ul
+    style={{
+      border: '1px solid red',
+      padding: 0,
+      margin: 0,
+      listStyle: 'none',
+      animation: 'fadeIn 0.5s',
+    }}
+  >
+    <li>12222</li>
+    <li>22222</li>
   </ul>
 );
 const defaultArgs = {
   css: { w: 100, border: '1px solid green', margin: '100px' },
+  dbg: true,
   overlay: Overlay,
 };
 
 export const ClickDropdown = () => (
-  <Dropdown {...defaultArgs} dbg>
+  <Dropdown {...defaultArgs}>
     <button>click</button>
   </Dropdown>
 );
 export const HoverDropdown = () => (
-  <Dropdown trigger={['hover']} {...defaultArgs}>
+  <Dropdown {...defaultArgs} trigger={['hover']}>
     <button>click</button>
   </Dropdown>
 );

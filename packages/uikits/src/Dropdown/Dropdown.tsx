@@ -83,13 +83,12 @@ export const Dropdown: React.FC<DropdownProps> = props => {
 
   const [pos, setPos] = useState<IPosition>({});
   const watch = useBoundingClientRect((box: IBox<number>) => {
-    console.log('box,', box);
     switch (placement) {
       case 'bottom':
         setPos(absXCenter({ top: box.height }));
         break;
       case 'top':
-        setPos(absXCenter({ bottom: 0 }));
+        setPos(absXCenter({ bottom: box.height }));
         break;
       case 'left':
         setPos(absYCenter({ right: box.width }));
@@ -116,7 +115,8 @@ export const Dropdown: React.FC<DropdownProps> = props => {
       ref={ref}
     >
       <children.type {...childProps} />
-      <Box style={{ position: 'absolute', ...pos }}>{visible && overlay}</Box>
+      {/* @ts-ignore */}
+      <Box css={{ position: 'absolute', ...pos }}>{visible && overlay}</Box>
     </Relative>
   );
 };
