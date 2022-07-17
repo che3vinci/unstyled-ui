@@ -6,7 +6,7 @@ import { translate } from './translate';
 import { s } from '@c3/utils';
 
 export default {
-  title: 'Animation',
+  title: 'Animation/animation',
   component: () => {
     return <div></div>;
   },

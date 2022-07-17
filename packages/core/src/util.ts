@@ -16,7 +16,13 @@ export type Animation = Pick<
   | 'animationTimingFunction'
   | 'animationFillMode'
   | 'animationPlayState'
-  | 'animation'
+>;
+export type Transition = Pick<
+  CSSProperties,
+  | 'transitionDelay'
+  | 'transitionDuration'
+  | 'transitionProperty'
+  | 'transitionTimingFunction'
 >;
 // export type Animation = {
 //   name: RCSSProperties['animationName'];
@@ -81,6 +87,7 @@ export const utils = {
     animationFillMode: 'forwards',
     ...options,
   }),
+  transi: (trans: Transition) => ({ ...trans }),
   ...pseudoElements.reduce(
     (acc, pseudo: string) => ({
       ...acc,
