@@ -1,48 +1,48 @@
-// import { Direction, getAntiDirectin } from '@c3/utils';
-// import { css } from 'styled-components';
-// import { rcss, ResponsiveInputValueType, toResponsiveArray } from '..';
+import { Direction } from '@c3/utils';
+import { RCSSProperties } from '@unstyled-ui/core';
+import { absXCenter } from '@unstyled-ui/layout';
 
-// export const arrow = (
-//   direction: Direction,
-//   width: ResponsiveInputValueType, //border-width
-//   height: ResponsiveInputValueType,
-//   pos: ResponsiveInputValueType = ['50%'],
-//   color: ResponsiveInputValueType = ['currentColor']
-// ) => {
-//   const anti: Direction = getAntiDirectin(direction);
-//   const _width = toResponsiveArray(width);
-//   const _height = toResponsiveArray(height);
-//   let _pos;
-//   switch (direction) {
-//     case 'left':
-//     case 'right':
-//       _pos = `top:${pos};transform:translateY(-50%);`;
-//       break;
-//     case 'top':
-//     case 'bottom':
-//       _pos = `left:${pos};transform:translateX(-50%);`;
-//       break;
-//     default:
-//       throw new Error('not supported');
-//   }
-//   return css`
-//     position: relative;
-
-//     &::before {
-//       position: absolute;
-//       display: inline-block;
-//       width: 0;
-//       height: 0;
-//       content: '';
-//       z-index: 1;
-//       ${_pos};
-//       ${rcss({
-//         [direction]: direction,
-//         border: 'solid transparent',
-//         [`border-${direction}`]: 'none',
-//         [`border-${anti}`]: [`${width} solid ${color}`],
-//       })}
-//     }
-//   `;
-// };
-export {}
+export const arrow = (
+  direction: 'top' | 'right' | 'bottom' | 'left'
+): RCSSProperties => {
+  let polygon;
+  switch (direction) {
+    case 'top':
+      polygon = '50% 0%, 0% 100%, 100% 100%';
+      break;
+    case 'bottom':
+      polygon = '0% 0%, 50% 100%, 100% 0%';
+      break;
+    case 'left':
+      polygon = '100% 0%, 0% 50%, 100% 100%';
+      break;
+    case 'right':
+      polygon = '0% 0%, 0% 100%, 100% 50%';
+      break;
+  }
+  return {
+    clipPath: `polygon(${polygon})`,
+  };
+};
+export const pseudoArrow = (
+  direction: Direction,
+  width: RCSSProperties['width'],
+  height: RCSSProperties['height'],
+  css?:RCSSProperties
+) => {
+  let pos;
+  switch (direction) {
+    case 'bottom':
+      pos = absXCenter({ top: '100%' });
+      break;
+  }
+  return {
+    _after: {
+      w: width,
+      h: height,
+      ...pos,
+      ...arrow(direction),
+      ...css,
+    },
+  };
+};

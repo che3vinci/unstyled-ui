@@ -1,24 +1,12 @@
 import { Dropdown } from './Dropdown';
 import React from 'react';
 
+import { Default } from '../List/index.stories';
 export default {
   component: Dropdown,
   title: 'uikits/Dropdown',
 };
-const Overlay = (
-  <ul
-    style={{
-      border: '1px solid red',
-      padding: 0,
-      margin: 0,
-      listStyle: 'none',
-      animation: 'fadeIn 0.5s',
-    }}
-  >
-    <li>12222</li>
-    <li>22222</li>
-  </ul>
-);
+const Overlay = <Default />;
 const defaultArgs = {
   css: { w: 100, border: '1px solid green', margin: '100px' },
   dbg: true,

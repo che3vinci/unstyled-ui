@@ -1,5 +1,7 @@
 import { Arrow } from './Arrow';
 import React from 'react';
+import { absXCenter, Box, xCenter } from '@unstyled-ui/layout';
+import { arrow, pseudoArrow } from '@unstyled-ui/css';
 
 export default {
   component: Arrow,
@@ -15,4 +17,15 @@ export const Bottom = () => (
 );
 export const Top = () => (
   <Arrow directionx="top" css={{ w: 100, h: 50, background: 'red' }} />
+);
+
+export const PseudoArrow = () => (
+  <Box
+    css={{
+      w: 100,
+      h: 100,
+      background: 'green',
+      ...pseudoArrow('bottom', 90, 30, { background: 'red' }),
+    }}
+  ></Box>
 );

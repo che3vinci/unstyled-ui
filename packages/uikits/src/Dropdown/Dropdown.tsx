@@ -15,6 +15,7 @@ import React, {
   useState,
 } from 'react';
 import { IPosition } from '@unstyled-ui/layout';
+import { show } from '@unstyled-ui/css';
 
 export type DropdownProps = {
   overlay: JSX.Element;
@@ -116,7 +117,9 @@ export const Dropdown: React.FC<DropdownProps> = props => {
     >
       <children.type {...childProps} />
       {/* @ts-ignore */}
-      <Box css={{ position: 'absolute', ...pos }}>{visible && overlay}</Box>
+      <Box css={{ position: 'absolute', ...pos, ...show(visible) }}>
+        {overlay}
+      </Box>
     </Relative>
   );
 };

@@ -81,10 +81,27 @@ export const utils = {
     animationFillMode: 'forwards',
     ...options,
   }),
-  ...pseudoElements.map((pseudo: string) => ({
-    [`_${pseudo}`]: (css: RCSSProperties) => ({ [`&::${pseudo}`]: css }),
-  })),
-  ...pseudoClasses.map((pseudo: string) => ({
-    [`_${pseudo}`]: (css: RCSSProperties) => ({ [`&:${pseudo}`]: css }),
-  })),
+  ...pseudoElements.reduce(
+    (acc, pseudo: string) => ({
+      ...acc,
+      [`_${pseudo}`]: (css: RCSSProperties) => ({
+        [`&::${pseudo}`]: {
+          content: '',
+          position: 'absolute',
+          ...css,
+        },
+        '&': {
+          position: 'relative',
+        },
+      }),
+    }),
+    {}
+  ),
+  ...pseudoClasses.reduce(
+    (acc, pseudo: string) => ({
+      ...acc,
+      [`_${pseudo}`]: (css: RCSSProperties) => ({ [`&:${pseudo}`]: css }),
+    }),
+    {}
+  ),
 };
