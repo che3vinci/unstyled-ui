@@ -13,7 +13,7 @@ export type RowProps = {
 export const Row: React.FC<RowProps> = props => {
   const {
     //@ts-ignore
-    css = {},
+    css: { fx: _fx, fy: _fy, ...restCss } = {},
     fx,
     fy,
     gap,
@@ -22,7 +22,7 @@ export const Row: React.FC<RowProps> = props => {
   return (
     <Box
       //@ts-ignore
-      css={{ ...row(fx, fy), ...rgap(gap), ...css }}
+      css={{ ...row(_fx || fx, _fy || fy), ...rgap(gap), ...restCss }}
       {...restProps}
     />
   );

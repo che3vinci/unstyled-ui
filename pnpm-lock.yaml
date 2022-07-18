@@ -256,6 +256,7 @@ importers:
       '@ant-design/icons': ^4.7.0
       '@babel/core': ^7.17.5
       '@types/js-beautify': ^1.13.3
+      '@unstyled-ui/atomic': workspace:^1.0.7
       '@unstyled-ui/core': workspace:^1.0.6
       '@unstyled-ui/css': workspace:^
       '@unstyled-ui/layout': workspace:^1.0.9
@@ -265,6 +266,7 @@ importers:
       classnames: ^2.3.1
     dependencies:
       '@ant-design/icons': 4.7.0_biqbaboplfbrettd7655fr4n2y
+      '@unstyled-ui/atomic': link:../atomic
       '@unstyled-ui/core': link:../core
       '@unstyled-ui/css': link:../css
       '@unstyled-ui/layout': link:../layout

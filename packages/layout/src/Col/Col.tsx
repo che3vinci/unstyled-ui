@@ -11,11 +11,18 @@ export type ColProps = {
   gap?: CSSProperties['gap'];
 } & BaseProps;
 export const Col: React.FC<BaseProps> = props => {
-  const { css = {}, fx, fy, gap, className, ...restProps } = props;
+  const {
+    css: { fx: _fx, fy: _fy, ...restCss } = {},
+    fx,
+    fy,
+    gap,
+    className,
+    ...restProps
+  } = props;
   return (
     <Box
       //@ts-ignore
-      css={{ ...col(fx, fy), ...vgap(gap), ...css }}
+      css={{ ...col(_fx || fx, _fy || fy), ...vgap(gap), ...restCss }}
       className={classNames('uu-col', className)}
       {...restProps}
     />
