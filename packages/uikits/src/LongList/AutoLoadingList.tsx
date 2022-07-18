@@ -2,9 +2,9 @@ import { useTouchBottom } from '@c3/hooks';
 import React, { useRef } from 'react';
 import { BaseProps } from '@unstyled-ui/core';
 import { Col } from '@unstyled-ui/layout';
-import { BaseListItem, List, ListProps } from '../List';
+import { BaseListItemType, List, ListProps } from '../List/List';
 
-type BaseType = BaseListItem;
+type BaseType = BaseListItemType;
 export type IAutoLongListProps<T extends BaseType> = {
   loadNextTip?: React.ReactElement;
   loadNextPage: () => void;
@@ -17,7 +17,7 @@ export const AutoLoadingList = <T extends BaseType>(
   const {
     renderItem,
     data,
-    updateList,
+    updateData: updateList,
     hvDirection,
     emptyNode,
     loadNextPage,
@@ -33,7 +33,7 @@ export const AutoLoadingList = <T extends BaseType>(
       <List
         data={data}
         renderItem={renderItem}
-        updateList={updateList}
+        updateData={updateList}
         hvDirection={hvDirection}
         emptyNode={emptyNode}
         css={{ ...listCssProps }}

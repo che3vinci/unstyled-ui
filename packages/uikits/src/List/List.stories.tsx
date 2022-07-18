@@ -1,4 +1,4 @@
-import { List } from './index';
+import { List } from './List';
 import { Text } from '@unstyled-ui/atomic';
 import React, { useState } from 'react';
 import { TextItem } from '../TextItem';
@@ -35,13 +35,22 @@ export const Default = () => {
           text={t.name}
           icon={mock.getRandomPic(32, 32)}
           css={{
-            '&.uu-active': {
+            '&[active]': {
               color: 'red',
             },
           }}
         />
       )}
-      updateList={setData}
+      updateData={setData}
     />
+  );
+};
+export const DisabledButton = () => {
+  return (
+    <div>
+      <button disabled>disabled</button>
+      <button disabled={true}>true</button>;
+      <button disabled={false}>false</button>;
+    </div>
   );
 };

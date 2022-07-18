@@ -4,7 +4,6 @@ import React, { InputHTMLAttributes } from 'react';
 import { atomic } from './Input';
 import classnames from 'classnames';
 
-
 export type InputProps = {
   prefix?: JSX.Element;
   suffix?: JSX.Element;
@@ -21,7 +20,6 @@ export const InputContainer: React.FC<InputProps> = props => {
     allowClear,
     addonAfter,
     addonBefore,
-    className,
     css = {},
     ...restProps
   } = props;
@@ -29,6 +27,7 @@ export const InputContainer: React.FC<InputProps> = props => {
   }
   return (
     <Row
+      as="u-input-container"
       css={{
         fx: 'flex-start',
         fy: 'center',
@@ -39,7 +38,6 @@ export const InputContainer: React.FC<InputProps> = props => {
         },
         ...css,
       }}
-      className={classnames(className, 'input-container')}
       {...restProps}
     ></Row>
   );

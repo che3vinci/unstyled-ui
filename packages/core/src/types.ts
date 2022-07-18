@@ -22,4 +22,5 @@ export type BaseProps<
   Attr extends React.HTMLAttributes<HTMLElement> = React.HTMLAttributes<HTMLElement>
 > = VariantProps<any> & {
   css?: RCSSProps;
+  as?: keyof JSX.IntrinsicElements;
 } & Attr;

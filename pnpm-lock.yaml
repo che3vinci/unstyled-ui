@@ -261,6 +261,7 @@ importers:
       '@unstyled-ui/css': workspace:^
       '@unstyled-ui/layout': workspace:^1.0.9
       '@unstyled-ui/stitches': workspace:^1.0.8
+      '@unstyled-ui/uikits': workspace:^1.0.7
       '@vitejs/plugin-react': ^1.3.2
       babel-loader: ^8.2.3
       classnames: ^2.3.1
@@ -271,6 +272,7 @@ importers:
       '@unstyled-ui/css': link:../css
       '@unstyled-ui/layout': link:../layout
       '@unstyled-ui/stitches': link:../stitches
+      '@unstyled-ui/uikits': link:../uikits
       classnames: 2.3.1
     devDependencies:
       '@babel/core': 7.18.2
