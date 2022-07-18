@@ -36,7 +36,13 @@ export type Transition = Pick<
 //   animation: RCSSProperties['animation'];
 // };
 
-const pseudoElements = ['before', 'after'];
+const pseudoElements = [
+  'before',
+  'after',
+  'first-letter',
+  'first-line',
+  'placeholder',
+];
 const pseudoClasses = ['hover', 'focus', 'active'];
 
 export const utils = {
@@ -88,6 +94,8 @@ export const utils = {
     ...options,
   }),
   transi: (trans: Transition) => ({ ...trans }),
+
+  //TODO: img/input dones't support pseudo elements
   ...pseudoElements.reduce(
     (acc, pseudo: string) => ({
       ...acc,

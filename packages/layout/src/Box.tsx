@@ -1,6 +1,6 @@
 import { styled } from '@unstyled-ui/core';
 
-export const Box = styled('div', {
+export const Box = styled('u-box', {
   display: 'flex',
   boxSizing: 'border-box',
   p: 0,

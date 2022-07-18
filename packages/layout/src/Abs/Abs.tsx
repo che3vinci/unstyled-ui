@@ -5,5 +5,7 @@ import React from 'react';
 export const Abs: React.FC<BaseProps> = props => {
   const { css, ...restProps } = props;
   //@ts-ignore
-  return <Box css={{ ...css, position: 'absolute' }} {...restProps} />;
+  return (
+    <Box as="u-abs" css={{ ...css, position: 'absolute' }} {...restProps} />
+  );
 };

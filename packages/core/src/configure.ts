@@ -19,9 +19,9 @@ type _Config<Prefix, Theme, ThemeMap, Utils> = {
 
 const theme = {};
 
-export type Config = _Config<'uu', typeof theme, DefaultThemeMap, typeof utils>;
+export type Config = _Config<'', typeof theme, DefaultThemeMap, typeof utils>;
 export const config: Config = {
-  prefix: 'uu',
+  prefix: '',
   utils: utils,
   theme: theme,
   breakpoints: [768, 1366],

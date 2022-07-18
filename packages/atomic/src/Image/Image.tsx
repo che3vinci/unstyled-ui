@@ -53,7 +53,6 @@ export const Image: React.FC<ImageProps> = props => {
         objectFit: 'cover',
         objectPosition: 'center',
         flexShrink: 0,
-        width: '100%',
         maxWidth: '100%',
         ...css,
       }}

@@ -1,29 +1,17 @@
+import { BaseProps } from '@unstyled-ui/core';
 import React from 'react';
 import { Box } from '../Box';
-import { BaseProps, CSSProperties } from '@unstyled-ui/core';
-import { col } from './col.utils';
 import { vgap } from '../utils';
-import classNames from 'classnames';
+import { col } from './col.utils';
 
-export type ColProps = {
-  fx?: CSSProperties['alignItems'];
-  fy?: CSSProperties['justifyContent'];
-  gap?: CSSProperties['gap'];
-} & BaseProps;
+export type ColProps = BaseProps;
 export const Col: React.FC<BaseProps> = props => {
-  const {
-    css: { fx: _fx, fy: _fy, ...restCss } = {},
-    fx,
-    fy,
-    gap,
-    className,
-    ...restProps
-  } = props;
+  const { css: { fx, fy, gap, ...restCss } = {}, ...restProps } = props;
   return (
     <Box
+      as="u-col"
       //@ts-ignore
-      css={{ ...col(_fx || fx, _fy || fy), ...vgap(gap), ...restCss }}
-      className={classNames('uu-col', className)}
+      css={{ ...col(fx, fy), ...vgap(gap), ...restCss }}
       {...restProps}
     />
   );

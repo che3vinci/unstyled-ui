@@ -5,7 +5,7 @@ export const row = (
   fy: RCSSProperties['alignItems'] = 'center'
 ): RCSSProperties => ({
   display: 'flex',
-  alignItems: fx,
-  justifyContent: fy,
+  alignItems: fy,
+  justifyContent: fx,
   flexWrap: 'nowrap',
 });
