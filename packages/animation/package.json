@@ -1,6 +1,6 @@
 {
   "name": "@unstyled-ui/animation",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "uibasic",
   "keywords": [],
   "author": "che3vinci <che3vinci@gmail.com>",
@@ -43,9 +43,9 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@stitches/react": "^1.2.8",
-    "@unstyled-ui/core": "workspace:^1.0.4",
+    "@unstyled-ui/core": "workspace:^1.0.6",
     "@unstyled-ui/css": "workspace:^",
-    "@unstyled-ui/stitches": "workspace:^1.0.6",
+    "@unstyled-ui/stitches": "workspace:^1.0.8",
     "classnames": "^2.3.1",
     "csstype": "^3.1.0"
   },

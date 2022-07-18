@@ -1,5 +1,14 @@
 ## 1.0.2
 
+## 1.0.6
+
+### Patch Changes
+
+- 5263ff0: dropdown/animation/others
+- Updated dependencies [5263ff0]
+  - @unstyled-ui/css@1.1.2
+  - @unstyled-ui/stitches@1.0.8
+
 ## 1.0.4
 
 ### Patch Changes
