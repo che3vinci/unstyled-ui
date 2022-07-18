@@ -4,6 +4,7 @@ module.exports = {
     '../packages/uikits/src/**/*.stories.@(js|jsx|ts|tsx)',
     '../packages/layout/src/**/*.stories.@(js|jsx|ts|tsx)',
     '../packages/core/src/**/*.stories.@(js|jsx|ts|tsx)',
+    '../packages/animation/src/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   addons: [
     '@storybook/addon-links',

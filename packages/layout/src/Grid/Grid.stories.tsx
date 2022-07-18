@@ -16,5 +16,5 @@ Default.args = {
 
 export default {
   component: Grid,
-  title: 'Grid',
+  title: 'layout/Grid',
 };

@@ -3,7 +3,7 @@ import { Modal, ModalProps } from './Modal';
 import { useModal } from './useModal';
 export default {
   component: Modal,
-  title: 'Modal',
+  title: 'uikits/Modal',
 };
 
 const ModalApp = props => {

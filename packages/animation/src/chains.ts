@@ -1,11 +1,13 @@
+import { CSSProperties } from '@unstyled-ui/core';
+
 export type AnimationObject = {
-  animation: string;
+  animation: CSSProperties['animation'];
   duration: number; //ms
 };
 
 // multiple animation take place in order
 
-export const getAnimiationFromChains = (...animations: AnimationObject[]) => {
+export const chainedAnimation = (...animations: AnimationObject[]) => {
   return animations.reduce((total, cur, idx) => {
     const delay = animations
       .slice(0, idx)

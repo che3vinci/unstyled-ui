@@ -1,8 +1,7 @@
 export * from './Badget';
 export * from './CountDownBtn';
 export * from './ErrorBoundary';
-export * from './InfoBar';
-export * from './Loading';
+export * from './TextItem';
 export * from './LongList';
 export * from './MediaObject';
 export * from './Modal';
@@ -13,3 +12,4 @@ export * from './Tabs';
 export * from './Toast';
 export * from './List';
 export * from './ToolTip';
+export * from './Page';

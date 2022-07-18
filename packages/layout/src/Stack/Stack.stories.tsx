@@ -16,17 +16,9 @@ WidthInstrinticChildren.args = {
   width: 500,
   height: 500,
 } as StackProps;
-// export const NormalChildren = Template.bind({});
-// NormalChildren.args = {
-//   children: [
-//     <Text style={{ background: 'red', opacity: 0.2, top: 100 }} key="1">
-//       hello
-//     </Text>,
-//   ],
-//   css: { width: 500, height: 500, border: '1px solid grey' },
-// } as StackProps;
+
 
 export default {
   component: Stack,
-  title: 'Stack',
+  title: 'layout/Stack',
 };

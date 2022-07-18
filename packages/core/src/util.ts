@@ -1,11 +1,43 @@
-import { RCSSProperties } from './types';
-type Typography = {
+import { RCSSProperties, CSSProperties } from './types';
+export type Typography = {
   fontSize: RCSSProperties['fontSize'];
   fontWeight: RCSSProperties['fontWeight'];
   lineHeight?: RCSSProperties['lineHeight'];
   letterSpacing?: RCSSProperties['letterSpacing'];
   fontFamily?: RCSSProperties['fontFamily'];
 };
+export type Animation = Pick<
+  CSSProperties,
+  | 'animationName'
+  | 'animationDelay'
+  | 'animationDirection'
+  | 'animationDuration'
+  | 'animationIterationCount'
+  | 'animationTimingFunction'
+  | 'animationFillMode'
+  | 'animationPlayState'
+>;
+export type Transition = Pick<
+  CSSProperties,
+  | 'transitionDelay'
+  | 'transitionDuration'
+  | 'transitionProperty'
+  | 'transitionTimingFunction'
+>;
+// export type Animation = {
+//   name: RCSSProperties['animationName'];
+//   delay: RCSSProperties['animationDelay'];
+//   direction: RCSSProperties['animationDirection'];
+//   duration: RCSSProperties['animationDuration'];
+//   iterationCount: RCSSProperties['animationIterationCount'];
+//   timingFunction: RCSSProperties['animationTimingFunction'];
+//   fillMode: RCSSProperties['animationFillMode'];
+//   playState: RCSSProperties['animationPlayState'];
+//   animation: RCSSProperties['animation'];
+// };
+
+const pseudoElements = ['before', 'after'];
+const pseudoClasses = ['hover', 'focus', 'active'];
 
 export const utils = {
   w: (w: RCSSProperties['width']) => ({ width: w }),
@@ -51,5 +83,32 @@ export const utils = {
   //others shortcuts
   bg: (bg: RCSSProperties['background']) => ({ background: bg }),
 
-  round: () => ({ borderRadius: 10000000 }),
+  anime: (options: Animation) => ({
+    animationFillMode: 'forwards',
+    ...options,
+  }),
+  transi: (trans: Transition) => ({ ...trans }),
+  ...pseudoElements.reduce(
+    (acc, pseudo: string) => ({
+      ...acc,
+      [`_${pseudo}`]: (css: RCSSProperties) => ({
+        [`&::${pseudo}`]: {
+          content: '',
+          position: 'absolute',
+          ...css,
+        },
+        '&': {
+          position: 'relative',
+        },
+      }),
+    }),
+    {}
+  ),
+  ...pseudoClasses.reduce(
+    (acc, pseudo: string) => ({
+      ...acc,
+      [`_${pseudo}`]: (css: RCSSProperties) => ({ [`&:${pseudo}`]: css }),
+    }),
+    {}
+  ),
 };

@@ -1,36 +1,63 @@
-import { mock } from '@c3/utils';
-import React from 'react';
-import { BaseProps, styled } from '.';
+import React, { useEffect } from 'react';
+import { styled } from '.';
 
-const App = styled('div', {});
+const Box = styled('div', {
+  variants: {
+    round: {
+      true: {
+        borderRadius: '100000px',
+      },
+    },
+  },
+});
+const Row = styled(Box, { display: 'flex' });
 
-const Template = (args: any) => <App {...args} />;
+export default {
+  component: Box,
+  title: 'core/Core',
+};
 
-export const DeepClsVisitor = Template.bind({});
-DeepClsVisitor.args = {
-  children: [
+export const Variants = () => (
+  <Box round css={{ border: '1px solid red' }}>
+    hello
+  </Box>
+);
+export const InheritedVariants = () => (
+  <Row round css={{ border: '1px solid red' }}>
+    hello
+  </Row>
+);
+
+export const DeepClsVisitor = () => (
+  <Box
+    css={{
+      '& > .child-1': {
+        color: 'red',
+      },
+      '& .grandson': {
+        color: 'green',
+      },
+    }}
+  >
     <div className="child-1" key={1}>
       child1
       <div className="grandson">grandson</div>
-    </div>,
+    </div>
+
     <div className="child-2" key={2}>
       child2
-    </div>,
-  ],
-  css: {
-    round: true,
-    w: 100,
-    aspectRatio: 1,
-    '& .child-1': {
-      color: 'red',
-    },
-    '& .grandson': {
-      color: 'green',
-    },
-  },
-} as BaseProps;
+    </div>
+  </Box>
+);
 
-export default {
-  component: App,
-  title: 'Core',
+export const ForwardRef = () => {
+  const ref = React.useRef<HTMLDivElement>(null);
+  const [tagName, setTagName] = React.useState<string>('');
+  useEffect(() => {
+    setTagName(ref.current?.tagName || '');
+  }, [ref]);
+
+  return <Box ref={ref}>tagName:{tagName || 'null'}</Box>;
 };
+
+

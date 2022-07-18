@@ -1,13 +1,9 @@
 import { CSSProperties } from '@unstyled-ui/core';
 
-export const bg = (
-  url: string,
-  size: CSSProperties['backgroundSize'] = 'cover',
-  css: CSSProperties = {}
-): CSSProperties => ({
+export const bgImg = (url: string, css: CSSProperties = {}): CSSProperties => ({
   backgroundImage: `url(${url})`,
   backgroundPosition: 'center',
-  backgroundSize: `${size}`,
+  backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   ...css,
 });

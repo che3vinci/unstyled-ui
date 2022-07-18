@@ -15,5 +15,5 @@ Default.args = {
 
 export default {
   component: Fixed,
-  title: 'Fixed',
+  title: 'layout/Fixed',
 };

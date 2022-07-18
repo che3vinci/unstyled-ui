@@ -42,11 +42,12 @@
   "homepage": "https://github.com/che3vinci/c3#readme",
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@c3/dom": "^1.0.99",
+    "@c3/dom": "^1.1.0",
+    "@unstyled-ui/animation": "workspace:^1.0.2",
     "@unstyled-ui/atomic": "workspace:^1.0.5",
     "@unstyled-ui/core": "workspace:^1.0.4",
     "@unstyled-ui/css": "workspace:^",
-    "@unstyled-ui/layout": "workspace:^1.0.7",
+    "@unstyled-ui/layout": "workspace:^1.0.8",
     "classnames": "^2.3.1"
   },
   "devDependencies": {
