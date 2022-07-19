@@ -4,7 +4,7 @@ import { BaseProps } from '@unstyled-ui/core';
 import React, { useCallback } from 'react';
 import { useSwitch } from '@c3/hooks';
 import { URL } from '@c3/utils';
-import Svg404 from './404.svg';
+// import Svg404 from './404.svg';
 
 export type ImageProps = {
   fallbackSrc?: URL;
@@ -17,7 +17,7 @@ export const Image: React.FC<ImageProps> = props => {
   const {
     css = {},
     className,
-    fallbackSrc = Svg404,
+    fallbackSrc = '',
     loadingIndicator = '',
     src,
     onLoad,
@@ -53,7 +53,6 @@ export const Image: React.FC<ImageProps> = props => {
         objectFit: 'cover',
         objectPosition: 'center',
         flexShrink: 0,
-        width: '100%',
         maxWidth: '100%',
         ...css,
       }}

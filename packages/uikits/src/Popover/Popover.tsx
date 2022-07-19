@@ -6,7 +6,13 @@ import {
 } from '@c3/hooks';
 import { IBox } from '@c3/utils';
 import { BaseProps } from '@unstyled-ui/core';
-import { absXCenter, absYCenter, Box, Relative } from '@unstyled-ui/layout';
+import {
+  absXCenter,
+  absYCenter,
+  Box,
+  col,
+  Relative,
+} from '@unstyled-ui/layout';
 import React, {
   useCallback,
   useEffect,
@@ -17,13 +23,13 @@ import React, {
 import { IPosition } from '@unstyled-ui/layout';
 import { show } from '@unstyled-ui/css';
 
-export type DropdownProps = {
+export type PopoverProps = {
   overlay: JSX.Element;
   trigger?: ('click' | 'hover')[];
   placement?: 'top' | 'bottom' | 'left' | 'right';
 } & BaseProps;
 
-export const Dropdown: React.FC<DropdownProps> = props => {
+export const Popover: React.FC<PopoverProps> = props => {
   const {
     trigger = ['click'],
     overlay,
@@ -106,6 +112,7 @@ export const Dropdown: React.FC<DropdownProps> = props => {
   useEffect(() => {
     ref.current && watch(ref.current);
   }, [watch]);
+  const { css: overlayCss, ...restOverlayProps } = overlay.props;
 
   return (
     //@ts-ignore
@@ -117,9 +124,16 @@ export const Dropdown: React.FC<DropdownProps> = props => {
     >
       <children.type {...childProps} />
       {/* @ts-ignore */}
-      <Box css={{ position: 'absolute', ...pos, ...show(visible) }}>
-        {overlay}
-      </Box>
+      <overlay.type
+        css={{
+          ...overlayCss,
+          position: 'absolute',
+          ...pos,
+          ...show(visible),
+          ...col(),
+        }}
+        {...restOverlayProps}
+      />
     </Relative>
   );
 };

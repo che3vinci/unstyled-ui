@@ -20,7 +20,7 @@ export default defineConfig({
         '@unstyled-ui/css',
         '@c3/utils',
         '@c3/hooks',
-        '@unstyled-ui/stitches',
+        '@unstyled-ui/core',
         'lodash',
         'classnames',
       ],

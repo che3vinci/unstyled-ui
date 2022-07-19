@@ -7,10 +7,10 @@ import { Abs, Fixed, Col, absXYCenter } from '@unstyled-ui/layout';
 
 export type ModalProps = {
   visible: boolean;
-  closeBtn?: React.ReactElement;
-  okBtn?: React.ReactElement;
-  cancelBtn?: React.ReactElement;
-  body: React.ReactElement;
+  closeBtn?: JSX.Element;
+  okBtn?: JSX.Element;
+  cancelBtn?: JSX.Element;
+  body: JSX.Element;
   onCancel?: Fn;
   onOK?: Fn;
   showLoading?: boolean;
@@ -29,19 +29,19 @@ export const Modal: React.FC<ModalProps> = ({
   showLoading,
   loadingIcon,
   cancelBtn,
-  className,
   css,
   ...restProps
 }) => {
   const display = visible ? 'flex' : 'none';
   return (
     <Fixed
-      className="uu-mask"
+      as="u-mask"
       //@ts-ignore
       css={{ ...mask, display, bg: 'rgba(0,0,0,0.8)', ...css }}
       {...restProps}
     >
-      <Col position="relative" className={classNames('uu-modal', className)}>
+      <Col css={{ position: 'relative' }} as="u-modal">
+        <body.type {...body.props} as="u-body" />
         {closeBtn && (
           <closeBtn.type
             onClick={onClose}
@@ -49,7 +49,6 @@ export const Modal: React.FC<ModalProps> = ({
             {...closeBtn?.props}
           />
         )}
-        {body}
 
         {okBtn && (
           <okBtn.type

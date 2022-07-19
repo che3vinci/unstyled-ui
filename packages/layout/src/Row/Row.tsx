@@ -1,28 +1,21 @@
+import { BaseProps } from '@unstyled-ui/core';
 import React from 'react';
 import { Box } from '../Box';
-import { BaseProps } from '@unstyled-ui/core';
-import { row } from './row.utils';
 import { rgap } from '../utils';
-import { CSSProperties } from '@stitches/react';
+import { row } from './row.utils';
 
-export type RowProps = {
-  fx?: CSSProperties['justifyContent'];
-  fy?: CSSProperties['alignItems'];
-  gap?: CSSProperties['gap'];
-} & BaseProps;
+export type RowProps = BaseProps;
 export const Row: React.FC<RowProps> = props => {
   const {
     //@ts-ignore
-    css = {},
-    fx,
-    fy,
-    gap,
+    css: { fx, fy, gap, ...restCss } = {},
     ...restProps
   } = props;
   return (
     <Box
+      as="u-row"
       //@ts-ignore
-      css={{ ...row(fx, fy), ...rgap(gap), ...css }}
+      css={{ ...row(fx, fy), ...rgap(gap), ...restCss }}
       {...restProps}
     />
   );

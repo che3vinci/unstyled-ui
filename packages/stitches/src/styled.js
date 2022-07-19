@@ -45,16 +45,20 @@ export const createStyledFunction = ({ config, css }) =>
           }
         }
 
-
         const { props: forwardProps, deferredInjector } =
           cssComponent(newProps);
         delete forwardProps.as;
 
+        if (typeof Type === 'string' && Type.startsWith('u-')) {
+          forwardProps.class = forwardProps.className;
+          delete forwardProps.className;
+        }
+
         forwardProps.ref = ref;
-         if (__DEV__) {
-           console.log('newprops', newProps);
-           console.log('forwardProps', forwardProps);
-         }
+        if (__DEV__) {
+          // console.log('newprops', newProps);
+          // console.log('forwardProps', forwardProps);
+        }
 
         if (deferredInjector) {
           return React.createElement(

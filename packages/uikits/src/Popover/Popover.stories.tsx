@@ -1,9 +1,9 @@
-import { Dropdown } from './Dropdown';
+import { Popover } from './Popover';
 import React from 'react';
 
-import { Default } from '../List/index.stories';
+import { Default } from '../List/List.stories';
 export default {
-  component: Dropdown,
+  component: Popover,
   title: 'uikits/Dropdown',
 };
 const Overlay = <Default />;
@@ -14,33 +14,33 @@ const defaultArgs = {
 };
 
 export const ClickDropdown = () => (
-  <Dropdown {...defaultArgs}>
+  <Popover {...defaultArgs}>
     <button>click</button>
-  </Dropdown>
+  </Popover>
 );
 export const HoverDropdown = () => (
-  <Dropdown {...defaultArgs} trigger={['hover']}>
+  <Popover {...defaultArgs} trigger={['hover']}>
     <button>click</button>
-  </Dropdown>
+  </Popover>
 );
 export const Top = () => (
-  <Dropdown {...defaultArgs} placement="top">
+  <Popover {...defaultArgs} placement="top">
     <button>click</button>
-  </Dropdown>
+  </Popover>
 );
 export const Bottom = () => (
-  <Dropdown {...defaultArgs} placement="bottom">
+  <Popover {...defaultArgs} placement="bottom">
     <button>click</button>
-  </Dropdown>
+  </Popover>
 );
 
 export const Left = () => (
-  <Dropdown {...defaultArgs} placement="left">
+  <Popover {...defaultArgs} placement="left">
     <button>click</button>
-  </Dropdown>
+  </Popover>
 );
 export const Right = () => (
-  <Dropdown {...defaultArgs} placement="right">
+  <Popover {...defaultArgs} placement="right">
     <button>click</button>
-  </Dropdown>
+  </Popover>
 );

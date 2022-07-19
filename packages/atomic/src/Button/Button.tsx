@@ -15,8 +15,15 @@ export type ButtonProps = BaseProps<
 };
 
 export const Button: React.FC<ButtonProps> = props => {
-  const { preventDefault, onClick, loading, children, css, ...restProps } =
-    props;
+  const {
+    preventDefault,
+    onClick,
+    loading,
+    children,
+    css,
+    disabled,
+    ...restProps
+  } = props;
 
   const handleClick = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -33,7 +40,8 @@ export const Button: React.FC<ButtonProps> = props => {
       as="button"
       onClick={handleClick}
       //@ts-ignore
-      css={{ ...(loading ? { gap: '1em' } : {}), ...button(), ...css }}
+      css={{ ...(loading ? { gap: '1em' } : {}), ...button(disabled), ...css }}
+      disabled={disabled}
       {...restProps}
     >
       {loading && <LoadingOutlined className="loading-icon" />}

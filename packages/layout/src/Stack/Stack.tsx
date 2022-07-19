@@ -14,9 +14,9 @@ export const Stack: React.FC<StackProps> = props => {
   return (
     //@ts-ignore
     <Relative
+      as="u-stack"
       //@ts-ignore
       css={{ width, height, overflow: 'hidden', ...css }}
-      className={classnames(className, 'uu-stack')}
       {...restProps}
     >
       {React.Children.toArray(children).map(e => {

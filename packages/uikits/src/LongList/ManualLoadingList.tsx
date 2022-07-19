@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
 import { BaseProps } from '@unstyled-ui/core';
 import { Col } from '@unstyled-ui/layout';
-import { BaseListItem, List, ListProps } from '../List';
+import { BaseListItemType, List, ListProps } from '../List/List';
 
-type BaseType = BaseListItem;
+type BaseType = BaseListItemType;
 export type IManualLongListProps<T extends BaseType> = {
   loadNextTip?: React.ReactElement;
   listCssProps?: BaseProps;
@@ -15,7 +15,7 @@ export const ManualLoadingList = <T extends BaseType>(
   const {
     renderItem,
     data,
-    updateList,
+    updateData: updateList,
     hvDirection,
     emptyNode,
     loadNextTip,
@@ -29,7 +29,7 @@ export const ManualLoadingList = <T extends BaseType>(
       <List
         data={data}
         renderItem={renderItem}
-        updateList={updateList}
+        updateData={updateList}
         hvDirection={hvDirection}
         emptyNode={emptyNode}
         css={{ ...listCssProps }}

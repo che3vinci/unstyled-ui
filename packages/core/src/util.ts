@@ -24,19 +24,14 @@ export type Transition = Pick<
   | 'transitionProperty'
   | 'transitionTimingFunction'
 >;
-// export type Animation = {
-//   name: RCSSProperties['animationName'];
-//   delay: RCSSProperties['animationDelay'];
-//   direction: RCSSProperties['animationDirection'];
-//   duration: RCSSProperties['animationDuration'];
-//   iterationCount: RCSSProperties['animationIterationCount'];
-//   timingFunction: RCSSProperties['animationTimingFunction'];
-//   fillMode: RCSSProperties['animationFillMode'];
-//   playState: RCSSProperties['animationPlayState'];
-//   animation: RCSSProperties['animation'];
-// };
 
-const pseudoElements = ['before', 'after'];
+const pseudoElements = [
+  'before',
+  'after',
+  'first-letter',
+  'first-line',
+  'placeholder',
+];
 const pseudoClasses = ['hover', 'focus', 'active'];
 
 export const utils = {
@@ -48,7 +43,13 @@ export const utils = {
   maxH: (maxH: RCSSProperties['maxHeight']) => ({ maxHeight: maxH }),
 
   //typo
-  typo: (value: Typography) => ({ ...value }),
+  typo: (value: Typography) => {
+    const hl =
+      typeof value.lineHeight === 'number' && value.lineHeight > 5
+        ? `${value.lineHeight}px`
+        : value.lineHeight;
+    return { ...value, lineHeight: hl };
+  },
 
   //margin
   m: (m: RCSSProperties['margin']) => ({ margin: m }),
@@ -88,6 +89,8 @@ export const utils = {
     ...options,
   }),
   transi: (trans: Transition) => ({ ...trans }),
+
+  //TODO: img/input dones't support pseudo elements
   ...pseudoElements.reduce(
     (acc, pseudo: string) => ({
       ...acc,

@@ -60,4 +60,6 @@ export const ForwardRef = () => {
   return <Box ref={ref}>tagName:{tagName || 'null'}</Box>;
 };
 
-
+export const themeTest = () => {
+  return <Box css={{ background: '$red500',  }}>hello</Box>;
+};
