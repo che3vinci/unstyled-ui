@@ -1,5 +1,13 @@
 ## 1.0.2
 
+## 1.0.7
+
+### Patch Changes
+
+- d146218: form and item component
+- Updated dependencies [d146218]
+  - @unstyled-ui/stitches@1.0.9
+
 ## 1.0.6
 
 ### Patch Changes

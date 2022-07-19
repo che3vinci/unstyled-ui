@@ -20,6 +20,8 @@ export default defineConfig({
         '@ant-design/icons',
         '@unstyled-ui/css',
         '@unstyled-ui/core',
+        '@unstyled-ui/atomic',
+        '@unstyled-ui/layout',
         '@c3/utils',
         '@c3/hooks',
         'lodash',

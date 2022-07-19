@@ -34,6 +34,7 @@ export const List = <T extends BaseListItemType>(props: ListProps<T>) => {
   //@ts-ignore
   const gapObj = hvDirection === 'vertical' ? vgap(gap) : rgap(gap);
   return (
+    //@ts-ignore
     <Box
       as="ul"
       width="100%"

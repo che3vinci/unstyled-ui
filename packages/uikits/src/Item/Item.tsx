@@ -2,7 +2,7 @@ import { BaseProps } from '@unstyled-ui/core';
 import { Box, flexYCenter } from '@unstyled-ui/layout';
 import React from 'react';
 
-export interface ItemProps extends BaseProps {
+export interface ItemProps extends Omit<BaseProps, 'prefix' | 'suffix'> {
   direction?: 'row' | 'column';
   prefix?: JSX.Element;
   suffix?: JSX.Element;

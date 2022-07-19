@@ -1,7 +1,7 @@
 import { BaseProps } from '@unstyled-ui/core';
 import { Dropdown } from '@unstyled-ui/uikits';
 import { isEmpty } from 'lodash';
-import { useCallback } from 'react';
+import React, { useCallback } from 'react';
 
 export type Option = {
   name: string;
@@ -17,6 +17,10 @@ export type SelectProps = {
 
 export const Select = (props: SelectProps) => {
   const { onChange, selectBox, selected, children, ...restProps } = props;
+  if (!React.isValidElement(children)) {
+    throw new Error('Select children must be a valid react element');
+  }
+
   const handleChange = useCallback(
     e => {
       const v = {

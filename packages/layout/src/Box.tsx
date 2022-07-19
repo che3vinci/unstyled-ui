@@ -1,5 +1,6 @@
 import { styled } from '@unstyled-ui/core';
 
+//@ts-ignore
 export const Box = styled('u-box', {
   display: 'flex',
   boxSizing: 'border-box',
@@ -9,7 +10,7 @@ export const Box = styled('u-box', {
     dbg: {
       true: {
         '&,& *': {
-          outline: '1px solid rgba(255, 0, 0, 0.5)',
+          outline: '1px solid rgba(220, 108, 108, 0.5)',
         },
       },
     },

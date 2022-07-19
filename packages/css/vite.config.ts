@@ -16,9 +16,11 @@ export default defineConfig({
         'tslib',
         'react',
         'lodash',
-        '@c3/utils'
+        '@c3/utils',
+        '@unstyled-ui/core',
+        '@unstyled-ui/layout',
       ],
-      plugins: [commonjs(), rollupTypescript()], 
+      plugins: [commonjs(), rollupTypescript()],
     },
   },
 });

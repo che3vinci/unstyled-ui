@@ -70,7 +70,6 @@ export const Popover: React.FC<PopoverProps> = props => {
       ...(trigger.includes('click')
         ? {
             onClick: (e: Event) => {
-              console.log('xxx');
               e.stopPropagation();
               on();
             },
@@ -117,6 +116,7 @@ export const Popover: React.FC<PopoverProps> = props => {
   return (
     //@ts-ignore
     <Relative
+      //@ts-ignore
       css={{ w: 'max-content', ...css }}
       {...restProps}
       onClick={onClickContainer}

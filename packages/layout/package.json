@@ -1,17 +1,17 @@
 {
   "name": "@unstyled-ui/layout",
-  "version": "1.0.9",
+  "version": "1.0.13",
   "description": "uibasic",
   "keywords": [],
   "author": "che3vinci <che3vinci@gmail.com>",
   "license": "ISC",
-  "main": "src/index.tsx",
-  "module": "src/index.tsx",
-  "types": "src/index.tsx",
   "directories": {
     "lib": "dist",
     "test": "__tests__"
   },
+  "main": "dist/layout.umd.js",
+  "module": "dist/layout.es.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -44,10 +44,10 @@
     "@ant-design/icons": "^4.7.0",
     "@stitches/react": "^1.2.8",
     "@unstyled-ui/common": "workspace:^1.0.3",
-    "@unstyled-ui/core": "workspace:^1.0.6",
+    "@unstyled-ui/core": "workspace:^1.0.7",
     "@unstyled-ui/css": "workspace:^",
     "@unstyled-ui/responsive": "workspace:^1.0.4",
-    "@unstyled-ui/stitches": "workspace:^1.0.8",
+    "@unstyled-ui/stitches": "workspace:^1.0.9",
     "classnames": "^2.3.1",
     "csstype": "^3.1.0"
   },

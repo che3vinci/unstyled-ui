@@ -1,5 +1,15 @@
 ## 1.0.2
 
+## 1.0.8
+
+### Patch Changes
+
+- d146218: form and item component
+- Updated dependencies [d146218]
+  - @unstyled-ui/atomic@1.0.8
+  - @unstyled-ui/core@1.0.7
+  - @unstyled-ui/layout@1.0.10
+
 ## 1.0.7
 
 ### Patch Changes

@@ -1,12 +1,11 @@
 import commonjs from '@rollup/plugin-commonjs';
-import rollupTypescript from '@rollup/plugin-typescript';
 import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
     lib: {
-      entry: './src/index.tsx',
+      entry: './src/index.ts',
       name: 'form',
       formats: ['iife', 'es', 'umd'],
     },

@@ -1,4 +1,5 @@
 import { Popover, PopoverProps } from './Popover';
+import React from 'react';
 
 export type DropdownProps = PopoverProps;
 

@@ -10,8 +10,11 @@ run({
     await $`pnpm -r buildOnly`;
     await $`pnpm -r type`;
   },
-  async publish() {
+  async publish(options) {
+    const { buildOnly } = options;
     await this.build();
-    await $`pnpm publish -r  --no-git-checks `;
+    if (!buildOnly) {
+      await $`pnpm publish -r  --no-git-checks `;
+    }
   },
 });

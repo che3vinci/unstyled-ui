@@ -1,18 +1,18 @@
 {
   "name": "@unstyled-ui/stitches",
-  "version": "1.0.8",
+  "version": "1.0.12",
   "description": "",
   "keywords": [],
   "author": "che3vinci <che3vinci@gmail.com>",
   "license": "MIT",
-  "main": "src/index.js",
-  "module": "src/index.js",
-  "types": "types/index.d.ts",
-  "type": "module",
   "directories": {
     "lib": "dist",
     "test": "__tests__"
   },
+  "main": "dist/stitches.umd.js",
+  "module": "dist/stitches.es.js",
+  "types": "types/index.d.ts",
+  "type": "module",
   "files": [
     "dist",
     "types/*.d.ts"

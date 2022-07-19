@@ -4,7 +4,7 @@
     "experimentalDecorators": true,
     "target": "es5",
     "module": "esnext",
-    "jsx": "react-jsx",
+    "jsx": "react",
     "types": ["node", "jest"],
     "esModuleInterop": true,
     "moduleResolution": "node",
