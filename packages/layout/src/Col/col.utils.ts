@@ -1,7 +1,7 @@
 import { CSSProperties } from '@unstyled-ui/core';
 
 export const col = (
-  fx: CSSProperties['alignItems'] = 'center',
+  fx: CSSProperties['alignItems'] = 'flex-start',
   fy: CSSProperties['justifyContent'] = 'flex-start'
 ): CSSProperties => {
   return {

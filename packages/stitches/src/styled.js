@@ -56,8 +56,8 @@ export const createStyledFunction = ({ config, css }) =>
 
         forwardProps.ref = ref;
         if (__DEV__) {
-          console.log('newprops', newProps);
-          console.log('forwardProps', forwardProps);
+          // console.log('newprops', newProps);
+          // console.log('forwardProps', forwardProps);
         }
 
         if (deferredInjector) {
