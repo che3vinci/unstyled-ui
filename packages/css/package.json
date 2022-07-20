@@ -9,9 +9,9 @@
     "lib": "dist",
     "test": "__tests__"
   },
-"main": "src/index.ts",
-"module": "src/index.ts",
-"types": "src/index.ts",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "types": "src/index.ts",
   "files": [
     "dist"
   ],

@@ -1,24 +1,25 @@
+import { mock } from '@c3/utils';
+import { styled } from '@unstyled-ui/core';
 import React from 'react';
 import { Stack, StackProps } from '../Stack';
 
-const Template = (args: any) => <Stack {...args} />;
-export const WidthInstrinticChildren = Template.bind({});
-WidthInstrinticChildren.args = {
-  children: [
-    <div style={{ background: 'red', opacity: 0.2, top: 100 }} key="1">
-      hello
-    </div>,
-    <p style={{ background: 'blue', opacity: 0.3, left: 100, top: 20 }} key="2">
-      world
-    </p>,
-  ],
-  css: { border: '1px solid grey' },
-  width: 500,
-  height: 500,
-} as StackProps;
-
+const Image = styled('img', {});
+const Text = styled('p', {});
 
 export default {
   component: Stack,
   title: 'layout/Stack',
+};
+export const StackWithBody = (props: StackProps) => {
+  return (
+    <Stack
+      body={<Image src={mock.getRandomPic(400, 300)} css={{ opacity: 0.2 }} />}
+    >
+      <Text css={{ left: 100, top: 10 }}>hello</Text>
+      <Text css={{ left: 10, top: 10 }}>hello</Text>
+      <Text>center-no-specified-left-top</Text>
+      <Text css={{ left: 100, top: 100 }}>hello</Text>
+      <Text css={{ left: 100, top: 250, h: 300, bg: 'red' }}>overflow</Text>
+    </Stack>
+  );
 };

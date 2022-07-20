@@ -5,8 +5,13 @@ export const Input = styled('input', {
   _placeholder: {
     ...absYCenter({ left: '0em' }),
   },
-  // pl: '1em',
-  variants: {},
+  '&:focus': {},
+  variants: {
+    status: {
+      error: { border: '1px solid red' },
+      focus: {},
+    },
+  },
 });
 
 export const atomic: { input: typeof Input } = { input: Input };
