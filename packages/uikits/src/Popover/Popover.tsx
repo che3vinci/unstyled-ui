@@ -6,13 +6,7 @@ import {
 } from '@c3/hooks';
 import { IBox } from '@c3/utils';
 import { BaseProps } from '@unstyled-ui/core';
-import {
-  absXCenter,
-  absYCenter,
-  Box,
-  col,
-  Relative,
-} from '@unstyled-ui/layout';
+import { absXCenter, absYCenter, col, Relative } from '@unstyled-ui/layout';
 import React, {
   useCallback,
   useEffect,
@@ -27,6 +21,8 @@ export type PopoverProps = {
   overlay: JSX.Element;
   trigger?: ('click' | 'hover')[];
   placement?: 'top' | 'bottom' | 'left' | 'right';
+  visible: boolean;
+  updateVisible: (visible: boolean) => void;
 } & BaseProps;
 
 export const Popover: React.FC<PopoverProps> = props => {
@@ -35,18 +31,20 @@ export const Popover: React.FC<PopoverProps> = props => {
     overlay,
     placement = 'bottom',
     children,
+    visible,
+    updateVisible,
     css = {},
     ...restProps
   } = props;
   if (!React.isValidElement(children)) {
     throw new Error('TypeError:children must be reactElement');
   }
-  const [visible, on, off] = useSwitch(false);
+  // const [visible, on, off] = useSwitch(false);
   const ref = useRef<HTMLButtonElement>(null);
 
   const clickOutside = useCallback(() => {
-    visible && off();
-  }, [off, visible]);
+    visible && updateVisible(false);
+  }, [updateVisible, visible]);
 
   const forbidClick = useCallback((e: Event) => {
     e.stopPropagation();
@@ -58,11 +56,11 @@ export const Popover: React.FC<PopoverProps> = props => {
 
   useEffect(() => {
     hovered
-      ? on()
+      ? updateVisible(true)
       : setTimeout(() => {
-          off();
+          updateVisible(false);
         }, 2000);
-  }, [hovered, off, on]);
+  }, [hovered, updateVisible]);
 
   const childProps = useMemo(() => {
     return {
@@ -71,13 +69,13 @@ export const Popover: React.FC<PopoverProps> = props => {
         ? {
             onClick: (e: Event) => {
               e.stopPropagation();
-              on();
+              updateVisible(true);
             },
           }
         : {}),
       ...(trigger.includes('hover') ? restEvent : {}),
     };
-  }, [children.props, on, restEvent, trigger]);
+  }, [children.props, restEvent, trigger, updateVisible]);
 
   const onClickContainer = useCallback(
     e => {
@@ -116,6 +114,7 @@ export const Popover: React.FC<PopoverProps> = props => {
   return (
     //@ts-ignore
     <Relative
+      // as="u-popover"
       //@ts-ignore
       css={{ w: 'max-content', ...css }}
       {...restProps}

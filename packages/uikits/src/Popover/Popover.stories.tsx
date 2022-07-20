@@ -4,7 +4,7 @@ import React from 'react';
 import { Default } from '../List/List.stories';
 export default {
   component: Popover,
-  title: 'uikits/Dropdown',
+  title: 'uikits/popover',
 };
 const Overlay = <Default />;
 const defaultArgs = {

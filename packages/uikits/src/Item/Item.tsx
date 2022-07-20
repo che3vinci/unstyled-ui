@@ -9,13 +9,14 @@ export interface ItemProps extends Omit<BaseProps, 'prefix' | 'suffix'> {
 }
 
 export const Item: React.FC<ItemProps> = props => {
-  const { prefix, direction = 'row', css = {}, ...restProps } = props;
+  const { prefix, suffix, direction = 'row', css = {}, ...restProps } = props;
 
   if (!React.isValidElement(props.children)) {
     throw new Error('Item children must be a valid react element');
   }
-  const { cCss = {}, ...restCProps } = props.children.props;
+  const { css: cCss = {}, ...restCProps } = props.children.props;
   const { prefixCss = {}, ...restPrefixProps } = prefix?.props || {};
+  const { suffixCss = {}, ...restsuffixProps } = suffix?.props || {};
 
   return (
     <Box
@@ -40,6 +41,12 @@ export const Item: React.FC<ItemProps> = props => {
         css={{ rows: 1, flexGrow: 1, ...cCss }}
         {...restCProps}
       />
+      {suffix && (
+        <suffix.type
+          css={{ flexShrink: 0, ...suffixCss }}
+          {...restsuffixProps}
+        />
+      )}
     </Box>
   );
 };

@@ -13,8 +13,10 @@ export const Row = () => {
     <Item
       direction="row"
       prefix={<Image src={mock.getRandomPic()} css={{ w: 100 }}></Image>}
+      suffix={<Image src={mock.getRandomPic()} css={{ w: 100 }}></Image>}
+      css={{ w: 500, h: 100 }}
     >
-      <Text>hello</Text>
+      <Text css={{ color: 'red' }}>hello</Text>
     </Item>
   );
 };

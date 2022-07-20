@@ -2,6 +2,7 @@ import { mock } from '@c3/utils';
 import React, { useState } from 'react';
 import { Item } from '../Item';
 import { List } from './List';
+import { Image, Text } from '@unstyled-ui/atomic';
 
 export default {
   title: 'uikits/List',
@@ -24,23 +25,27 @@ const idata = [
   },
 ];
 
-export const Default = () => {
+export const Default = props => {
   const [data, setData] = useState(idata);
   return (
     <List
       data={data}
       renderItem={t => (
         <Item
-          text={t.name}
-          icon={mock.getRandomPic(32, 32)}
+          prefix={
+            <Image css={{ w: 48, h: 48 }} src={mock.getRandomPic(32, 32)} />
+          }
           css={{
             '&[active]': {
               color: 'red',
             },
           }}
-        />
+        >
+          <Text>{t.name}</Text>
+        </Item>
       )}
       updateData={setData}
+      {...props}
     />
   );
 };
