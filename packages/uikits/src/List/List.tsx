@@ -1,8 +1,8 @@
-import { Box, col, rgap, row, vgap } from '@unstyled-ui/layout';
 import { useExclusive } from '@c3/hooks';
-import { Color, HVDirection, IDable, isEmpty } from '@c3/utils';
-import React from 'react';
+import { Color, IDable, isEmpty } from '@c3/utils';
 import { BaseProps, CSSProperties } from '@unstyled-ui/core';
+import { Box, col, rgap, row, vgap } from '@unstyled-ui/layout';
+import React from 'react';
 
 export type BaseListItemType = IDable & { active?: boolean };
 
@@ -10,8 +10,9 @@ export type ListProps<T extends BaseListItemType> = {
   data: T[];
   renderItem: (item: T, idx: number) => JSX.Element;
   emptyNode?: React.ReactElement;
-  hvDirection?: HVDirection;
+  direction?: 'row' | 'column';
   updateData: (newData: T[], prev: T[]) => void;
+  afterClick?: (item: T) => void;
 } & BaseProps & {
     divider?: Color; //color
     gap?: CSSProperties['gap'];
@@ -22,31 +23,34 @@ export const List = <T extends BaseListItemType>(props: ListProps<T>) => {
     data,
     renderItem,
     emptyNode,
-    hvDirection = 'vertical',
+    afterClick,
+    direction = 'column',
     updateData,
     css = {},
     gap,
     ...restProps
   } = props;
-  const on = useExclusive(data, 'active', updateData);
-  const _isEmpty = isEmpty(data);
-  const dir = hvDirection === 'vertical' ? col('stretch') : row();
+  const on = useExclusive<T>(data, 'active', updateData);
+  console.log('direction', direction);
+  const dir = direction === 'column' ? col('stretch') : row();
   //@ts-ignore
-  const gapObj = hvDirection === 'vertical' ? vgap(gap) : rgap(gap);
+  const gapObj = direction === 'column' ? vgap(gap) : rgap(gap);
   return (
     //@ts-ignore
     <Box
       as="ul"
       width="100%"
-      hvDirection={hvDirection}
       //@ts-ignore
       css={{ listStyle: 'none', ...dir, ...gapObj, ...css }}
       {...restProps}
     >
-      {_isEmpty
+      {isEmpty(data)
         ? emptyNode
-        : data.map((e, idx) => {
+        : data.map((e: T, idx: number) => {
             const item = renderItem(e, idx);
+            if (!item) {
+              return null;
+            }
             const { onClick, ...restProps } = item.props;
             return (
               <item.type
@@ -54,6 +58,7 @@ export const List = <T extends BaseListItemType>(props: ListProps<T>) => {
                 onClick={(evt: React.MouseEvent) => {
                   on(e.id);
                   onClick && onClick(evt, e);
+                  afterClick && afterClick(e);
                 }}
                 {...(e.active ? { active: true } : {})}
                 {...restProps}

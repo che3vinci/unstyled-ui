@@ -12,7 +12,7 @@ export const Item: React.FC<ItemProps> = props => {
   const { prefix, direction = 'row', css = {}, ...restProps } = props;
 
   if (!React.isValidElement(props.children)) {
-    throw new Error('TextItem children must be a valid react element');
+    throw new Error('Item children must be a valid react element');
   }
   const { cCss = {}, ...restCProps } = props.children.props;
   const { prefixCss = {}, ...restPrefixProps } = prefix?.props || {};

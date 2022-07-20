@@ -1,20 +1,14 @@
 import { useExclusive } from '@c3/hooks';
-import { HVDirection } from '@c3/utils';
-import { BaseProps } from '@unstyled-ui/core';
-import React, { useCallback, useMemo, useState } from 'react';
-import { BaseSwitchItem, MenuConfig, Switcher } from './Switcher';
+import React, { useCallback, useMemo } from 'react';
+import { BaseSwitchItemType, Switcher, SwitcherProps } from './Switcher';
 
-export type Props<T> = {
-  menuConfig: MenuConfig<T>;
-  updateConfig: (menu: MenuConfig<T>) => void;
-  direction: HVDirection;
-} & BaseProps;
-
-export const useSteps = <T extends BaseSwitchItem>(props: Props<T>) => {
-  const { menuConfig, updateConfig, direction, ...restProps } = props;
-  const on = useExclusive(menuConfig, 'isSelected', updateConfig);
+export const useSteps = <T extends BaseSwitchItemType>(
+  props: SwitcherProps<T>
+) => {
+  const { menuConfig, updateConfig, ...restProps } = props;
+  const on = useExclusive<T>(menuConfig, 'active', updateConfig);
   const activeIndex = useMemo(
-    () => menuConfig.findIndex(e => e.isSelected),
+    () => menuConfig.findIndex((e: T) => e.active),
     [menuConfig]
   );
 
@@ -32,9 +26,13 @@ export const useSteps = <T extends BaseSwitchItem>(props: Props<T>) => {
 
   const _Switcher = useMemo(
     () => (
-      <Switcher menuConfig={menuConfig} direction={direction} {...restProps} />
+      <Switcher
+        menuConfig={menuConfig}
+        updateConfig={updateConfig}
+        {...restProps}
+      />
     ),
-    [direction, menuConfig, restProps]
+    [menuConfig, restProps, updateConfig]
   );
 
   return [_Switcher, goNext, goPrev] as const;

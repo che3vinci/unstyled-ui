@@ -1,6 +1,6 @@
 {
   "name": "@unstyled-ui/form",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "form",
   "keywords": [],
   "author": "che3vinci <che3vinci@gmail.com>",
@@ -12,6 +12,9 @@
   "files": [
     "dist"
   ],
+  "main": "dist/form.umd.js",
+  "module": "dist/form.es.js",
+  "types": "dist/index.d.ts",
   "publishConfig": {
     "access": "public",
     "main": "dist/form.umd.js",

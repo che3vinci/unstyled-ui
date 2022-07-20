@@ -1,8 +1,7 @@
-import { List } from './List';
-import { Text } from '@unstyled-ui/atomic';
-import React, { useState } from 'react';
-import { TextItem } from '../TextItem';
 import { mock } from '@c3/utils';
+import React, { useState } from 'react';
+import { Item } from '../Item';
+import { List } from './List';
 
 export default {
   title: 'uikits/List',
@@ -31,7 +30,7 @@ export const Default = () => {
     <List
       data={data}
       renderItem={t => (
-        <TextItem
+        <Item
           text={t.name}
           icon={mock.getRandomPic(32, 32)}
           css={{
