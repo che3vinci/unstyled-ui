@@ -1,6 +1,6 @@
 {
   "name": "@unstyled-ui/core",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "uibasic",
   "keywords": [],
   "author": "che3vinci <che3vinci@gmail.com>",
@@ -9,9 +9,9 @@
     "lib": "dist",
     "test": "__tests__"
   },
-  "main": "src/index.ts",
-  "module": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "dist/core.umd.js",
+  "module": "dist/core.es.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],

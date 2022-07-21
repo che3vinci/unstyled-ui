@@ -33,3 +33,10 @@ export const borderRadiusForGroup = (
 export const roundBorderValue = (height: number) => {
   return height / 2;
 };
+
+export const gradientBorder = (gradient: string): RCSSProperties => ({
+  border: '1px solid',
+  borderImageWidth: 1,
+  borderImageSlice: 1,
+  borderImageSource: gradient,
+});

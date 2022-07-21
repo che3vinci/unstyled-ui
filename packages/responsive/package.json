@@ -1,6 +1,6 @@
 {
   "name": "@unstyled-ui/responsive",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "uibasic",
   "keywords": [],
   "author": "che3vinci <che3vinci@gmail.com>",
@@ -9,9 +9,9 @@
     "lib": "dist",
     "test": "__tests__"
   },
-  "main": "src/index.ts",
-  "module": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "dist/responsive.umd.js",
+  "module": "dist/responsive.es.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
