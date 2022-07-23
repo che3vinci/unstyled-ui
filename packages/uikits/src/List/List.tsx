@@ -31,7 +31,6 @@ export const List = <T extends BaseListItemType>(props: ListProps<T>) => {
     ...restProps
   } = props;
   const on = useExclusive<T>(data, 'active', updateData);
-  console.log('direction', direction);
   const dir = direction === 'column' ? col('stretch') : row();
   //@ts-ignore
   const gapObj = direction === 'column' ? vgap(gap) : rgap(gap);
@@ -39,9 +38,15 @@ export const List = <T extends BaseListItemType>(props: ListProps<T>) => {
     //@ts-ignore
     <Box
       as="ul"
-      width="100%"
       //@ts-ignore
-      css={{ listStyle: 'none', ...dir, ...gapObj, ...css }}
+      css={{
+        listStyle: 'none',
+        ...dir,
+        ...gapObj,
+        w: 'max-content',
+        '& > *': { w: '100%' },
+        ...css,
+      }}
       {...restProps}
     >
       {isEmpty(data)

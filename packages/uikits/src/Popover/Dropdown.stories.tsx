@@ -7,7 +7,7 @@ export default {
 };
 const overlay = <Default />;
 const defaultArgs = {
-  css: { w: 100, border: '1px solid green', margin: '100px' },
+  css: {  border: '1px solid green', margin: '100px' },
   dbg: true,
   overlay: overlay,
 };
