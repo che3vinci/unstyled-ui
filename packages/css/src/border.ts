@@ -1,4 +1,4 @@
-import { RCSSProperties } from '@unstyled-ui/core';
+import { CSSProperties, RCSSProperties } from '@unstyled-ui/core';
 import { HVDirection } from '@c3/utils';
 
 export const borderRadiusForGroup = (
@@ -30,13 +30,25 @@ export const borderRadiusForGroup = (
   };
 };
 
+export const gradientRoundedBorder = (
+  bgColor: string,
+  gradient: string
+): CSSProperties => {
+  return {
+    border: '1px solid transparent',
+    backgroundImage: `linear-gradient(${bgColor}, ${bgColor}),${gradient}`,
+    backgroundOrigin: 'border-box',
+    backgroundClip: 'content-box, border-box',
+  };
+};
+
 export const roundBorderValue = (height: number) => {
   return height / 2;
 };
 
 export const gradientBorder = (gradient: string): RCSSProperties => ({
-  border: '1px solid',
-  borderImageWidth: 1,
+  borderStyle: 'solid',
+  borderImageWidth: '1px',
   borderImageSlice: 1,
   borderImageSource: gradient,
 });

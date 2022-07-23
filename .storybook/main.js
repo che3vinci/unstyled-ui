@@ -6,6 +6,7 @@ module.exports = {
     '../packages/core/src/**/*.stories.@(js|jsx|ts|tsx)',
     '../packages/animation/src/**/*.stories.@(js|jsx|ts|tsx)',
     '../packages/form/src/**/*.stories.@(js|jsx|ts|tsx)',
+    '../packages/css/src/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   addons: [
     '@storybook/addon-links',

@@ -1,6 +1,6 @@
 {
   "name": "@unstyled-ui/atomic",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "uibasic",
   "keywords": [],
   "author": "che3vinci <che3vinci@gmail.com>",
@@ -9,9 +9,9 @@
     "lib": "dist",
     "test": "__tests__"
   },
-  "main": "dist/atomic.umd.js",
-  "module": "dist/atomic.es.js",
-  "types": "dist/index.d.ts",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "types": "src/index.ts",
   "files": [
     "dist"
   ],

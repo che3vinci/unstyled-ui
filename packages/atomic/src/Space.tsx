@@ -10,6 +10,10 @@ export const Space: React.FC<SpaceProps> = props => {
   const { css = {}, size, ...restProps } = props;
   return (
     //@ts-ignore
-    <Atomic as="u-space" css={{ w: size, h: size, ...css }} {...restProps} />
+    <Atomic
+      as="u-space"
+      css={{ display: 'block', w: size, h: size, ...css }}
+      {...restProps}
+    />
   );
 };

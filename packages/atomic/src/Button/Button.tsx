@@ -20,7 +20,7 @@ export const Button: React.FC<ButtonProps> = props => {
     onClick,
     loading,
     children,
-    css,
+    css = {},
     disabled,
     ...restProps
   } = props;
@@ -39,6 +39,7 @@ export const Button: React.FC<ButtonProps> = props => {
     //@ts-ignore
     <Atomic
       as="button"
+      role="button"
       onClick={handleClick}
       css={{ ...(loading ? { gap: '1em' } : {}), ...button(), ...css }}
       disabled={disabled}

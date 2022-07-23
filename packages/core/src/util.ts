@@ -32,7 +32,7 @@ const pseudoElements = [
   'first-line',
   'placeholder',
 ];
-const pseudoClasses = ['hover', 'focus', 'active'];
+const pseudoClasses = ['hover', 'focus', 'active','focus-within'];
 
 export const utils = {
   w: (w: RCSSProperties['width']) => ({ width: w }),

@@ -11,7 +11,14 @@ export type InputProps = {
 } & BaseProps<InputHTMLAttributes<HTMLInputElement>>;
 
 export const InputContainer: React.FC<InputProps> = props => {
-  const { prefix, suffix, allowClear, css = {}, ...restProps } = props;
+  const {
+    prefix,
+    suffix,
+    allowClear,
+    children,
+    css = {},
+    ...restProps
+  } = props;
   if (!React.isValidElement(props.children)) {
     throw new Error('TypeError:children must be reactElement');
   }
@@ -23,12 +30,21 @@ export const InputContainer: React.FC<InputProps> = props => {
         fy: 'center',
         '& input': {
           h: '100%',
-          w: '100%',
+          // w: 'max-content',
           background: 'transparent',
+          outline: 'none',
+          border: 'none',
+        },
+        '&:focus-within': {
+          // border: '1px solid $gray600',
         },
         ...css,
       }}
       {...restProps}
-    ></Row>
+    >
+      {prefix}
+      {children}
+      {suffix}
+    </Row>
   );
 };
