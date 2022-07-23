@@ -43,11 +43,16 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@stitches/react": "^1.2.8",
+    "@types/animejs": "^3.1.5",
     "@unstyled-ui/core": "workspace:^1.0.6",
     "@unstyled-ui/css": "workspace:^",
     "@unstyled-ui/stitches": "workspace:^1.0.8",
+    "anime": "^0.1.2",
+    "anime.es.js": "link:animejs/lib/anime.es.js",
     "classnames": "^2.3.1",
-    "csstype": "^3.1.0"
+    "csstype": "^3.1.0",
+    "from": "^0.1.7",
+    "import": "^0.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
