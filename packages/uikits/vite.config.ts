@@ -14,7 +14,6 @@ export default defineConfig({
       external: [
         /node:*/,
         'tslib',
-
         'react',
         'react-dom',
         '@ant-design/icons',
@@ -25,7 +24,6 @@ export default defineConfig({
         '@c3/utils',
         '@c3/hooks',
         'lodash',
-        'deepmerge',
         'classnames',
       ],
       plugins: [commonjs(), rollupTypescript()],

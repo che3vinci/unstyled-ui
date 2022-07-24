@@ -15,7 +15,11 @@ export const Page: React.FC<PageProps> = ({
 }) => {
   return (
     <Col
-      css={{ position: 'relative', fx: 'stretch', width: '100%' }}
+      css={{
+        position: 'relative',
+        fx: 'stretch',
+        width: '100%',
+      }}
       {...props}
     >
       {nav}

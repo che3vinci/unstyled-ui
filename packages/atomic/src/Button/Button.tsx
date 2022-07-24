@@ -30,9 +30,12 @@ export const Button: React.FC<ButtonProps> = props => {
       if (preventDefault) {
         e.preventDefault();
       }
+      if (loading) {
+        return;
+      }
       onClick && onClick(e);
     },
-    [onClick, preventDefault]
+    [loading, onClick, preventDefault]
   );
 
   return (
@@ -42,7 +45,7 @@ export const Button: React.FC<ButtonProps> = props => {
       role="button"
       onClick={handleClick}
       css={{ ...(loading ? { gap: '1em' } : {}), ...button(), ...css }}
-      disabled={disabled}
+      disabled={disabled || loading}
       {...restProps}
     >
       {loading && <LoadingOutlined className="loading-icon" />}

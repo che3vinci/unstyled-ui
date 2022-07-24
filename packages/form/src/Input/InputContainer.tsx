@@ -20,6 +20,7 @@ export const InputContainer: React.FC<InputProps> = props => {
       styled(Row, {
         '& > input': {
           h: '100%',
+          //TODO: auto calc the input width
           // w: 'max-content',
           background: 'transparent',
           outline: 'none',

@@ -9,8 +9,8 @@
     "lib": "dist",
     "test": "__tests__"
   },
-  "main": "dist/stitches.umd.js",
-  "module": "dist/stitches.es.js",
+  "main": "src/index.js",
+  "module": "src/index.js",
   "types": "types/index.d.ts",
   "type": "module",
   "files": [

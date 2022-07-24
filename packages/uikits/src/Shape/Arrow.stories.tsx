@@ -1,7 +1,7 @@
-import { Arrow } from './Arrow';
+import { pseudoArrow } from '@unstyled-ui/css';
+import { Box } from '@unstyled-ui/layout';
 import React from 'react';
-import { absXCenter, Box, xCenter } from '@unstyled-ui/layout';
-import { arrow, pseudoArrow } from '@unstyled-ui/css';
+import { Arrow } from './Arrow';
 
 export default {
   component: Arrow,

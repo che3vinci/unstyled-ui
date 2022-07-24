@@ -24,6 +24,7 @@ export const arrow = (
     clipPath: `polygon(${polygon})`,
   };
 };
+
 export const pseudoArrow = (
   direction: Direction,
   width: RCSSProperties['width'],

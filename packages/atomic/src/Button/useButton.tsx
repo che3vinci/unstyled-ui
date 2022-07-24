@@ -11,10 +11,11 @@ export const useButton = (
 ): JSX.Element => {
   const { useLoading } = option;
   const [loading, showLoading, hideLoading] = useSwitch(false);
+  console.log('loading', loading, useLoading);
 
   const onClick = useCallback(
     async (e: React.MouseEvent<HTMLButtonElement>) => {
-      console.log('click');
+      // console.log('click', loading, useLoading);
       try {
         useLoading && showLoading();
         btn.props.onClick && (await btn.props.onClick(e));

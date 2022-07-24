@@ -13,7 +13,7 @@ export const createStyledFunction = ({ config, css }) =>
 
       const styledComponent = React.forwardRef((props, ref) => {
         const Type = (props && props.as) || DefaultType;
-
+        // console.log('styledComponent props', props);
         const newProps = { ...props };
         for (const key of Object.keys(props)) {
           if (
