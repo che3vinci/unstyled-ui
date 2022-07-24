@@ -26,9 +26,7 @@ export const InputContainer: React.FC<InputProps> = props => {
     <Row
       as="u-input-container"
       css={{
-        fx: 'flex-start',
-        fy: 'center',
-        '& input': {
+        '& > input': {
           h: '100%',
           // w: 'max-content',
           background: 'transparent',
