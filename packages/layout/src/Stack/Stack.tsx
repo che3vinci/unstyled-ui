@@ -1,33 +1,32 @@
+import { BaseProps } from '@unstyled-ui/core';
 import React from 'react';
 import { Relative } from '../Relative';
-import { BaseProps, RCSSProperties } from '@unstyled-ui/core';
-import classnames from 'classnames';
+import { flexCenter } from '../utils';
 
 export type StackProps = {
-  width: RCSSProperties['width'];
-  height: RCSSProperties['height'];
+  body?: JSX.Element;
 } & BaseProps;
 
 export const Stack: React.FC<StackProps> = props => {
-  const { width, height, css = {}, children, className, ...restProps } = props;
+  const { body, css = {}, children, ...restProps } = props;
 
   return (
     //@ts-ignore
     <Relative
-      as="u-stack"
+      // as="u-stack"
       //@ts-ignore
-      css={{ width, height, overflow: 'hidden', ...css }}
+      css={{ overflow: 'hidden', w: 'max-content', ...flexCenter, ...css }}
       {...restProps}
     >
+      {body && <body.type {...body.props} key={body?.key} />}
       {React.Children.toArray(children).map(e => {
         if (!React.isValidElement(e)) {
           throw new Error('TypeError:children must be reactElement');
         }
-        const { style = {}, ...restProps } = e.props;
-        //TODO: add position: absolute for different type of children
+        const { css: cCss = {}, ...restProps } = e.props;
         return (
           <e.type
-            style={{ position: 'absolute', ...style }}
+            css={{ ...cCss, position: 'absolute' }}
             key={e.key}
             {...restProps}
           />

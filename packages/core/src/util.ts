@@ -32,7 +32,7 @@ const pseudoElements = [
   'first-line',
   'placeholder',
 ];
-const pseudoClasses = ['hover', 'focus', 'active'];
+const pseudoClasses = ['hover', 'focus', 'active','focus-within'];
 
 export const utils = {
   w: (w: RCSSProperties['width']) => ({ width: w }),
@@ -57,14 +57,14 @@ export const utils = {
   mr: (m: RCSSProperties['marginRight']) => ({ marginRight: m }),
   mb: (m: RCSSProperties['paddingBottom']) => ({ marginBottom: m }),
   ml: (m: RCSSProperties['marginLeft']) => ({ marginLeft: m }),
-  mx: (mx: {
-    ml: RCSSProperties['marginLeft'];
-    mr: RCSSProperties['marginRight'];
-  }) => ({ marginLeft: mx.ml, marginRight: mx.mr }),
-  my: (my: {
-    mt: RCSSProperties['marginTop'];
-    mb: RCSSProperties['paddingBottom'];
-  }) => ({ marginTop: my.mt, marginBottom: my.mb }),
+  mx: (mx: RCSSProperties['marginLeft']) => ({
+    marginLeft: mx,
+    marginRight: mx,
+  }),
+  my: (my: RCSSProperties['marginTop']) => ({
+    marginTop: my,
+    marginBottom: my,
+  }),
 
   //padding
   p: (m: RCSSProperties['padding']) => ({ padding: m }),
@@ -72,14 +72,14 @@ export const utils = {
   pr: (m: RCSSProperties['paddingRight']) => ({ paddingRight: m }),
   pb: (m: RCSSProperties['paddingBottom']) => ({ paddingBottom: m }),
   pl: (m: RCSSProperties['paddingLeft']) => ({ paddingLeft: m }),
-  px: (px: {
-    pl: RCSSProperties['paddingLeft'];
-    pr: RCSSProperties['paddingRight'];
-  }) => ({ paddingLeft: px.pl, paddingRight: px.pr }),
-  py: (py: {
-    pt: RCSSProperties['paddingTop'];
-    pb: RCSSProperties['paddingBottom'];
-  }) => ({ paddingTop: py.pt, paddingBottom: py.pb }),
+  px: (px: RCSSProperties['paddingLeft']) => ({
+    paddingLeft: px,
+    paddingRight: px,
+  }),
+  py: (py: RCSSProperties['paddingTop']) => ({
+    paddingTop: py,
+    paddingBottom: py,
+  }),
 
   //others shortcuts
   bg: (bg: RCSSProperties['background']) => ({ background: bg }),

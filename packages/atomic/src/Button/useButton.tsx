@@ -1,30 +1,33 @@
 import { useSwitch } from '@c3/hooks';
+import { wait } from '@c3/utils';
 import React, { useCallback, useMemo } from 'react';
-import { Button, ButtonProps } from './Button';
 
 export type UseBtnOption = {
-  props: ButtonProps;
   useLoading: boolean;
 };
-export const useButton = (option: UseBtnOption): JSX.Element => {
-  const { props, useLoading } = option;
+export const useButton = (
+  btn: JSX.Element,
+  option: UseBtnOption
+): JSX.Element => {
+  const { useLoading } = option;
   const [loading, showLoading, hideLoading] = useSwitch(false);
 
   const onClick = useCallback(
     async (e: React.MouseEvent<HTMLButtonElement>) => {
+      console.log('click');
       try {
         useLoading && showLoading();
-        props.onClick && (await props.onClick(e));
+        btn.props.onClick && (await btn.props.onClick(e));
       } finally {
         useLoading && hideLoading();
       }
     },
-    [hideLoading, props, showLoading, useLoading]
+    [btn.props, hideLoading, showLoading, useLoading]
   );
 
-  const btn = useMemo(() => {
-    return <Button {...option.props} loading={loading} onClick={onClick} />;
-  }, [loading, onClick, option.props]);
+  const button = useMemo(() => {
+    return <btn.type {...btn.props} loading={loading} onClick={onClick} />;
+  }, [btn, loading, onClick]);
 
-  return btn;
+  return button;
 };

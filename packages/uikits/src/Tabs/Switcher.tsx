@@ -1,86 +1,69 @@
-import { useExclusive } from '@c3/hooks';
-import { HVDirection, noop } from '@c3/utils';
+import { noop, __DEV__ } from '@c3/utils';
 import { BaseProps } from '@unstyled-ui/core';
-import { Col, Row } from '@unstyled-ui/layout';
-import classNames from 'classnames';
+import { hidden } from '@unstyled-ui/css';
 import React, { useMemo } from 'react';
+import { Item } from '../Item';
+import { List } from '../List/List';
 
-export type DefaultSwitchItem = {
-  title: string;
-  to: string;
-} & BaseSwitchItem;
-
-export type BaseSwitchItem = {
+export type BaseSwitchItemType = {
   id: string;
-  isSelected: boolean;
-  renderItem?: <T>(item: T) => JSX.Element;
+  active: boolean;
   renderContent?: <T>(item: T) => JSX.Element;
 };
 
+const anti = (direction: 'row' | 'column') =>
+  direction === 'row' ? 'column' : 'row';
 export type MenuConfig<T> = T[];
 
-export type SwitcherProps<Item> = {
-  direction: HVDirection;
-  menuConfig: MenuConfig<Item>;
-  updateConfig?: (config: MenuConfig<Item>) => void;
-  renderItem?: (item: Item) => JSX.Element;
-  afterSwitch?: (item: Item) => void;
-  renderContent?: (item: Item) => JSX.Element;
+export type SwitcherProps<ItemType> = {
+  direction: 'row' | 'column';
+  menuConfig: MenuConfig<ItemType>;
+  updateConfig: (config: MenuConfig<ItemType>) => void;
+  renderItem: (item: ItemType) => JSX.Element;
+  renderContent?: (item: ItemType) => JSX.Element;
 } & BaseProps;
 
-export const Switcher = <Item extends BaseSwitchItem>({
+export const Switcher = <ItemType extends BaseSwitchItemType>({
   menuConfig,
   updateConfig,
-  afterSwitch,
   direction,
   renderItem,
   renderContent,
   ...restProps
-}: SwitcherProps<Item>) => {
-  const on = useExclusive(menuConfig, 'isSelected', updateConfig || noop);
-  const activeItem = useMemo(
-    () => menuConfig.find(e => e.isSelected),
-    [menuConfig]
-  );
+}: SwitcherProps<ItemType>) => {
+  // const activeItem = useMemo(
+  //   () => menuConfig.find((e: ItemType) => e.active),
+  //   [menuConfig]
+  // );
+  // if (__DEV__) {
+  //   if (!activeItem) {
+  //     throw new Error('active item not found');
+  //   }
+  // }
 
-  const hv = useMemo(() => {
-    if (direction === 'horizontal') {
-      return {
-        navLayout: Row,
-        Layout: Col,
-      };
-    }
-    return { navLayout: Col, Layout: Row };
-  }, [direction]);
   return (
-    <hv.Layout className="uu-switcher" {...restProps}>
-      <hv.navLayout className="uu-switcher-navbar">
-        {menuConfig.map(e => {
-          const NavItem = renderItem?.(e) || e.renderItem?.<Item>(e) || (
-            <span>-please supply renderItem function-</span>
-          );
-          const { onClick, className, ...restProps } = NavItem.props;
-          return (
-            <NavItem.type
-              onClick={(evt: React.MouseEvent) => {
-                on(e.id);
-                onClick && onClick(evt);
-                afterSwitch && afterSwitch(e);
-              }}
-              className={classNames(
-                className,
-                'list-item',
-                activeItem?.id === e.id ? 'active-item' : 'normal-item'
-              )}
-              {...restProps}
-              key={e.id}
-            />
-          );
-        })}
-      </hv.navLayout>
-      {activeItem &&
-        (renderContent?.(activeItem) ||
-          activeItem.renderContent?.<Item>(activeItem))}
-    </hv.Layout>
+    <Item
+      as="u-switcher"
+      //@ts-ignore
+      prefix={
+        <List
+          as="u-nav"
+          data={menuConfig}
+          direction={anti(direction)}
+          renderItem={renderItem}
+          updateData={updateConfig}
+        />
+      }
+      direction={direction}
+      {...restProps}
+    >
+      <List
+        data={menuConfig}
+        direction={anti(direction)}
+        renderItem={(e: any) => renderContent?.(e) || e?.renderContent?.(e)}
+        css={{ '&>*:not([active])': { ...hidden } }}
+        updateData={noop}
+      />
+    </Item>
   );
 };

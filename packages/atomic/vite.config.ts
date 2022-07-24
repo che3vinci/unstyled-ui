@@ -6,7 +6,7 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   build: {
     lib: {
-      entry: './src/index.tsx',
+      entry: './src/index.ts',
       name: 'atomic',
       formats: ['iife', 'es', 'umd'],
     },

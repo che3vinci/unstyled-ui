@@ -4,7 +4,7 @@ import React from 'react';
 import { Default } from '../List/List.stories';
 export default {
   component: Popover,
-  title: 'uikits/Dropdown',
+  title: 'uikits/popover',
 };
 const Overlay = <Default />;
 const defaultArgs = {
@@ -12,35 +12,48 @@ const defaultArgs = {
   dbg: true,
   overlay: Overlay,
 };
+const PopoverApp = props => {
+  const [visible, setVisible] = React.useState(false);
+  return (
+    <Popover
+      {...defaultArgs}
+      visible={visible}
+      updateVisible={setVisible}
+      {...props}
+    >
+      <button>click</button>
+    </Popover>
+  );
+};
 
 export const ClickDropdown = () => (
-  <Popover {...defaultArgs}>
+  <PopoverApp>
     <button>click</button>
-  </Popover>
+  </PopoverApp>
 );
 export const HoverDropdown = () => (
-  <Popover {...defaultArgs} trigger={['hover']}>
+  <PopoverApp trigger={['hover']}>
     <button>click</button>
-  </Popover>
+  </PopoverApp>
 );
 export const Top = () => (
-  <Popover {...defaultArgs} placement="top">
+  <PopoverApp placement="top">
     <button>click</button>
-  </Popover>
+  </PopoverApp>
 );
 export const Bottom = () => (
-  <Popover {...defaultArgs} placement="bottom">
+  <PopoverApp placement="bottom">
     <button>click</button>
-  </Popover>
+  </PopoverApp>
 );
 
 export const Left = () => (
-  <Popover {...defaultArgs} placement="left">
+  <PopoverApp placement="left">
     <button>click</button>
-  </Popover>
+  </PopoverApp>
 );
 export const Right = () => (
-  <Popover {...defaultArgs} placement="right">
+  <PopoverApp placement="right">
     <button>click</button>
-  </Popover>
+  </PopoverApp>
 );

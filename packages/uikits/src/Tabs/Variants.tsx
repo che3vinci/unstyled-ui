@@ -1,19 +1,19 @@
 import React from 'react';
-import { BaseSwitchItem, Switcher, SwitcherProps } from './Switcher';
+import { BaseSwitchItemType, Switcher, SwitcherProps } from './Switcher';
 
-export type SideBarProps<T extends BaseSwitchItem> = Omit<
+export type SideBarProps<T extends BaseSwitchItemType> = Omit<
   SwitcherProps<T>,
   'direction'
 >;
 
-export const SideBar = <T extends BaseSwitchItem>(props: SideBarProps<T>) => (
+export const SideBar = <T extends BaseSwitchItemType>(props: SideBarProps<T>) => (
   //@ts-ignore
   <Switcher direction="vertical" {...props} />
 );
 
 
 export const Menus = Switcher;
-export const Tabs = <T extends BaseSwitchItem>(props: SideBarProps<T>) => (
+export const Tabs = <T extends BaseSwitchItemType>(props: SideBarProps<T>) => (
   //@ts-ignore
   <Switcher direction="horizontal" {...props} />
 );

@@ -14,5 +14,10 @@ export const Box = styled('u-box', {
         },
       },
     },
+    widen: {
+      true: {
+        width: '100%',
+      },
+    },
   },
 });

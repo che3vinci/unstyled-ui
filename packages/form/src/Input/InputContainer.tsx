@@ -1,15 +1,12 @@
-import { BaseProps, styled } from '@unstyled-ui/core';
-import { absYCenter, Row } from '@unstyled-ui/layout';
+import { BaseProps } from '@unstyled-ui/core';
+import { Item } from '@unstyled-ui/uikits';
+import { Row } from '@unstyled-ui/layout';
 import React, { InputHTMLAttributes } from 'react';
-import { atomic } from './Input';
-import classnames from 'classnames';
 
 export type InputProps = {
   prefix?: JSX.Element;
   suffix?: JSX.Element;
   allowClear?: boolean;
-  addonBefore?: JSX.Element;
-  addonAfter?: JSX.Element;
   status?: 'warning' | 'error' | 'success';
 } & BaseProps<InputHTMLAttributes<HTMLInputElement>>;
 
@@ -18,12 +15,12 @@ export const InputContainer: React.FC<InputProps> = props => {
     prefix,
     suffix,
     allowClear,
-    addonAfter,
-    addonBefore,
+    children,
     css = {},
     ...restProps
   } = props;
-  if (props.children) {
+  if (!React.isValidElement(props.children)) {
+    throw new Error('TypeError:children must be reactElement');
   }
   return (
     <Row
@@ -33,12 +30,21 @@ export const InputContainer: React.FC<InputProps> = props => {
         fy: 'center',
         '& input': {
           h: '100%',
-          w: '100%',
+          // w: 'max-content',
           background: 'transparent',
+          outline: 'none',
+          border: 'none',
+        },
+        '&:focus-within': {
+          // border: '1px solid $gray600',
         },
         ...css,
       }}
       {...restProps}
-    ></Row>
+    >
+      {prefix}
+      {children}
+      {suffix}
+    </Row>
   );
 };

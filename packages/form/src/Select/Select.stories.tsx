@@ -1,7 +1,6 @@
 import { Select } from './Select';
 import React, { useState } from 'react';
-import { Option } from './Option';
-import { List } from '@unstyled-ui/uikits';
+import { BaseListItemType, List } from '@unstyled-ui/uikits';
 import { Button, Text } from '@unstyled-ui/atomic';
 import { isEmpty } from '@c3/utils';
 
@@ -9,7 +8,8 @@ export default {
   title: 'form/select',
   component: Select,
 };
-const config = [
+type Item = { name: string; value: string | number } & BaseListItemType;
+const config: Item[] = [
   { id: 1, name: 'name1', value: 1, active: true },
   { id: 2, name: 'name2', value: 2 },
   { id: 3, name: 'name3', value: 3 },

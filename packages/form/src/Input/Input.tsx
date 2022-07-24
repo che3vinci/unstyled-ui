@@ -3,10 +3,8 @@ import { absYCenter } from '@unstyled-ui/layout';
 
 export const Input = styled('input', {
   _placeholder: {
-    ...absYCenter({ left: '0em' }),
+    ...absYCenter(),
   },
-  // pl: '1em',
-  variants: {},
+  appearance: 'none',
+  outline: 'none',
 });
-
-export const atomic: { input: typeof Input } = { input: Input };

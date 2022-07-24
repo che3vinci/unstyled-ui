@@ -1,8 +1,8 @@
-import { List } from './List';
-import { Text } from '@unstyled-ui/atomic';
-import React, { useState } from 'react';
-import { TextItem } from '../TextItem';
 import { mock } from '@c3/utils';
+import React, { useState } from 'react';
+import { Item } from '../Item';
+import { List } from './List';
+import { Image, Text } from '@unstyled-ui/atomic';
 
 export default {
   title: 'uikits/List',
@@ -24,24 +24,31 @@ const idata = [
     name: '3333',
   },
 ];
+const ItemX = t => {
+  console.log('t');
+  return (
+    <Item
+      prefix={<Image css={{ w: 48, h: 48 }} src={mock.getRandomPic(32, 32)} />}
+      css={{
+        '&[active]': {
+          color: 'red',
+        },
+      }}
+    >
+      <Text>{t.name}</Text>
+    </Item>
+  );
+};
+const ItemX1 = React.memo(ItemX);
 
-export const Default = () => {
+export const Default = props => {
   const [data, setData] = useState(idata);
   return (
     <List
       data={data}
-      renderItem={t => (
-        <TextItem
-          text={t.name}
-          icon={mock.getRandomPic(32, 32)}
-          css={{
-            '&[active]': {
-              color: 'red',
-            },
-          }}
-        />
-      )}
+      renderItem={e => <ItemX1 {...e}></ItemX1>}
       updateData={setData}
+      {...props}
     />
   );
 };
