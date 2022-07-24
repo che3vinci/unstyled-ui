@@ -18,12 +18,18 @@ export const useModal = (
   const { afterDisappear, beforeAppear, useAnime: _useAnime = true } = options;
   const ref = useRef<HTMLElement>(null);
   const [visible, _on, _off] = useSwitch(false);
-  const [showAnime, hideAnime] = useAnime(
-    ref.current?.querySelector('u-modal'),
-    { scale: 0, easing: 'linear', duration: HIDE_DURATION },
-    { scale: 1 }
-  );
-  console.log('xxx', ref.current, ref.current?.querySelector('u-modal'));
+  const [showAnime, hideAnime] = useAnime([
+    {
+      targets: ref.current?.querySelector('u-modal'),
+      from: { scale: 0, opacity: 0, easing: 'linear', duration: HIDE_DURATION },
+      to: { scale: 1, opacity: 1 },
+    },
+    {
+      targets: ref.current,
+      from: { opacity: 0, easing: 'linear', duration: HIDE_DURATION },
+      to: { opacity: 1, duration: 0 },
+    },
+  ]);
 
   const off = useCallback(async () => {
     _useAnime && hideAnime();

@@ -5,15 +5,20 @@ export default {
   component: Dropdown,
   title: 'uikits/Dropdown',
 };
-const overlay = <Default />;
+const overlay = (
+  <Default css={{ overflow: 'hidden', border: '1px solid black' }} />
+);
 const defaultArgs = {
-  css: {  border: '1px solid green', margin: '100px' },
-  dbg: true,
+  css: { border: '1px solid green', ml: '100px', mt: 100 },
+  // dbg: true,
   overlay: overlay,
 };
 export const ClickDropdown = () => {
   return (
-    <Dropdown {...defaultArgs}>
+    <Dropdown
+      {...defaultArgs}
+      useAnime
+    >
       <button>clickMe</button>
     </Dropdown>
   );

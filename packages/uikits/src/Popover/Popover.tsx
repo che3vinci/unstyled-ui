@@ -15,7 +15,8 @@ import React, {
   useState,
 } from 'react';
 import { IPosition } from '@unstyled-ui/layout';
-import { show } from '@unstyled-ui/css';
+import { toggleDisplay, toggleVisibility } from '@unstyled-ui/css';
+import { ForwardRefRenderFunction } from 'react';
 
 export type PopoverProps = {
   overlay: JSX.Element;
@@ -25,7 +26,10 @@ export type PopoverProps = {
   updateVisible: (visible: boolean) => void;
 } & BaseProps;
 
-export const Popover: React.FC<PopoverProps> = props => {
+const _Popover: ForwardRefRenderFunction<HTMLElement, PopoverProps> = (
+  props,
+  ref
+) => {
   const {
     trigger = ['click'],
     overlay,
@@ -39,8 +43,7 @@ export const Popover: React.FC<PopoverProps> = props => {
   if (!React.isValidElement(children)) {
     throw new Error('TypeError:children must be reactElement');
   }
-  // const [visible, on, off] = useSwitch(false);
-  const ref = useRef<HTMLButtonElement>(null);
+  const btnRef = useRef<HTMLButtonElement>(null);
 
   const clickOutside = useCallback(() => {
     visible && updateVisible(false);
@@ -55,12 +58,15 @@ export const Popover: React.FC<PopoverProps> = props => {
   const { hovered, ...restEvent } = useHover();
 
   useEffect(() => {
+    if (!trigger.includes('hover')) {
+      return;
+    }
     hovered
       ? updateVisible(true)
       : setTimeout(() => {
           updateVisible(false);
         }, 2000);
-  }, [hovered, updateVisible]);
+  }, [hovered, trigger, updateVisible]);
 
   const childProps = useMemo(() => {
     return {
@@ -107,9 +113,9 @@ export const Popover: React.FC<PopoverProps> = props => {
     }
   });
   useEffect(() => {
-    ref.current && watch(ref.current);
+    btnRef?.current && watch(btnRef?.current);
   }, [watch]);
-  const { css: overlayCss, ...restOverlayProps } = overlay.props;
+  const { css: overlayCss, className, ...restOverlayProps } = overlay.props;
 
   return (
     //@ts-ignore
@@ -121,18 +127,21 @@ export const Popover: React.FC<PopoverProps> = props => {
       onClick={onClickContainer}
       ref={ref}
     >
-      <children.type {...childProps} />
+      <children.type {...childProps} ref={btnRef} />
       {/* @ts-ignore */}
       <overlay.type
         css={{
           ...overlayCss,
           position: 'absolute',
           ...pos,
-          ...show(visible),
           ...col(),
+          ...toggleVisibility(visible),
         }}
+        className={className + ' u-popover'}
         {...restOverlayProps}
       />
     </Relative>
   );
 };
+
+export const Popover = React.forwardRef(_Popover);

@@ -1,26 +1,47 @@
+import { toArray } from '@c3/utils';
 import anime from 'animejs';
 import { useCallback } from 'react';
 
-export type AnimeOption = Omit<anime.AnimeParams, 'targets'>;
-export const useAnime = (
-  targets: anime.AnimeParams['targets'],
-  from: AnimeOption,
-  to: AnimeOption
-) => {
+export type _AnimeOption = Omit<anime.AnimeParams, 'targets'>;
+export type AnimeOption = _AnimeOption | (() => _AnimeOption);
+export type useAnimeOption = {
+  targets: anime.AnimeParams['targets'] | (() => anime.AnimeParams['targets']);
+  from: AnimeOption;
+  to: AnimeOption;
+};
+
+export const useAnime = (options: useAnimeOption | useAnimeOption[]) => {
+  const _options = toArray(options);
+
+  const get = useCallback((e: any) => (typeof e === 'function' ? e() : e), []);
+
   const reset = useCallback(
-    (s: AnimeOption) => {
-      anime({ targets, ...{ ...s, duration: 0 } });
+    (targets, s: AnimeOption) => {
+      anime({
+        targets: get(targets),
+        ...{ ...get(s), duration: 0 },
+      });
     },
-    [targets]
+    [get]
   );
   const forward = useCallback(() => {
-    reset(from);
-    return anime({ targets, ...to });
-  }, [from, reset, targets, to]);
+    _options.forEach(({ targets, from, to }) => {
+      reset(targets, from);
+      return anime({
+        targets: get(targets),
+        ...get(to),
+      });
+    });
+  }, [_options, get, reset]);
 
   const backward = useCallback(() => {
-    reset(to);
-    return anime({ targets, ...from });
-  }, [from, reset, targets, to]);
+    _options.forEach(({ targets, from, to }) => {
+      reset(targets, to);
+      return anime({
+        targets: get(targets),
+        ...get(from),
+      });
+    });
+  }, [_options, get, reset]);
   return [forward, backward] as const;
 };

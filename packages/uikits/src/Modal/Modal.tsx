@@ -1,4 +1,4 @@
-import { mask } from '@unstyled-ui/css';
+import { mask, toggleDisplay } from '@unstyled-ui/css';
 import { Fn, omit } from '@c3/utils';
 import classNames from 'classnames';
 import React, { ForwardRefRenderFunction, useCallback } from 'react';
@@ -36,8 +36,6 @@ const _Modal: ForwardRefRenderFunction<HTMLDivElement, ModalProps> = (
     css,
     ...restProps
   } = props;
-  const display = visible ? 'flex' : 'none';
-  console.log('xxx,in modal', ref);
   const handleClose = useCallback(
     async e => {
       await closeBtn?.props.onClick?.(e);
@@ -72,7 +70,12 @@ const _Modal: ForwardRefRenderFunction<HTMLDivElement, ModalProps> = (
     <Fixed
       as="u-mask"
       //@ts-ignore
-      css={{ ...mask, display, bg: 'rgba(0,0,0,0.8)', ...css }}
+      css={{
+        ...mask,
+        ...toggleDisplay(visible),
+        bg: 'rgba(0,0,0,0.8)',
+        ...css,
+      }}
       {...restProps}
       ref={ref}
     >

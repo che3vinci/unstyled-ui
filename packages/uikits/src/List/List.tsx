@@ -1,8 +1,8 @@
 import { useExclusive } from '@c3/hooks';
 import { Color, IDable, isEmpty } from '@c3/utils';
-import { BaseProps, CSSProperties } from '@unstyled-ui/core';
+import { BaseProps, CSSProperties, styled } from '@unstyled-ui/core';
 import { Box, col, rgap, row, vgap } from '@unstyled-ui/layout';
-import React from 'react';
+import React, { useMemo } from 'react';
 
 export type BaseListItemType = IDable & { active?: boolean };
 
@@ -26,29 +26,30 @@ export const List = <T extends BaseListItemType>(props: ListProps<T>) => {
     afterClick,
     direction = 'column',
     updateData,
-    css = {},
     gap,
     ...restProps
   } = props;
   const on = useExclusive<T>(data, 'active', updateData);
-  const dir = direction === 'column' ? col('stretch') : row();
+  const isCol = direction === 'column';
+  const dir = useMemo(() => (isCol ? col('stretch') : row()), [isCol]);
   //@ts-ignore
-  const gapObj = direction === 'column' ? vgap(gap) : rgap(gap);
-  return (
-    //@ts-ignore
-    <Box
-      as="ul"
-      //@ts-ignore
-      css={{
+  const gapObj = useMemo(() => (isCol ? vgap(gap) : rgap(gap)), [gap, isCol]);
+  const _Box = useMemo(
+    () =>
+      styled(Box, {
+        //@ts-ignore
         listStyle: 'none',
         ...dir,
         ...gapObj,
-        w: 'max-content',
-        '& > *': { w: '100%' },
-        ...css,
-      }}
-      {...restProps}
-    >
+        minW: 'max-content',
+        w: '100%',
+        overflow: 'hidden',
+        '& > *': { w: isCol ? '100%' : 'auto', flexShrink: 0 },
+      }),
+    [dir, gapObj, isCol]
+  );
+  return (
+    <_Box as="u-ul" {...restProps}>
       {isEmpty(data)
         ? emptyNode
         : data.map((e: T, idx: number) => {
@@ -71,6 +72,6 @@ export const List = <T extends BaseListItemType>(props: ListProps<T>) => {
               />
             );
           })}
-    </Box>
+    </_Box>
   );
 };
