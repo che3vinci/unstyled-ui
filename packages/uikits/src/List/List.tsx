@@ -49,6 +49,7 @@ export const List = <T extends BaseListItemType>(props: ListProps<T>) => {
     [dir, gapObj, isCol]
   );
   return (
+    //@ts-ignore
     <_Box as="u-ul" {...restProps}>
       {isEmpty(data)
         ? emptyNode

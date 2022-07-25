@@ -49,6 +49,7 @@ export const useModal = (
   const modal = useMemo(() => {
     return (
       <Modal
+      //@ts-ignore
         ref={ref}
         visible={visible}
         onClose={off}

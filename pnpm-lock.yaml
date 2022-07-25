@@ -115,8 +115,7 @@ importers:
       '@unstyled-ui/css': workspace:^
       '@unstyled-ui/stitches': workspace:^1.0.8
       '@vitejs/plugin-react': ^1.3.2
-      anime: ^0.1.2
-      anime.es.js: link:animejs/lib/anime.es.js
+      animejs: ^3.2.1
       babel-loader: ^8.2.3
       classnames: ^2.3.1
       csstype: ^3.1.0
@@ -130,8 +129,7 @@ importers:
       '@unstyled-ui/core': link:../core
       '@unstyled-ui/css': link:../css
       '@unstyled-ui/stitches': link:../stitches
-      anime: 0.1.2
-      anime.es.js: link:animejs/lib/anime.es.js
+      animejs: 3.2.1
       classnames: 2.3.1
       csstype: 3.1.0
       from: 0.1.7

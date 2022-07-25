@@ -20,6 +20,7 @@ export default defineConfig({
         '@c3/utils',
         '@c3/hooks',
         '@unstyled-ui/core',
+        '@unstyled-ui/animation',
         'lodash',
         'classnames',
       ],

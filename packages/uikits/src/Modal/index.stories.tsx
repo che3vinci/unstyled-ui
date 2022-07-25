@@ -1,12 +1,11 @@
 import { wait } from '@c3/utils';
 import { Box } from '@unstyled-ui/layout';
 import React, { forwardRef, useEffect } from 'react';
-import { useTransition } from '../../../animation/src/transition/useTransition';
+import { useTransition } from '@unstyled-ui/animation';
 import { Modal, ModalProps } from './Modal';
 import { useModal } from './useModal';
-import anime from 'animejs/lib/anime.es.js';
 import { useMount } from '@c3/hooks';
-import { useAnime } from '../../../animation/src/useAnime';
+import { useAnime } from '@unstyled-ui/animation';
 export default {
   component: Modal,
   title: 'uikits/Modal',

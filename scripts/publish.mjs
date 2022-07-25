@@ -43,6 +43,7 @@ run({
   },
   async publish(options) {
     const { buildOnly } = options;
+    await this.before({ beforePub: true });
     await this.build();
     if (!buildOnly) {
       await $`pnpm publish -r  --no-git-checks `;

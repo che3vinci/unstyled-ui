@@ -21,6 +21,7 @@ export default defineConfig({
         '@unstyled-ui/core',
         '@unstyled-ui/atomic',
         '@unstyled-ui/layout',
+        '@unstyled-ui/animation',
         '@c3/utils',
         '@c3/hooks',
         'lodash',

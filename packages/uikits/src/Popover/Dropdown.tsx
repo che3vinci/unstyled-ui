@@ -4,8 +4,6 @@ import { useRef } from 'react';
 import { useCallback } from 'react';
 import { useAnime } from '@unstyled-ui/animation';
 import { wait } from '@c3/utils';
-import anime from 'animejs';
-window.anime = anime;
 export type DropdownProps = Omit<PopoverProps, 'visible' | 'updateVisible'> & {
   useAnime?: boolean;
 };
